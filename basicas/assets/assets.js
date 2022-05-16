@@ -1,5 +1,5 @@
-const {createApp, ref, provide, inject, onMounted, getCurrentInstance, nextTick} = Vue
 
+const {createApp, ref, provide, inject, onMounted, getCurrentInstance, nextTick} = Vue
 const emitter = mitt()
 
 /* AUDIOS */
