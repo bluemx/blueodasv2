@@ -4,11 +4,9 @@ const emitter = mitt()
 
 /* AUDIOS */
 const audiopath = '../assets/asound/'
-const s_end = new Howl({ src: [audiopath+'end.mp3'] });
-const s_error = new Howl({ src: [audiopath+'error.mp3'] });
-const s_ok = new Howl({ src: [audiopath+'/ok.mp3'] });
-const s_select = new Howl({ src: [audiopath+'/select.mp3'] });
-const s_win = new Howl({ src: [audiopath+'/win.mp3'] });
+
+const s_select = new Howl({ src: [ 'data:audio/mp3;base64,'+audio_select ] });
+const s_win = new Howl({ src: [ 'data:audio/mp3;base64,'+audio_win ] });
 
 const app = createApp({
     setup(props, context){
@@ -22,21 +20,7 @@ const app = createApp({
             oks: 0,
             errors: 0,
         }
-
         app.provide('RESULTS', results)
-
-
-        const finalize = () => {
-            
-        }
-        
-        const testing = () => {
-            emitter.emit('foo', { a: 'b' })
-            emitter.on('finalize', (e => {
-                console.log(e)
-            }))
-            
-        }
 
         return {
             oda
@@ -67,12 +51,18 @@ tailwind.config = {
     theme: {
       extend: {
         colors: {
-          main: '#ED1846',
-          sec: '#005093',
-          clear: '#5AAEDA',
-          accent: '#EB8B2E',
-          isok: '#5EB246',
-          notok: '#DB3E34'
+            main: '#ED1846',
+            sec: '#005093',
+            clear: '#5AAEDA',
+            accent: '#EB8B2E',
+            isok: '#5EB246',
+            notok: '#DB3E34',
+            pastel1: '#FDEDE2',
+            pastel2: '#D5EDF6',
+            pastel3: '#EAF5E5',
+            pastel4: '#F3E5EF',
+            pastel5: '#EEEAE3',
+            pastel6: '#FFF6D8',
         },
         boxShadow: {
             'oda': '4px 4px 0 rgba(0, 0, 0, 0.1)'

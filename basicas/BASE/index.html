@@ -20,14 +20,64 @@
       <oda-titulo title="Título" subtitle="sub...title"></oda-titulo>
       <oda-instruccion>Selecciona así fxemoji:crossmark las situaciones que son <strong class=text-main>justas</strong>.</oda-instruccion>
       <!--layout-grid(columns="4" columns-md="3")-->
-      <layout-grid class="p-5" columns="2" columns-md="2" gap="10">
+      <layout-grid class="p-5" columns="3" columns-md="3" gap="10">
         <!--layout-box(design="simple")| Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis sint, labore aperiam vel eos doloremque est quis animi consectetur unde eveniet sed nulla odio consequatur, asperiores ipsam! Quo, fugit aspernatur!
         -->
-        <layout-box class="bg-gray-100" design="simple">
-          <module-check :answer="1" :icons-list="['fxemoji:crossmark', 'fxemoji:heavycheckmark']">Correcta</module-check>
+        <div>
+          <layout-box class="bg-gray-100" design="text">
+            <module-check :answer="1" :options="['fxemoji:crossmark', 'fxemoji:heavycheckmark']">Correcta</module-check>
+          </layout-box>
+        </div>
+        <div>
+          <layout-box class="bg-gray-100" design="text">
+            <module-check :answer="1" :options="['fxemoji:crossmark']">Incorrecta</module-check>
+          </layout-box>
+        </div>
+        <module-check :answer="1" :options="['fxemoji:crossmark']" float="topright">
+          <!--layout-box(img="https://picsum.photos/200" design)-->
+          <layout-img class="w-full" img="https://picsum.photos/200/100"></layout-img>
+        </module-check>
+      </layout-grid>
+      <oda-instruccion>Marca así fxemoji:whiteheavycheckmark los platillos que representan la comida típica mexicana.</strong>.</oda-instruccion>
+      <layout-grid columns="2" columns-md="3" gap="10">
+        <module-check :answer="0" float :options="['fxemoji:whiteheavycheckmark']">
+          <layout-box img="https://picsum.photos/200" design></layout-box>
+        </module-check>
+        <module-check :answer="0" float :options="['fxemoji:whiteheavycheckmark']">
+          <layout-box img="https://picsum.photos/200" design></layout-box>
+        </module-check>
+        <module-check :answer="0" float :options="['fxemoji:whiteheavycheckmark']">
+          <layout-box img="https://picsum.photos/200" design></layout-box>
+        </module-check>
+        <module-check :answer="1" float :options="['fxemoji:whiteheavycheckmark']">
+          <layout-box img="https://picsum.photos/200" design></layout-box>
+        </module-check>
+        <module-check :answer="1" float :options="['fxemoji:whiteheavycheckmark']">
+          <layout-box img="https://picsum.photos/200" design></layout-box>
+        </module-check>
+        <module-check :answer="1" float :options="['fxemoji:whiteheavycheckmark']">
+          <layout-box img="https://picsum.photos/200" design></layout-box>
+        </module-check>
+      </layout-grid>
+      <oda-instruccion>Marca así fxemoji:heavycheckmark los olores que son agradables para ti..</oda-instruccion>
+      <layout-grid columns="2" gap="10">
+        <layout-box class="bg-pastel1" design="text">
+          <module-check :answer="1" :options="['fxemoji:heavycheckmark']">Aroma de las flores</module-check>
         </layout-box>
-        <layout-box class="bg-gray-100" design="simple">
-          <module-check :answer="1" :icons-list="['fxemoji:crossmark']">Incorrecta</module-check>
+        <layout-box class="bg-pastel2" design="text">
+          <module-check :answer="0" :options="['fxemoji:heavycheckmark']">Aroma de las flores</module-check>
+        </layout-box>
+        <layout-box class="bg-pastel3" design="text">
+          <module-check :answer="1" :options="['fxemoji:heavycheckmark']">Aroma de las flores</module-check>
+        </layout-box>
+        <layout-box class="bg-pastel4" design="text">
+          <module-check :answer="0" :options="['fxemoji:heavycheckmark']">Aroma de las flores</module-check>
+        </layout-box>
+        <layout-box class="bg-pastel5" design="text">
+          <module-check :answer="1" :options="['fxemoji:heavycheckmark']">Aroma de las flores</module-check>
+        </layout-box>
+        <layout-box class="bg-pastel6" design="text">
+          <module-check :answer="1" :options="['fxemoji:heavycheckmark']">Aroma de las flores</module-check>
         </layout-box>
       </layout-grid>
       <oda-finalizar></oda-finalizar>

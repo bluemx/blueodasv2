@@ -13,16 +13,54 @@ html(lang="en")
             oda-instruccion Selecciona así fxemoji:crossmark las situaciones que son <strong class=text-main>justas</strong>.
             
             //layout-grid(columns="4" columns-md="3")
-            layout-grid(columns="2" columns-md="2" gap="10" class="p-5")
+            layout-grid(columns="3" columns-md="3" gap="10" class="p-5")
                 //layout-box(design="simple")
                     | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis sint, labore aperiam vel eos doloremque est quis animi consectetur unde eveniet sed nulla odio consequatur, asperiores ipsam! Quo, fugit aspernatur!
-                layout-box(class="bg-gray-100" design="simple")
-                    module-check(:answer="1" :icons-list="['fxemoji:crossmark', 'fxemoji:heavycheckmark']")
+                div: layout-box(class="bg-gray-100" design="text")
+                    module-check(:answer="1" :options="['fxemoji:crossmark', 'fxemoji:heavycheckmark']")
                         | Correcta
-                layout-box(class="bg-gray-100" design="simple")
-                    module-check(:answer="1" :icons-list="['fxemoji:crossmark']")
+
+                div: layout-box(class="bg-gray-100" design="text")
+                    module-check(:answer="1" :options="['fxemoji:crossmark']")
                         | Incorrecta
+                
+                module-check(:answer="1" :options="['fxemoji:crossmark']" float="topright")
+                    //layout-box(img="https://picsum.photos/200" design)
+                    layout-img(img="https://picsum.photos/200/100" class="w-full")
+
+
+            oda-instruccion Marca así fxemoji:whiteheavycheckmark los platillos que representan la comida típica mexicana.</strong>.
+
+            layout-grid(columns="2" columns-md="3" gap="10")
+                module-check(:answer="0" float :options="['fxemoji:whiteheavycheckmark']")
+                    layout-box(img="https://picsum.photos/200" design)
+                module-check(:answer="0" float :options="['fxemoji:whiteheavycheckmark']")
+                    layout-box(img="https://picsum.photos/200" design)
+                module-check(:answer="0" float :options="['fxemoji:whiteheavycheckmark']")
+                    layout-box(img="https://picsum.photos/200" design)
+                module-check(:answer="1" float :options="['fxemoji:whiteheavycheckmark']")
+                    layout-box(img="https://picsum.photos/200" design)
+                module-check(:answer="1" float :options="['fxemoji:whiteheavycheckmark']")
+                    layout-box(img="https://picsum.photos/200" design)
+                module-check(:answer="1" float :options="['fxemoji:whiteheavycheckmark']")
+                    layout-box(img="https://picsum.photos/200" design)
             
+            oda-instruccion Marca así fxemoji:heavycheckmark los olores que son agradables para ti..
+            layout-grid(columns="2" gap="10")
+                layout-box(class="bg-pastel1" design="text")
+                    module-check(:answer="1" :options="['fxemoji:heavycheckmark']") Aroma de las flores
+                layout-box(class="bg-pastel2" design="text")
+                    module-check(:answer="0" :options="['fxemoji:heavycheckmark']") Aroma de las flores
+                layout-box(class="bg-pastel3" design="text")
+                    module-check(:answer="1" :options="['fxemoji:heavycheckmark']") Aroma de las flores
+                layout-box(class="bg-pastel4" design="text")
+                    module-check(:answer="0" :options="['fxemoji:heavycheckmark']") Aroma de las flores
+                layout-box(class="bg-pastel5" design="text")
+                    module-check(:answer="1" :options="['fxemoji:heavycheckmark']") Aroma de las flores
+                layout-box(class="bg-pastel6" design="text")
+                    module-check(:answer="1" :options="['fxemoji:heavycheckmark']") Aroma de las flores
+
+
             oda-finalizar
         script(src=assetsPath+"loader.js")
         

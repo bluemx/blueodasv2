@@ -1,11 +1,26 @@
 let path = '../assets/'
 
 let scripts = [
+    path+'audios.js',
     path+'libs.js',
     path+'assets.js',
-    path+'components.js',
-    'https://cdnjs.cloudflare.com/ajax/libs/iconify/2.2.1/iconify.min.js'
+    'https://cdnjs.cloudflare.com/ajax/libs/iconify/2.2.1/iconify.min.js',
+    //path+'components.js',
+    //-------
+    path+'components/OdaTitulo.js',
+    path+'components/OdaInstruccion.js',
+    path+'components/OdaFinalizar.js',
+    path+'components/OdaIcon.js',
+    path+'components/Utilities.js',
+    path+'components/LayoutBox.js',
+    path+'components/LayoutGrid.js',
+    path+'components/LayoutImg.js',
+    //------- Modules
+    path+'components/ModuleCheck.js'
+    //-------
+    
 ]
+
 
 let styles = [
     {url: path+'assets.css', rel: 'stylesheet'},
@@ -25,7 +40,6 @@ function nextScript(){
     if(currentJS<scripts.length){
         loadScript()
     } else {
-        console.log('End loading')
         app.mount('#app')
     }
 }

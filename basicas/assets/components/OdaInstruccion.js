@@ -8,7 +8,7 @@ app.component('oda-instruccion', {
         }
     },
     template: `
-        <div class="text-sec text-2xl my-5 flex items-center instructions">
+        <div class="text-sec text-2xl my-20 flex items-center instructions">
             <span class="iconify" data-icon="fxemoji:blackdiamondsuit"></span>
             <span v-textfn><slot></slot></span>
         </div>

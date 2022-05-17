@@ -20,7 +20,7 @@ app.component('oda-finalizar', {
          }
     },
     template: `
-        <div class="my-5 text-center">
+        <div class="my-20 text-center">
             <template v-if="!finalized">
                 <button class="
                     font-extrabold

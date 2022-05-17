@@ -2,16 +2,32 @@ app.component('module-check', {
     props: {
         answer: Number,
         class: String,
-        iconsList: Array
+        options: Array,
+        float: String,
     },
     setup (props, context){
         const RESULTS = inject('RESULTS')
         const finalized = ref(false)
         const result = ref()
 
-        const options = ['', ...props.iconsList]
+        const options = ['', ...props.options]
 
-        const itemClass = props.class || ''
+        const itemClass = ref(props.class || '')
+        const itemCheckClass = ref('')
+
+        if(props.float!=undefined){
+            itemCheckClass.value += "absolute z-10 "
+            let pos = 'top-2 left-2'
+            if(props.float=='topleft'){pos=' top-2 left-2 '}
+            if(props.float=='topright'){pos=' top-2 right-2 '}
+            if(props.float=='bottomleft'){pos=' bottom-2 left-2 '}
+            if(props.float=='bottomright'){pos=' bottom-2 right-2 '}
+            console.log(pos)
+            itemCheckClass.value += pos 
+            console.log(itemCheckClass.value)
+
+        }
+
         
         const active = ref(0)
 
@@ -39,6 +55,7 @@ app.component('module-check', {
 
         return{
             itemClass,
+            itemCheckClass,
             options,
             clicked,
             active,
@@ -49,19 +66,19 @@ app.component('module-check', {
     template: `
         <div :class="[
                 'moduleCheck',
-                'flex cursor-pointer items-center',
+                'flex cursor-pointer items-center relative',
                 itemClass
             ]"
             @click="clicked"
         >
             <util-result :result="result" v-if="finalized" />
-            <div class="
-                module-check-box
-                w-9 h-9 flex items-center justify-center mr-2 rounded-full
-                bg-white
-                border-2 border-solid border-clear
-                shadow-oda
-                ">
+            <div :class="[
+                'module-check-box',
+                'w-9 h-9 flex items-center justify-center mr-2 rounded-full',
+                'border-2 border-solid border-clear',
+                'bg-white shadow-oda',
+                itemCheckClass
+            ]">
                 <template v-for="(icon, index) in options">
                     <template v-if="index==active ">
                         <oda-icon :name="icon" v-if="icon"  />
@@ -69,7 +86,6 @@ app.component('module-check', {
                 </template>
             </div>
             <slot></slot>
-            {{active}}
         </div>
         `
 })
