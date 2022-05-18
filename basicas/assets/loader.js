@@ -5,8 +5,10 @@ let scripts = [
     path+'libs.js',
     path+'assets.js',
     'https://cdnjs.cloudflare.com/ajax/libs/iconify/2.2.1/iconify.min.js',
-    //path+'components.js',
     //-------
+    path+'components.js',
+    //-------
+    /*
     path+'components/OdaTitulo.js',
     path+'components/OdaInstruccion.js',
     path+'components/OdaFinalizar.js',
@@ -16,7 +18,11 @@ let scripts = [
     path+'components/LayoutGrid.js',
     path+'components/LayoutImg.js',
     //------- Modules
-    path+'components/ModuleCheck.js'
+    path+'components/ModuleCheck.js',
+    path+'components/ModuleDrag.js',
+    path+'components/ModuleInput.js',
+    path+'components/ModuleSelect.js',
+    */
     //-------
     
 ]

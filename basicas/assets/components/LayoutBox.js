@@ -8,7 +8,7 @@ app.component('layout-box', {
         
         const itemDesign = ref(' rounded-xl ')
         if(props.design!=undefined){
-            let boxdesign = ' p-4 border border-gray-200 aspect-square flex justify-center items-center'
+            let boxdesign = ' p-4 border border-gray-200 flex justify-center items-center aspect-square'
             if(props.design=='box'){
                 //Same as default
             }
@@ -28,6 +28,7 @@ app.component('layout-box', {
         if(props.img){
             itemClass.value += 'w-full h-full bg-cover bg-no-repeat bg-center relative'
         }
+        
         const itemBgImg = props.img ? 'background-image:url('+props.img+')' : ''
 
         return{

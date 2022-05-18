@@ -4,20 +4,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Título</title>
-    <!--
-    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css")
-    link(rel="stylesheet", href=assetsPath+"assets.css")
-    //link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap")
-    link(rel="preconnect" href="https://fonts.googleapis.com")
-    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
-    link(href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700;800&display=swap" rel="stylesheet")
-    -->
+    <title>Kitchen</title>
   </head>
   <body> 
     <!--#app.container.mx-auto.my-5.animate__animated.animate__fadeIn.animate__delay-1s-->
     <div class="container mx-auto my-5" id="app">
-      <oda-titulo title="Título" subtitle="sub...title"></oda-titulo>
+      <oda-titulo title="Kitchen" subtitle="Sink"></oda-titulo>
+      <layout-grid columns="4" gap="10">
+        <layout-box design>
+          <module-select class="w-32 h-32" :answer="true">Hola</module-select>
+        </layout-box>
+        <module-select :answer="false">Adios</module-select>
+        <module-select :answer="true">
+          <layout-box img="https://picsum.photos/200" design></layout-box>
+        </module-select>
+      </layout-grid>
+      <layout-box class="my-5 flex gap-2 bg-grey-100">
+        <module-input class="w-full" answer="Respuesta" placeholder="Respuesta"></module-input>
+      </layout-box>
+      <layout-box class="my-5 flex gap-2 bg-grey-100">
+        <module-input answer="Hola" placeholder="Hola"></module-input>
+      </layout-box>
+      <layout-box class="my-5 flex gap-2 ">
+        <module-drag dropzone="drop1" answer="" liner="3" design>A</module-drag>
+        <layout-box design>
+          <module-drag dropzone="drop1" answer="a" liner connector></module-drag>
+        </layout-box>
+        <layout-box design>
+          <module-drag dropzone="drop1" answer="a" liner="2" connector="2"></module-drag>
+        </layout-box>
+        <layout-box design>
+          <module-drag dropzone="drop1" answer="a" liner="2" connector="2"></module-drag>
+        </layout-box>
+        <layout-box design>
+          <module-drag dropzone="drop1" answer="a" liner="2" connector="2"></module-drag>
+        </layout-box>
+      </layout-box>
+      <layout-grid class="bg-pastel2 p-5 rounded justify-center" columns="3">
+        <module-drag dropzone="drop1" answer="a">
+          <layout-box class="bg-gray-100" design="text">A</layout-box>
+        </module-drag>
+        <module-drag dropzone="drop1" answer="b">
+          <layout-box class="bg-gray-100" design="text">B</layout-box>
+        </module-drag>
+      </layout-grid>
+      <layout-grid class="p-5" columns="2" gap="10">
+        <module-drop class="p-2 min-h-[6rem]" name="drop1" answer="a" design></module-drop>
+        <module-drop class="p-2 min-h-[6rem]" name="drop1" answer="b" design></module-drop>
+      </layout-grid>
+      <util-text>Default Random Color</util-text>
+      <util-text design="1" color="1">Diseño 1 Color 1</util-text>
+      <util-text design="2" size="xl">Diseño 2 size xl</util-text>
+      <util-text design="2" size="5xl">Diseño 2 size xl</util-text>
+      <util-text design="3" size="2xl" extrabold>Diseño 3 size 2xl</util-text>
+      <util-text design="4" size="3xl">Diseño 4 3xl</util-text>
+      <util-text design="5" size="4xl" extrabold>Diseño 5 size 4xl</util-text>
+      <util-text design="6" size="4xl" bold>Diseño 6 size 4xl</util-text>
       <oda-instruccion>Selecciona así fxemoji:crossmark las situaciones que son <strong class=text-main>justas</strong>.</oda-instruccion>
       <!--layout-grid(columns="4" columns-md="3")-->
       <layout-grid class="p-5" columns="3" columns-md="3" gap="10">

@@ -6,12 +6,14 @@ app.component('module-check', {
         float: String,
     },
     setup (props, context){
+        const ODA = inject('ODA')
         const RESULTS = inject('RESULTS')
         const finalized = ref(false)
         const result = ref()
 
         const options = ['', ...props.options]
 
+        const item = ref(null)
         const itemClass = ref(props.class || '')
         const itemCheckClass = ref('')
 
@@ -22,9 +24,7 @@ app.component('module-check', {
             if(props.float=='topright'){pos=' top-2 right-2 '}
             if(props.float=='bottomleft'){pos=' bottom-2 left-2 '}
             if(props.float=='bottomright'){pos=' bottom-2 right-2 '}
-            console.log(pos)
             itemCheckClass.value += pos 
-            console.log(itemCheckClass.value)
 
         }
 
@@ -53,7 +53,12 @@ app.component('module-check', {
             }
         }))
 
+        onMounted(()=>{
+            ODA.modules.check.push(item.value)
+        })
+
         return{
+            item,
             itemClass,
             itemCheckClass,
             options,
@@ -70,6 +75,7 @@ app.component('module-check', {
                 itemClass
             ]"
             @click="clicked"
+            ref="item"
         >
             <util-result :result="result" v-if="finalized" />
             <div :class="[

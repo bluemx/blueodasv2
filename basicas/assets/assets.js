@@ -12,7 +12,14 @@ const app = createApp({
     setup(props, context){
         const oda = {
             title: null,
-            subtitle: null
+            subtitle: null,
+            modules: {
+                check: [],
+                drag: [],
+                dropzone: [],
+                input: [],
+                select: [],
+            }
         }
         app.provide('ODA', oda)
         
@@ -28,6 +35,10 @@ const app = createApp({
     }
 })
 
+app.component('draggable', window.vuedraggable)
+
+//app.component('Container', window.Vue3SmoothDnd.Container)
+//app.component('Draggable', window.Vue3SmoothDnd.Draggable)
 
 app.directive('textfn', {
     mounted: function (el, binding) {

@@ -1,15 +1,61 @@
-- titulo = 'Título'
-- subtitulo = 'sub...title'
+- titulo = 'Kitchen'
+- subtitulo = 'Sink'
 - assetsPath = '../assets/'
 doctype html
 html(lang="en")
     head
-        include ../assets/libs/pug/_head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title=titulo
     body 
         //#app.container.mx-auto.my-5.animate__animated.animate__fadeIn.animate__delay-1s
         #app.container.mx-auto.my-5
             
             oda-titulo(title=titulo subtitle=subtitulo)
+
+
+            layout-grid(columns=4 gap=10)
+                layout-box(design): module-select(:answer="true" class="w-32 h-32") Hola
+                module-select(:answer="false") Adios
+                module-select(:answer="true")
+                    layout-box(img="https://picsum.photos/200" design)
+
+
+
+            layout-box(class="my-5 flex gap-2 bg-grey-100")
+                module-input(answer="Respuesta" placeholder="Respuesta" class="w-full")
+            layout-box(class="my-5 flex gap-2 bg-grey-100")
+                module-input(answer="Hola" placeholder="Hola" )
+
+
+            layout-box(class="my-5 flex gap-2 ")
+                module-drag(dropzone='drop1' answer="" liner=3 design) A
+                layout-box(design): module-drag(dropzone='drop1' answer="a" liner connector)
+                layout-box(design): module-drag(dropzone='drop1' answer="a" liner=2 connector=2)
+                layout-box(design): module-drag(dropzone='drop1' answer="a" liner=2 connector=2)
+                layout-box(design): module-drag(dropzone='drop1' answer="a" liner=2 connector=2)
+
+            layout-grid(columns="3" class="bg-pastel2 p-5 rounded justify-center")
+                module-drag(dropzone='drop1' answer="a")
+                    layout-box(design="text" class="bg-gray-100") A
+                module-drag(dropzone='drop1' answer="b")
+                    layout-box(design="text" class="bg-gray-100") B
+            
+            layout-grid(columns="2" gap="10" class="p-5")
+                module-drop(name="drop1" answer="a" design class="p-2 min-h-[6rem]")
+                module-drop(name="drop1" answer="b" design class="p-2 min-h-[6rem]")
+
+
+            util-text() Default Random Color
+            util-text( design="1" color="1") Diseño 1 Color 1
+            util-text( design="2" size="xl") Diseño 2 size xl
+            util-text( design="2" size="5xl") Diseño 2 size xl
+            util-text( design="3" size="2xl" extrabold) Diseño 3 size 2xl
+            util-text( design="4" size="3xl") Diseño 4 3xl
+            util-text( design="5" size="4xl" extrabold) Diseño 5 size 4xl
+            util-text( design="6" size="4xl" bold) Diseño 6 size 4xl
+
             oda-instruccion Selecciona así fxemoji:crossmark las situaciones que son <strong class=text-main>justas</strong>.
             
             //layout-grid(columns="4" columns-md="3")
