@@ -45,8 +45,10 @@ app.directive('textfn', {
         let txt = el.innerHTML
         //FXEMOJI
         let fxemoji = txt.match(/(\bfxemoji\S+\b)/ig);
-        for(var fxe of fxemoji){
-            txt = txt.replace(fxe, '<span class="icon iconify inline" data-icon="'+fxe+'"></span>')
+        if(fxemoji){
+            for(var fxe of fxemoji){
+                txt = txt.replace(fxe, '<span class="icon iconify inline" data-icon="'+fxe+'"></span>')
+            }
         }
         
         // end text processing
