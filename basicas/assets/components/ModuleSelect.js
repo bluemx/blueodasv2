@@ -12,7 +12,7 @@ app.component('module-select', {
         const item = ref(null)
         const itemClass = ref(props.class || '')
         
-        const active = ref()
+        const active = ref(false)
         
 
         const select = () => {

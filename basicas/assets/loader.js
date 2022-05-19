@@ -1,5 +1,5 @@
 let path = '../assets/'
-path = 'https://cdn.jsdelivr.net/gh/bluemx/blueodasv2@v1.0.2/basicas/assets/'
+path = 'https://cdn.jsdelivr.net/gh/bluemx/blueodasv2/basicas/assets/'
 
 let scripts = [
     path+'audios.js',
