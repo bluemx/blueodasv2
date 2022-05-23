@@ -12,8 +12,8 @@ app.component('oda-icon', {
         }
     },
     template: `
-        <span :class="['icon inline animate__animated animate__heartBeat', itemClass]">
-            <span class="iconify " :data-icon="name"></span>
+        <span :class="['icon animate__animated animate__heartBeat', itemClass]">
+            <span class="iconify aspect-square" :data-icon="name"></span>
         </span>
         `
 })

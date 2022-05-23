@@ -16,6 +16,9 @@ app.component('module-select', {
         
 
         const select = () => {
+            if(finalized.value){
+                return false
+            }
             active.value = !active.value
             s_select.play()
 

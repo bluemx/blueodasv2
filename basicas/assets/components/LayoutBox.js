@@ -1,7 +1,7 @@
 app.component('layout-box', {
     props: {
         class: String,
-        design: String,
+        design: [Number, String],
         img: String,
     },
     setup (props, context){
@@ -9,13 +9,13 @@ app.component('layout-box', {
         const itemDesign = ref(' rounded-xl ')
         if(props.design!=undefined){
             let boxdesign = ' p-4 border border-gray-200 flex justify-center items-center aspect-square'
-            if(props.design=='box'){
+            if(props.design=='0'){
                 //Same as default
             }
-            if(props.design=='simple'){
+            if(props.design=='1'){
                 boxdesign = ' p-2 flex justify-center items-center'
             }
-            if(props.design=='text'){
+            if(props.design=='2'){
                 boxdesign = ' p-2'
             }
             itemDesign.value += boxdesign

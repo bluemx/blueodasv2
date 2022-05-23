@@ -9,6 +9,7 @@
   <body> 
     <!--#app.container.mx-auto.my-5.animate__animated.animate__fadeIn.animate__delay-1s-->
     <div class="container mx-auto my-5" id="app">
+      <oda-icon name="fxemoji:alien"></oda-icon>
       <oda-titulo title="Kitchen" subtitle="Sink"></oda-titulo>
       <layout-grid columns="4" gap="10">
         <layout-box design>
@@ -42,10 +43,10 @@
       </layout-box>
       <layout-grid class="bg-pastel2 p-5 rounded justify-center" columns="3">
         <module-drag dropzone="drop1" answer="a">
-          <layout-box class="bg-gray-100" design="text">A</layout-box>
+          <layout-box class="bg-gray-100" design="2">A</layout-box>
         </module-drag>
         <module-drag dropzone="drop1" answer="b">
-          <layout-box class="bg-gray-100" design="text">B</layout-box>
+          <layout-box class="bg-gray-100" design="2">B</layout-box>
         </module-drag>
       </layout-grid>
       <layout-grid class="p-5" columns="2" gap="10">
@@ -64,15 +65,15 @@
       <oda-instruccion>Selecciona así las situaciones que son <strong class=text-main>justas</strong>.</oda-instruccion>
       <!--layout-grid(columns="4" columns-md="3")-->
       <layout-grid class="p-5" columns="3" columns-md="3" gap="10">
-        <!--layout-box(design="simple")| Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis sint, labore aperiam vel eos doloremque est quis animi consectetur unde eveniet sed nulla odio consequatur, asperiores ipsam! Quo, fugit aspernatur!
+        <!--layout-box(design="2")| Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis sint, labore aperiam vel eos doloremque est quis animi consectetur unde eveniet sed nulla odio consequatur, asperiores ipsam! Quo, fugit aspernatur!
         -->
         <div>
-          <layout-box class="bg-gray-100" design="text">
+          <layout-box class="bg-gray-100" design="2">
             <module-check :answer="1" :options="['fxemoji:crossmark', 'fxemoji:heavycheckmark']">Correcta</module-check>
           </layout-box>
         </div>
         <div>
-          <layout-box class="bg-gray-100" design="text">
+          <layout-box class="bg-gray-100" design="2">
             <module-check :answer="1" :options="['fxemoji:crossmark']">Incorrecta</module-check>
           </layout-box>
         </div>
@@ -104,22 +105,22 @@
       </layout-grid>
       <oda-instruccion>Marca así fxemoji:heavycheckmark los olores que son agradables para ti..</oda-instruccion>
       <layout-grid columns="2" gap="10">
-        <layout-box class="bg-pastel1" design="text">
+        <layout-box class="bg-pastel1" design="2">
           <module-check :answer="1" :options="['fxemoji:heavycheckmark']">Aroma de las flores</module-check>
         </layout-box>
-        <layout-box class="bg-pastel2" design="text">
+        <layout-box class="bg-pastel2" design="2">
           <module-check :answer="0" :options="['fxemoji:heavycheckmark']">Aroma de las flores</module-check>
         </layout-box>
-        <layout-box class="bg-pastel3" design="text">
+        <layout-box class="bg-pastel3" design="2">
           <module-check :answer="1" :options="['fxemoji:heavycheckmark']">Aroma de las flores</module-check>
         </layout-box>
-        <layout-box class="bg-pastel4" design="text">
+        <layout-box class="bg-pastel4" design="2">
           <module-check :answer="0" :options="['fxemoji:heavycheckmark']">Aroma de las flores</module-check>
         </layout-box>
-        <layout-box class="bg-pastel5" design="text">
+        <layout-box class="bg-pastel5" design="2">
           <module-check :answer="1" :options="['fxemoji:heavycheckmark']">Aroma de las flores</module-check>
         </layout-box>
-        <layout-box class="bg-pastel6" design="text">
+        <layout-box class="bg-pastel6" design="2">
           <module-check :answer="1" :options="['fxemoji:heavycheckmark']">Aroma de las flores</module-check>
         </layout-box>
       </layout-grid>
