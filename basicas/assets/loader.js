@@ -17,9 +17,9 @@ if(isDevLocal){
 }
 
 let scripts = [
-    path+'audios.js',
-    path+'libs.js',
-    path+'assets.js',
+    path+'audios.min.js',
+    path+'libs.min.js',
+    path+'assets.min.js',
     'https://cdnjs.cloudflare.com/ajax/libs/iconify/2.2.1/iconify.min.js'
 ]
 
