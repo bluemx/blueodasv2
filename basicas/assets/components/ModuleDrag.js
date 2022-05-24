@@ -86,7 +86,7 @@ app.component('module-drag',{
 
             
 
-            if(props.liner!=undefined){
+            if(props.liner!=undefined) && props.liner!="0"){
                 if(props.liner!=""){
                     itemColor.value = themeColors[themeColorsArray[props.liner]]
                 }
@@ -121,12 +121,14 @@ app.component('module-drag',{
         }
 
         if(props.design!=undefined){
-            if(props.design=="" || props.design=="1"){
+            if(props.design==undefined || props.design==0){
+
+            } else if(props.design=="1"){
                 itemClass.value += ' bg-white rounded p-2 shadow-oda text-center border-2 border-grey-100 border-solid w-fit min-w-[6rem] flex justify-center items-center'
             }
         }
 
-        if(props.connector!=undefined){
+        if(props.connector!=undefined && props.connector!="0"){
             itemClass.value = ' w-6 h-6'
             let connectorColor = ' border-['+itemColor.value+'] '
             if(props.connector!=""){
