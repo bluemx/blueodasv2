@@ -1,15 +1,15 @@
 let path = '../assets/'
-//path = 'https://cdn.jsdelivr.net/gh/bluemx/blueodasv2@v1.0.5/basicas/assets/'
+//path = 'https://cdn.jsdelivr.net/gh/bluemx/blueodasv2@v1.0.7/basicas/assets/'
 
 let scripts = [
     path+'audios.js',
     path+'libs.js',
     path+'assets.js',
-    path+'components.js',
+    //path+'components.js',
     'https://cdnjs.cloudflare.com/ajax/libs/iconify/2.2.1/iconify.min.js',
     //-------
     //-------
-    /*
+    
     path+'components/OdaTitulo.js',
     path+'components/OdaInstruccion.js',
     path+'components/OdaFinalizar.js',
@@ -23,7 +23,7 @@ let scripts = [
     path+'components/ModuleDrag.js',
     path+'components/ModuleInput.js',
     path+'components/ModuleSelect.js',
-    */
+    
     //-------
     
 ]

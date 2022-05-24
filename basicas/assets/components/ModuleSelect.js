@@ -1,6 +1,6 @@
 app.component('module-select', {
     props: {
-        answer: Boolean,
+        answer: [Boolean, String],
         class: String,
     },
     setup (props, context){
@@ -14,6 +14,10 @@ app.component('module-select', {
         
         const active = ref(false)
         
+        let theanswer = props.answer
+        if(typeof props.answer == 'string'){
+           theanswer = (props.answer == 'true')
+        }
 
         const select = () => {
             if(finalized.value){
@@ -28,7 +32,7 @@ app.component('module-select', {
             finalized.value = true
             
 
-            if(active.value == props.answer){
+            if(active.value == theanswer){
                 result.value = true
                 RESULTS.oks++
             } else {

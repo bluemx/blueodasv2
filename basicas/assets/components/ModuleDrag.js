@@ -86,7 +86,7 @@ app.component('module-drag',{
 
             
 
-            if(props.liner!=undefined) && props.liner!="0"){
+            if(props.liner!=undefined ||  props.liner!="0"){
                 if(props.liner!=""){
                     itemColor.value = themeColors[themeColorsArray[props.liner]]
                 }

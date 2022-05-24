@@ -12,6 +12,8 @@ html(lang="en")
         //#app.container.mx-auto.my-5.animate__animated.animate__fadeIn.animate__delay-1s
         #app.container.mx-auto.my-5
 
+            layout-grid(columns="4")
+                layout-box(design=""): module-select(answer="true" class="w-full h-full") Hola
 
             module-check(v-bind="{options:['fxemoji:crossmark'],answer:1}")
 
@@ -21,8 +23,8 @@ html(lang="en")
             oda-instruccion <span><span> Probando fxemoji:alien </span></span>
 
             layout-grid(columns=4 gap=10)
-                layout-box(design): module-select(:answer="true" class="w-32 h-32") Hola
-                module-select(:answer="false") Adios
+                layout-box(design): module-select(answer="true" class="w-32 h-32") Hola
+                module-select(answer="false") Adios
                 module-select(:answer="true")
                     layout-box(img="https://picsum.photos/200" design)
 
@@ -35,7 +37,7 @@ html(lang="en")
 
             layout-box(class="my-5 flex gap-2 ")
                 module-drag(dropzone='drop1' answer="" liner=3 design) A
-                layout-box(design): module-drag(dropzone='drop1' answer="a" liner connector)
+                layout-box(design): module-drag(dropzone='drop1' answer="a" liner="1" connector="1")
                 layout-box(design): module-drag(dropzone='drop1' answer="a" liner=2 connector=2)
                 layout-box(design): module-drag(dropzone='drop1' answer="a" liner=2 connector=2)
                 layout-box(design): module-drag(dropzone='drop1' answer="a" liner=2 connector=2)
@@ -70,14 +72,14 @@ html(lang="en")
                 //layout-box(design="2")
                     | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis sint, labore aperiam vel eos doloremque est quis animi consectetur unde eveniet sed nulla odio consequatur, asperiores ipsam! Quo, fugit aspernatur!
                 div: layout-box(class="bg-gray-100" design="2")
-                    module-check(:answer="1" :options="['fxemoji:crossmark', 'fxemoji:heavycheckmark']")
+                    module-check(:answer="1" :options="['fxemoji:crossmark', 'fxemoji:heavycheckmark']" float="")
                         | Correcta
 
                 div: layout-box(class="bg-gray-100" design="2")
-                    module-check(:answer="1" :options="['fxemoji:crossmark']")
+                    module-check(:answer="1" :options="['fxemoji:crossmark']" float="")
                         | Incorrecta
                 
-                module-check(:answer="1" :options="['fxemoji:crossmark']" float="topright")
+                module-check(:answer="1" :options="['fxemoji:crossmark']" float="bottomright")
                     //layout-box(img="https://picsum.photos/200" design)
                     layout-img(img="https://picsum.photos/200/100" class="w-full")
 

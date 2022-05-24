@@ -9,15 +9,20 @@
   <body> 
     <!--#app.container.mx-auto.my-5.animate__animated.animate__fadeIn.animate__delay-1s-->
     <div class="container mx-auto my-5" id="app">
+      <layout-grid columns="4">
+        <layout-box design="">
+          <module-select class="w-full h-full" answer="true">Hola</module-select>
+        </layout-box>
+      </layout-grid>
       <module-check v-bind="{options:['fxemoji:crossmark'],answer:1}"></module-check>
       <oda-icon name="fxemoji:alien"></oda-icon>
       <oda-titulo title="Kitchen" subtitle="Sink"></oda-titulo>
       <oda-instruccion><span><span> Probando fxemoji:alien </span></span></oda-instruccion>
       <layout-grid columns="4" gap="10">
         <layout-box design>
-          <module-select class="w-32 h-32" :answer="true">Hola</module-select>
+          <module-select class="w-32 h-32" answer="true">Hola</module-select>
         </layout-box>
-        <module-select :answer="false">Adios</module-select>
+        <module-select answer="false">Adios</module-select>
         <module-select :answer="true">
           <layout-box img="https://picsum.photos/200" design></layout-box>
         </module-select>
@@ -31,7 +36,7 @@
       <layout-box class="my-5 flex gap-2 ">
         <module-drag dropzone="drop1" answer="" liner="3" design>A</module-drag>
         <layout-box design>
-          <module-drag dropzone="drop1" answer="a" liner connector></module-drag>
+          <module-drag dropzone="drop1" answer="a" liner="1" connector="1"></module-drag>
         </layout-box>
         <layout-box design>
           <module-drag dropzone="drop1" answer="a" liner="2" connector="2"></module-drag>
@@ -71,15 +76,15 @@
         -->
         <div>
           <layout-box class="bg-gray-100" design="2">
-            <module-check :answer="1" :options="['fxemoji:crossmark', 'fxemoji:heavycheckmark']">Correcta</module-check>
+            <module-check :answer="1" :options="['fxemoji:crossmark', 'fxemoji:heavycheckmark']" float="">Correcta</module-check>
           </layout-box>
         </div>
         <div>
           <layout-box class="bg-gray-100" design="2">
-            <module-check :answer="1" :options="['fxemoji:crossmark']">Incorrecta</module-check>
+            <module-check :answer="1" :options="['fxemoji:crossmark']" float="">Incorrecta</module-check>
           </layout-box>
         </div>
-        <module-check :answer="1" :options="['fxemoji:crossmark']" float="topright">
+        <module-check :answer="1" :options="['fxemoji:crossmark']" float="bottomright">
           <!--layout-box(img="https://picsum.photos/200" design)-->
           <layout-img class="w-full" img="https://picsum.photos/200/100"></layout-img>
         </module-check>
