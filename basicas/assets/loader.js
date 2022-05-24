@@ -1,7 +1,7 @@
 let path = '../assets/'
 
 
-var LoaderVersion = document.querySelector('[data="data-loader-version"]')
+var LoaderVersion = document.querySelector('[data-loader-version]')
 if(LoaderVersion){
     LoaderVersion = LoaderVersion.getAttribute('data-loader-version')
 }
