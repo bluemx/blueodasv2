@@ -27,12 +27,16 @@ app.component('module-drag',{
         const itemColor = ref(themeColors[themeColorsArray[Math.floor(Math.random()*5)]])
 
 
-
+        const hasLiner = (props.liner!=undefined && props.liner!="0" && props.liner!=0)
+        const hasConnector = (props.connector!=undefined && props.connector!="0" && props.connector!=0)
 
 
         onMounted(()=>{
             ODA.modules.drag.push(item.value)
             itemParent.value = item.value.parentNode
+
+            itemParent.value.classList.add('z-10')
+
             draggable.value = Draggable.create(item.value,{
                 onClick: function(e) {
                     if(finalized.value){
@@ -86,11 +90,7 @@ app.component('module-drag',{
 
             
 
-            if(props.liner!=undefined ||  props.liner!="0"){
-                if(props.liner!=""){
-                    itemColor.value = themeColors[themeColorsArray[props.liner]]
-                }
-
+            if(hasLiner){
                 liner.value = new LeaderLine(
                     itemParent.value,
                     item.value,
@@ -111,7 +111,7 @@ app.component('module-drag',{
         })
 
         const updateLiner = (action) => {
-            if(props.liner!=undefined){
+            if(hasLiner){
                 if(action){
                     liner.value[action]('draw')
                 } else {
@@ -120,15 +120,15 @@ app.component('module-drag',{
             }
         }
 
-        if(props.design!=undefined){
-            if(props.design==undefined || props.design==0){
 
-            } else if(props.design=="1"){
-                itemClass.value += ' bg-white rounded p-2 shadow-oda text-center border-2 border-grey-100 border-solid w-fit min-w-[6rem] flex justify-center items-center'
-            }
+        if(props.design==undefined || props.design==0 || props.design=="0"){
+
+        } else if(props.design=="1"){
+            itemClass.value += ' bg-white rounded p-2 shadow-oda text-center border-2 border-grey-100 border-solid w-fit min-w-[6rem] flex justify-center items-center'
         }
 
-        if(props.connector!=undefined && props.connector!="0"){
+
+        if(hasConnector){
             itemClass.value = ' w-6 h-6'
             let connectorColor = ' border-['+itemColor.value+'] '
             if(props.connector!=""){
@@ -144,6 +144,8 @@ app.component('module-drag',{
 
             
             let currentParent = item.value.parentNode
+
+
 
             if(props.answer==""){
                 //EMPTY ANSWER
@@ -178,7 +180,9 @@ app.component('module-drag',{
             itemClass,
             connectorClass,
             finalized,
-            result
+            result,
+            hasLiner,
+            hasConnector
         }
     },
     template: `
@@ -191,7 +195,7 @@ app.component('module-drag',{
                     'w-6 h-6 rounded-full bg-white border-4 shadow-oda',
                     connectorClass,
                 ]"
-                v-if="connector!=undefined"></div>
+                v-if="hasConnector"></div>
         </div>
         
         `
@@ -215,8 +219,8 @@ app.component('module-drop',{
         
         const item = ref(null)
 
-        if(props.design!=undefined){
-            itemClass.value += ' rounded-xl border-dashed border-2 border-accent bg-pastel1'
+        if(props.design=="1"){
+            itemClass.value += ' rounded-xl border-dashed border-2 border-accent'
         }
 
         onMounted(()=>{

@@ -9,131 +9,134 @@
   <body> 
     <!--#app.container.mx-auto.my-5.animate__animated.animate__fadeIn.animate__delay-1s-->
     <div class="container mx-auto my-5" id="app">
-      <layout-grid columns="4">
-        <module-input answer="hola." placeholder="hola."></module-input>
-        <layout-box design="">
-          <module-select class="w-full h-full" answer="true">Hola</module-select>
-        </layout-box>
-      </layout-grid>
-      <module-check v-bind="{options:['fxemoji:crossmark'],answer:1}"></module-check>
-      <oda-icon name="fxemoji:alien"></oda-icon>
-      <oda-titulo title="Kitchen" subtitle="Sink"></oda-titulo>
-      <oda-instruccion><span><span> Probando fxemoji:alien </span></span></oda-instruccion>
-      <layout-grid columns="4" gap="10">
-        <layout-box design>
-          <module-select class="w-32 h-32" answer="true">Hola</module-select>
-        </layout-box>
-        <module-select answer="false">Adios</module-select>
-        <module-select :answer="true">
-          <layout-box img="https://picsum.photos/200" design></layout-box>
-        </module-select>
-      </layout-grid>
-      <layout-box class="my-5 flex gap-2 bg-grey-100">
-        <module-input class="w-full" answer="Respuesta" placeholder="Respuesta"></module-input>
-      </layout-box>
-      <layout-box class="my-5 flex gap-2 bg-grey-100">
-        <module-input answer="Hola" placeholder="Hola"></module-input>
-      </layout-box>
-      <layout-box class="my-5 flex gap-2 ">
-        <module-drag dropzone="drop1" answer="" liner="3" design>A</module-drag>
-        <layout-box design>
-          <module-drag dropzone="drop1" answer="a" liner="1" connector="1"></module-drag>
-        </layout-box>
-        <layout-box design>
-          <module-drag dropzone="drop1" answer="a" liner="2" connector="2"></module-drag>
-        </layout-box>
-        <layout-box design>
-          <module-drag dropzone="drop1" answer="a" liner="2" connector="2"></module-drag>
-        </layout-box>
-        <layout-box design>
-          <module-drag dropzone="drop1" answer="a" liner="2" connector="2"></module-drag>
-        </layout-box>
-      </layout-box>
-      <layout-grid class="bg-pastel2 p-5 rounded justify-center" columns="3">
-        <module-drag dropzone="drop1" answer="a">
-          <layout-box class="bg-gray-100" design="2">A</layout-box>
-        </module-drag>
-        <module-drag dropzone="drop1" answer="b">
-          <layout-box class="bg-gray-100" design="2">B</layout-box>
-        </module-drag>
-      </layout-grid>
-      <layout-grid class="p-5" columns="2" gap="10">
-        <module-drop class="p-2 min-h-[6rem]" name="drop1" answer="a" design></module-drop>
-        <module-drop class="p-2 min-h-[6rem]" name="drop1" answer="b" design></module-drop>
-      </layout-grid>
-      <util-text>Default Random Color</util-text>
-      <util-text class="text-accent" design="1">Diseño 1 Color 1</util-text>
-      <util-text design="2" size="xl">Diseño 2 size xl</util-text>
-      <util-text design="2" size="5xl">Diseño 2 size xl</util-text>
-      <util-text design="3" size="2xl" extrabold>Diseño 3 size 2xl</util-text>
-      <util-text design="4" size="3xl">Diseño 4 3xl</util-text>
-      <util-text design="5" size="4xl" extrabold>Diseño 5 size 4xl</util-text>
-      <util-text design="6" size="4xl" bold>Diseño 6 size 4xl</util-text>
-      <oda-instruccion>Selecciona así fxemoji:crossmark las situaciones que son <strong class=text-main>justas</strong>.</oda-instruccion>
-      <oda-instruccion>Selecciona así las situaciones que son <strong class=text-main>justas</strong>.</oda-instruccion>
-      <!--layout-grid(columns="4" columns-md="3")-->
-      <layout-grid class="p-5" columns="3" columns-md="3" gap="10">
-        <!--layout-box(design="2")| Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis sint, labore aperiam vel eos doloremque est quis animi consectetur unde eveniet sed nulla odio consequatur, asperiores ipsam! Quo, fugit aspernatur!
-        -->
-        <div>
-          <layout-box class="bg-gray-100" design="2">
-            <module-check :answer="1" :options="['fxemoji:crossmark', 'fxemoji:heavycheckmark']" float="">Correcta</module-check>
-          </layout-box>
+      <layout-grid class="bg-isok py-5 my-20" columns="3">
+        <div class="text-center">
+          <module-drag class="w-fit mx-auto" dropzone="drop1" answer="a" liner="0" connector="0">
+            <layout-box class="w-32 h-32 bg-white" design="0">hola</layout-box>
+          </module-drag>
         </div>
         <div>
-          <layout-box class="bg-gray-100" design="2">
-            <module-check :answer="1" :options="['fxemoji:crossmark']" float="">Incorrecta</module-check>
-          </layout-box>
+          <div>
+            <layout-box class="w-32 h-32 bg-white" design="0">adios
+              <module-drag dropzone="drop1" answer="a" liner="1" connector="1"></module-drag>
+            </layout-box>
+          </div>
         </div>
-        <module-check :answer="1" :options="['fxemoji:crossmark']" float="bottomright">
-          <!--layout-box(img="https://picsum.photos/200" design)-->
-          <layout-img class="w-full" img="https://picsum.photos/200/100"></layout-img>
-        </module-check>
+        <div>
+          <module-drag dropzone="drop1" answer="a" liner="0" connector="0" design="1">Hola</module-drag>
+        </div>
+        <module-drop class="w-64 h-64" name="drop1" answer="a" design="0"></module-drop>
+        <module-drop class="w-64 h-64" name="drop1" answer="a" design="1"></module-drop>
       </layout-grid>
-      <oda-instruccion>Marca así fxemoji:whiteheavycheckmark los platillos que representan la comida típica mexicana.</strong>.</oda-instruccion>
-      <layout-grid columns="2" columns-md="3" gap="10">
-        <module-check :answer="0" float :options="['fxemoji:whiteheavycheckmark']">
-          <layout-box img="https://picsum.photos/200" design></layout-box>
-        </module-check>
-        <module-check :answer="0" float :options="['fxemoji:whiteheavycheckmark']">
-          <layout-box img="https://picsum.photos/200" design></layout-box>
-        </module-check>
-        <module-check :answer="0" float :options="['fxemoji:whiteheavycheckmark']">
-          <layout-box img="https://picsum.photos/200" design></layout-box>
-        </module-check>
-        <module-check :answer="1" float :options="['fxemoji:whiteheavycheckmark']">
-          <layout-box img="https://picsum.photos/200" design></layout-box>
-        </module-check>
-        <module-check :answer="1" float :options="['fxemoji:whiteheavycheckmark']">
-          <layout-box img="https://picsum.photos/200" design></layout-box>
-        </module-check>
-        <module-check :answer="1" float :options="['fxemoji:whiteheavycheckmark']">
-          <layout-box img="https://picsum.photos/200" design></layout-box>
-        </module-check>
-      </layout-grid>
-      <oda-instruccion>Marca así fxemoji:heavycheckmark los olores que son agradables para ti..</oda-instruccion>
-      <layout-grid columns="2" gap="10">
-        <layout-box class="bg-pastel1" design="2">
-          <module-check :answer="1" :options="['fxemoji:heavycheckmark']">Aroma de las flores</module-check>
-        </layout-box>
-        <layout-box class="bg-pastel2" design="2">
-          <module-check :answer="0" :options="['fxemoji:heavycheckmark']">Aroma de las flores</module-check>
-        </layout-box>
-        <layout-box class="bg-pastel3" design="2">
-          <module-check :answer="1" :options="['fxemoji:heavycheckmark']">Aroma de las flores</module-check>
-        </layout-box>
-        <layout-box class="bg-pastel4" design="2">
-          <module-check :answer="0" :options="['fxemoji:heavycheckmark']">Aroma de las flores</module-check>
-        </layout-box>
-        <layout-box class="bg-pastel5" design="2">
-          <module-check :answer="1" :options="['fxemoji:heavycheckmark']">Aroma de las flores</module-check>
-        </layout-box>
-        <layout-box class="bg-pastel6" design="2">
-          <module-check :answer="1" :options="['fxemoji:heavycheckmark']">Aroma de las flores</module-check>
-        </layout-box>
-      </layout-grid>
+      <!--
+      layout-grid(columns="4")
+          module-input(answer="hola." placeholder="hola.")
+          layout-box(design=""): module-select(answer="true" class="w-full h-full") Hola
+      
+      module-check(v-bind="{options:['fxemoji:crossmark'],answer:1}")
+      
+      oda-icon(name="fxemoji:alien")
+      oda-titulo(title=titulo subtitle=subtitulo)
+      
+      oda-instruccion <span><span> Probando fxemoji:alien </span></span>
+      
+      layout-grid(columns=4 gap=10)
+          layout-box(design): module-select(answer="true" class="w-32 h-32") Hola
+          module-select(answer="false") Adios
+          module-select(:answer="true")
+              layout-box(img="https://picsum.photos/200" design)
+      
+      
+      layout-box(class="my-5 flex gap-2 bg-grey-100")
+          module-input(answer="Respuesta" placeholder="Respuesta" class="w-full")
+      layout-box(class="my-5 flex gap-2 bg-grey-100")
+          module-input(answer="Hola" placeholder="Hola" )
+      
+      
+      layout-box(class="my-5 flex gap-2 ")
+          module-drag(dropzone='drop1' answer="" liner=3 design) A
+          layout-box(design): module-drag(dropzone='drop1' answer="a" liner="1" connector="1")
+          layout-box(design): module-drag(dropzone='drop1' answer="a" liner=2 connector=2)
+          layout-box(design): module-drag(dropzone='drop1' answer="a" liner=2 connector=2)
+          layout-box(design): module-drag(dropzone='drop1' answer="a" liner=2 connector=2)
+      
+      layout-grid(columns="3" class="bg-pastel2 p-5 rounded justify-center")
+          module-drag(dropzone='drop1' answer="a")
+              layout-box(design="2" class="bg-gray-100") A
+          module-drag(dropzone='drop1' answer="b")
+              layout-box(design="2" class="bg-gray-100") B
+      
+      layout-grid(columns="2" gap="10" class="p-5")
+          module-drop(name="drop1" answer="a" design class="p-2 min-h-[6rem]")
+          module-drop(name="drop1" answer="b" design class="p-2 min-h-[6rem]")
+      
+      
+      util-text() Default Random Color
+      util-text( design="1" class="text-accent") Diseño 1 Color 1
+      util-text( design="2" size="xl") Diseño 2 size xl
+      util-text( design="2" size="5xl") Diseño 2 size xl
+      util-text( design="3" size="2xl" extrabold) Diseño 3 size 2xl
+      util-text( design="4" size="3xl") Diseño 4 3xl
+      util-text( design="5" size="4xl" extrabold) Diseño 5 size 4xl
+      util-text( design="6" size="4xl" bold) Diseño 6 size 4xl
+      
+      oda-instruccion Selecciona así fxemoji:crossmark las situaciones que son <strong class=text-main>justas</strong>.
+      oda-instruccion Selecciona así las situaciones que son <strong class=text-main>justas</strong>.
+      
+      
+      
+      //layout-grid(columns="4" columns-md="3")
+      layout-grid(columns="3" columns-md="3" gap="10" class="p-5")
+          //layout-box(design="2")
+              | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis sint, labore aperiam vel eos doloremque est quis animi consectetur unde eveniet sed nulla odio consequatur, asperiores ipsam! Quo, fugit aspernatur!
+          div: layout-box(class="bg-gray-100" design="2")
+              module-check(:answer="1" :options="['fxemoji:crossmark', 'fxemoji:heavycheckmark']" float="")
+                  | Correcta
+      
+          div: layout-box(class="bg-gray-100" design="2")
+              module-check(:answer="1" :options="['fxemoji:crossmark']" float="")
+                  | Incorrecta
+          
+          module-check(:answer="1" :options="['fxemoji:crossmark']" float="bottomright")
+              //layout-box(img="https://picsum.photos/200" design)
+              layout-img(img="https://picsum.photos/200/100" class="w-full")
+      
+      
+      oda-instruccion Marca así fxemoji:whiteheavycheckmark los platillos que representan la comida típica mexicana.</strong>.
+      
+      layout-grid(columns="2" columns-md="3" gap="10")
+          module-check(:answer="0" float :options="['fxemoji:whiteheavycheckmark']")
+              layout-box(img="https://picsum.photos/200" design)
+          module-check(:answer="0" float :options="['fxemoji:whiteheavycheckmark']")
+              layout-box(img="https://picsum.photos/200" design)
+          module-check(:answer="0" float :options="['fxemoji:whiteheavycheckmark']")
+              layout-box(img="https://picsum.photos/200" design)
+          module-check(:answer="1" float :options="['fxemoji:whiteheavycheckmark']")
+              layout-box(img="https://picsum.photos/200" design)
+          module-check(:answer="1" float :options="['fxemoji:whiteheavycheckmark']")
+              layout-box(img="https://picsum.photos/200" design)
+          module-check(:answer="1" float :options="['fxemoji:whiteheavycheckmark']")
+              layout-box(img="https://picsum.photos/200" design)
+      
+      oda-instruccion Marca así fxemoji:heavycheckmark los olores que son agradables para ti..
+      layout-grid(columns="2" gap="10")
+          layout-box(class="bg-pastel1" design="2")
+              module-check(:answer="1" :options="['fxemoji:heavycheckmark']") Aroma de las flores
+          layout-box(class="bg-pastel2" design="2")
+              module-check(:answer="0" :options="['fxemoji:heavycheckmark']") Aroma de las flores
+          layout-box(class="bg-pastel3" design="2")
+              module-check(:answer="1" :options="['fxemoji:heavycheckmark']") Aroma de las flores
+          layout-box(class="bg-pastel4" design="2")
+              module-check(:answer="0" :options="['fxemoji:heavycheckmark']") Aroma de las flores
+          layout-box(class="bg-pastel5" design="2")
+              module-check(:answer="1" :options="['fxemoji:heavycheckmark']") Aroma de las flores
+          layout-box(class="bg-pastel6" design="2")
+              module-check(:answer="1" :options="['fxemoji:heavycheckmark']") Aroma de las flores
+      
+      
+      -->
       <oda-finalizar></oda-finalizar>
     </div>
-    <script src="../assets/loader.js" data="local" data-loader-version="v1.0.9"></script>
+    <script src="../assets/loader.js" data="local" data-loader-version="v1.0.11"></script>
   </body>
 </html>
