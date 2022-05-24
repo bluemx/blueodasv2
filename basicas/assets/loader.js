@@ -1,15 +1,30 @@
 let path = '../assets/'
-path = 'https://cdn.jsdelivr.net/gh/bluemx/blueodasv2@v1.0.8/basicas/assets/'
+
+
+var LoaderVersion = document.querySelector('[data="data-loader-version"]')
+if(LoaderVersion){
+    LoaderVersion = LoaderVersion.getAttribute('data-loader-version')
+}
+var isDevLocal = document.querySelector('[data="local"]')
+if(isDevLocal){
+} else {
+    let vrs = ''
+    if(LoaderVersion){
+        vrs = '@'+LoaderVersion
+    }
+    path = 'https://cdn.jsdelivr.net/gh/bluemx/blueodasv2'+vrs+'/basicas/assets/'
+    
+}
 
 let scripts = [
     path+'audios.js',
     path+'libs.js',
     path+'assets.js',
-    path+'components.js',
-    'https://cdnjs.cloudflare.com/ajax/libs/iconify/2.2.1/iconify.min.js',
-    //-------
-    //-------
-    /*
+    'https://cdnjs.cloudflare.com/ajax/libs/iconify/2.2.1/iconify.min.js'
+]
+
+
+const components = [
     path+'components/OdaTitulo.js',
     path+'components/OdaInstruccion.js',
     path+'components/OdaFinalizar.js',
@@ -22,11 +37,16 @@ let scripts = [
     path+'components/ModuleCheck.js',
     path+'components/ModuleDrag.js',
     path+'components/ModuleInput.js',
-    path+'components/ModuleSelect.js',
-    */
-    //-------
-    
+    path+'components/ModuleSelect.js'
 ]
+
+
+if(isDevLocal){
+    scripts.push(...components)
+} else {
+    scripts.push(path+'components.js',)
+}
+
 
 
 let styles = [

@@ -13,6 +13,7 @@ html(lang="en")
         #app.container.mx-auto.my-5
 
             layout-grid(columns="4")
+                module-input(answer="hola." placeholder="hola.")
                 layout-box(design=""): module-select(answer="true" class="w-full h-full") Hola
 
             module-check(v-bind="{options:['fxemoji:crossmark'],answer:1}")
@@ -117,5 +118,5 @@ html(lang="en")
 
 
             oda-finalizar
-        script(src=assetsPath+"loader.js")
+        script(src=assetsPath+"loader.js" data="local" data-loader-version="v1.0.9")
         

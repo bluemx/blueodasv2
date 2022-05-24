@@ -14,14 +14,17 @@ app.component('module-input', {
         const itemClass = ref(props.class || '')
         const active = ref()
         
-
+        const theanswer = props.answer
 
 
         emitter.on('finalize', (e => {
             finalized.value = true
             let activeEVAL = active.value ? active.value.toLowerCase() : ''
-            let answerEVAL = props.answer.toLowerCase()
-
+            activeEVAL = activeEVAL.replace(/\.\s*$/, "")
+            let answerEVAL = theanswer.toLowerCase()
+            answerEVAL = answerEVAL.replace(/\.\s*$/, "")
+            
+            console.log(activeEVAL, answerEVAL)
 
             if(activeEVAL == answerEVAL){
                 result.value = true
