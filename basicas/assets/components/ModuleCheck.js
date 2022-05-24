@@ -17,7 +17,7 @@ app.component('module-check', {
         const itemClass = ref(props.class || '')
         const itemCheckClass = ref('')
 
-        if(props.float!=undefined){
+        if(props.float!=undefined || props.float!=""){
             itemCheckClass.value += "absolute z-10 "
             let pos = 'top-2 left-2'
             if(props.float=='topleft'){pos=' top-2 left-2 '}
