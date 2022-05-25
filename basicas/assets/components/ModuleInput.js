@@ -57,7 +57,7 @@ app.component('module-input', {
         >
             <util-result :result="result" v-if="finalized" />
             <input v-model="active" :placeholder="placeholder" :readonly="finalized"
-                class="w-full rounded border-clear border-2 shadow-oda focus:ring focus:ring-main focus:ring-opacity-50 p-1">
+                class="text-center w-full rounded border-clear border-2 shadow-oda focus:ring focus:ring-main focus:ring-opacity-50 p-1">
         </div>
         `
 })
