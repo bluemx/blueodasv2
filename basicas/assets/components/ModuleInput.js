@@ -24,8 +24,6 @@ app.component('module-input', {
             let answerEVAL = theanswer.toLowerCase()
             answerEVAL = answerEVAL.replace(/\.\s*$/, "")
             
-            console.log(activeEVAL, answerEVAL)
-
             if(activeEVAL == answerEVAL){
                 result.value = true
                 RESULTS.oks++
@@ -50,7 +48,7 @@ app.component('module-input', {
     template: `
         <div :class="[
                 'moduleInput',
-                '',
+                ' inline-block ',
                 itemClass
             ]"
             ref="item"
