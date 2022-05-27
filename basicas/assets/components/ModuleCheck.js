@@ -4,6 +4,7 @@ app.component('module-check', {
         class: String,
         options: Array,
         float: String,
+        allok: Boolean
     },
     setup (props, context){
         const ODA = inject('ODA')
@@ -46,12 +47,19 @@ app.component('module-check', {
 
         emitter.on('finalize', (e => {
             finalized.value = true
-            if(props.answer == active.value){
+            
+            if(props.allok){
                 result.value = true
                 RESULTS.oks++
             } else {
-                result.value = false
-                RESULTS.errors++
+
+                if(props.answer == active.value){
+                    result.value = true
+                    RESULTS.oks++
+                } else {
+                    result.value = false
+                    RESULTS.errors++
+                }
             }
         }))
 

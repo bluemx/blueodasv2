@@ -2,7 +2,8 @@ app.component('module-input', {
     props: {
         answer: String,
         class: String,
-        placeholder: String
+        placeholder: String,
+        allok: Boolean
     },
     setup (props, context){
         const ODA = inject('ODA')
@@ -24,12 +25,18 @@ app.component('module-input', {
             let answerEVAL = theanswer.toLowerCase()
             answerEVAL = answerEVAL.replace(/\.\s*$/, "")
             
-            if(activeEVAL == answerEVAL){
+            if(props.allok){
                 result.value = true
                 RESULTS.oks++
             } else {
-                result.value = false
-                RESULTS.errors++
+
+                if(activeEVAL == answerEVAL){
+                    result.value = true
+                    RESULTS.oks++
+                } else {
+                    result.value = false
+                    RESULTS.errors++
+                }
             }
         }))
 

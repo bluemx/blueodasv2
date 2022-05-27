@@ -4,7 +4,8 @@ app.component('module-drag',{
         answer: String,
         liner: String,
         design: String,
-        connector: String
+        connector: String,
+        allok: Boolean
     },
     setup (props, context) {
         const ODA = inject('ODA')
@@ -145,34 +146,36 @@ app.component('module-drag',{
             
             let currentParent = item.value.parentNode
 
-
-
-            if(props.answer==""){
-                //EMPTY ANSWER
-                if(currentParent == itemParent.value){
-                    result.value = true
-                    RESULTS.oks++
-                } else {
-                    result.value = false
-                    RESULTS.errors++
-                }
+            if(props.allok){
+                result.value = true
+                RESULTS.oks++
             } else {
-                //DIDNT MOVE PARENTNODE
-                if(currentParent == itemParent.value){
-                    result.value = false
-                    RESULTS.errors++
-                } else {
-                    if(currentParent.__vueParentComponent.ctx.answer == props.answer){
+
+                if(props.answer==""){
+                    //EMPTY ANSWER
+                    if(currentParent == itemParent.value){
                         result.value = true
                         RESULTS.oks++
                     } else {
                         result.value = false
                         RESULTS.errors++
                     }
+                } else {
+                    //DIDNT MOVE PARENTNODE
+                    if(currentParent == itemParent.value){
+                        result.value = false
+                        RESULTS.errors++
+                    } else {
+                        if(currentParent.__vueParentComponent.ctx.answer == props.answer){
+                            result.value = true
+                            RESULTS.oks++
+                        } else {
+                            result.value = false
+                            RESULTS.errors++
+                        }
+                    }
                 }
             }
-
-         
         }))
 
         return {

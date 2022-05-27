@@ -12,19 +12,26 @@ html(lang="en")
         //#app.container.mx-auto.my-5.animate__animated.animate__fadeIn.animate__delay-1s
         #app.container.mx-auto.my-5
         
-            oda-instruccion <span><span> Probando fxemoji:alien que los textos funcionen como deben de funcionar y no haya problemas con el triangulo de las instrucciones. </span></span>
+            module-check(v-bind="{options:['fxemoji:crossmark'],answer:1}" v-bind:allok="true")
+            module-drag(dropzone="drop1" answer="a" liner="1" connector="1" v-bind:allok="true") Arrastrame
+            module-drop(name="drop1" answer="a" design="1" class="w-64 h-64")
+            module-select(answer="true" v-bind:allok="true") Adios
+            module-input(answer="hola." placeholder="hola." v-bind:allok="true")
+        
+            //-
+                oda-instruccion <span><span> Probando fxemoji:alien que los textos funcionen como deben de funcionar y no haya problemas con el triangulo de las instrucciones. </span></span>
 
-            layout-grid(columns="3" class="bg-isok py-5 my-20")
-                div.text-center: module-drag(dropzone="drop1" answer="a" liner="0" connector="0" class="w-fit mx-auto")
-                    layout-box(class="w-32 h-32 bg-white" design="0") hola
-                div: div
-                    layout-box(class="w-32 h-32 bg-white" design="0") adios
-                        module-drag(dropzone="drop1" answer="a" liner="1" connector="1")
-                div
-                    module-drag(dropzone="drop1" answer="a" liner="0" connector="0" design="1") Hola
-                    
-                module-drop(name="drop1" answer="a" design="0" class="w-64 h-64")
-                module-drop(name="drop1" answer="a" design="1" class="w-64 h-64")
+                layout-grid(columns="3" class="bg-isok py-5 my-20")
+                    div.text-center: module-drag(dropzone="drop1" answer="a" liner="0" connector="0" class="w-fit mx-auto")
+                        layout-box(class="w-32 h-32 bg-white" design="0") hola
+                    div: div
+                        layout-box(class="w-32 h-32 bg-white" design="0") adios
+                            module-drag(dropzone="drop1" answer="a" liner="1" connector="1")
+                    div
+                        module-drag(dropzone="drop1" answer="a" liner="0" connector="0" design="1") Hola
+                        
+                    module-drop(name="drop1" answer="a" design="0" class="w-64 h-64")
+                    module-drop(name="drop1" answer="a" design="1" class="w-64 h-64")
             //
                 layout-grid(columns="4")
                     module-input(answer="hola." placeholder="hola.")

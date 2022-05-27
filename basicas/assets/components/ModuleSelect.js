@@ -2,6 +2,7 @@ app.component('module-select', {
     props: {
         answer: [Boolean, String],
         class: String,
+        allok: Boolean
     },
     setup (props, context){
         const ODA = inject('ODA')
@@ -31,13 +32,17 @@ app.component('module-select', {
         emitter.on('finalize', (e => {
             finalized.value = true
             
-
-            if(active.value == theanswer){
+            if(props.allok){
                 result.value = true
                 RESULTS.oks++
             } else {
-                result.value = false
-                RESULTS.errors++
+                if(active.value == theanswer){
+                    result.value = true
+                    RESULTS.oks++
+                } else {
+                    result.value = false
+                    RESULTS.errors++
+                }
             }
         }))
 

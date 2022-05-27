@@ -9,26 +9,11 @@
   <body> 
     <!--#app.container.mx-auto.my-5.animate__animated.animate__fadeIn.animate__delay-1s-->
     <div class="container mx-auto my-5" id="app">
-      <oda-instruccion><span><span> Probando fxemoji:alien que los textos funcionen como deben de funcionar y no haya problemas con el triangulo de las instrucciones. </span></span></oda-instruccion>
-      <layout-grid class="bg-isok py-5 my-20" columns="3">
-        <div class="text-center">
-          <module-drag class="w-fit mx-auto" dropzone="drop1" answer="a" liner="0" connector="0">
-            <layout-box class="w-32 h-32 bg-white" design="0">hola</layout-box>
-          </module-drag>
-        </div>
-        <div>
-          <div>
-            <layout-box class="w-32 h-32 bg-white" design="0">adios
-              <module-drag dropzone="drop1" answer="a" liner="1" connector="1"></module-drag>
-            </layout-box>
-          </div>
-        </div>
-        <div>
-          <module-drag dropzone="drop1" answer="a" liner="0" connector="0" design="1">Hola</module-drag>
-        </div>
-        <module-drop class="w-64 h-64" name="drop1" answer="a" design="0"></module-drop>
-        <module-drop class="w-64 h-64" name="drop1" answer="a" design="1"></module-drop>
-      </layout-grid>
+      <module-check v-bind="{options:['fxemoji:crossmark'],answer:1}" v-bind:allok="true"></module-check>
+      <module-drag dropzone="drop1" answer="a" liner="1" connector="1" v-bind:allok="true">Arrastrame</module-drag>
+      <module-drop class="w-64 h-64" name="drop1" answer="a" design="1"></module-drop>
+      <module-select answer="true" v-bind:allok="true">Adios</module-select>
+      <module-input answer="hola." placeholder="hola." v-bind:allok="true"></module-input>
       <!--
       layout-grid(columns="4")
           module-input(answer="hola." placeholder="hola.")
