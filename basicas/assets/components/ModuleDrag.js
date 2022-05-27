@@ -39,6 +39,7 @@ app.component('module-drag',{
             itemParent.value.classList.add('z-10')
 
             draggable.value = Draggable.create(item.value,{
+                autoScroll:1,
                 onClick: function(e) {
                     if(finalized.value){
                         return false
