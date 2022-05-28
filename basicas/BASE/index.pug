@@ -11,12 +11,19 @@ html(lang="en")
     body 
         //#app.container.mx-auto.my-5.animate__animated.animate__fadeIn.animate__delay-1s
         #app.container.mx-auto.my-5
-        
-            module-check(v-bind="{options:['fxemoji:crossmark'],answer:1}" v-bind:allok="true")
-            module-drag(dropzone="drop1" answer="a" liner="1" connector="1" v-bind:allok="true") Arrastrame
-            module-drop(name="drop1" answer="a" design="1" class="w-64 h-64")
-            module-select(answer="true" v-bind:allok="true") Adios
-            module-input(answer="hola." placeholder="hola." v-bind:allok="true")
+            module-choice(class="" v-bind:answer="2" v-bind:allok="false" v-bind:options="[{value:'fxemoji:alien'}, {value:'fxemoji:bactriancamel'}, {value:'fxemoji:wolfface'}]")
+                template(#option="{ value }")
+                    //util-text {{value}}
+                    layout-box(design="0" class="w-32")
+                        oda-icon(:name="value" class="text-4xl")
+
+
+            //-
+                module-check(v-bind="{options:['fxemoji:crossmark'],answer:1}" v-bind:allok="true")
+                module-drag(dropzone="drop1" answer="a" liner="1" connector="1" v-bind:allok="true") Arrastrame
+                module-drop(name="drop1" answer="a" design="1" class="w-64 h-64")
+                module-select(answer="true" v-bind:allok="true") Adios
+                module-input(answer="hola." placeholder="hola." v-bind:allok="true")
         
             //-
                 oda-instruccion <span><span> Probando fxemoji:alien que los textos funcionen como deben de funcionar y no haya problemas con el triangulo de las instrucciones. </span></span>

@@ -9,11 +9,14 @@
   <body> 
     <!--#app.container.mx-auto.my-5.animate__animated.animate__fadeIn.animate__delay-1s-->
     <div class="container mx-auto my-5" id="app">
-      <module-check v-bind="{options:['fxemoji:crossmark'],answer:1}" v-bind:allok="true"></module-check>
-      <module-drag dropzone="drop1" answer="a" liner="1" connector="1" v-bind:allok="true">Arrastrame</module-drag>
-      <module-drop class="w-64 h-64" name="drop1" answer="a" design="1"></module-drop>
-      <module-select answer="true" v-bind:allok="true">Adios</module-select>
-      <module-input answer="hola." placeholder="hola." v-bind:allok="true"></module-input>
+      <module-choice v-bind:answer="2" v-bind:allok="false" v-bind:options="[{value:'fxemoji:alien'}, {value:'fxemoji:bactriancamel'}, {value:'fxemoji:wolfface'}]">
+        <template #option="{ value }">
+          <!--util-text {{value}}-->
+          <layout-box class="w-32" design="0">
+            <oda-icon class="text-4xl" :name="value"></oda-icon>
+          </layout-box>
+        </template>
+      </module-choice>
       <!--
       layout-grid(columns="4")
           module-input(answer="hola." placeholder="hola.")

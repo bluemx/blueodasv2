@@ -37,7 +37,8 @@ const components = [
     path+'components/ModuleCheck.js',
     path+'components/ModuleDrag.js',
     path+'components/ModuleInput.js',
-    path+'components/ModuleSelect.js'
+    path+'components/ModuleSelect.js',
+    path+'components/ModuleChoice.js',
 ]
 
 

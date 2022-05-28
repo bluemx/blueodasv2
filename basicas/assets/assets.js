@@ -19,6 +19,7 @@ const app = createApp({
                 dropzone: [],
                 input: [],
                 select: [],
+                choice: []
             }
         }
         app.provide('ODA', oda)
