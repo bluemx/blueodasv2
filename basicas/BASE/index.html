@@ -9,12 +9,14 @@
   <body> 
     <!--#app.container.mx-auto.my-5.animate__animated.animate__fadeIn.animate__delay-1s-->
     <div class="container mx-auto my-5" id="app">
-      <module-choice v-bind:answer="2" v-bind:allok="false" v-bind:options="[{value:'fxemoji:alien'}, {value:'fxemoji:bactriancamel'}, {value:'fxemoji:wolfface'}]">
-        <template #option="{ value }">
+      <module-choice v-bind:answer="2" v-bind:allok="false" v-bind:options="[{v1:'fxemoji:alien', v2:'https://picsum.photos/100/100'}, {v1:'fxemoji:bactriancamel', v2:'https://picsum.photos/60/60'}, {v1:'fxemoji:wolfface', v2:'https://picsum.photos/50/50'}]">
+        <template #option="{ v1, v2 }">
           <!--util-text {{value}}-->
           <layout-box class="w-32" design="0">
-            <oda-icon class="text-4xl" :name="value"></oda-icon>
+            <oda-icon class="text-4xl" :name="v1"></oda-icon>
+            <p>{{v2}}</p>
           </layout-box>
+          <layout-img class="w-full" img="https://picsum.photos/200/100"></layout-img>
         </template>
       </module-choice>
       <!--

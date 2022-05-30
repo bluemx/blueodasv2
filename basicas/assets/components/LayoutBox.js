@@ -39,7 +39,7 @@ app.component('layout-box', {
     },
     template: `
         <div :class="[
-            'layoutBox',
+            'layoutBox max-w-full',
             itemDesign,
             itemClass
         ]"

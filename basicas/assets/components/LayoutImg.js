@@ -2,11 +2,19 @@ app.component('layout-img', {
     props: {
         class: String,
         img: String,
+        imgVariable: String,
     },
     setup (props, context){
-                   
         const itemClass = ref(props.class || '')
         const itemImg = ref(props.img)
+
+        console.log(props)
+
+        const itemImgVariable = ref(props.imgVariable)
+        console.log(props.imgVariable)
+        if(itemImgVariable.value){
+            itemImg.value = itemImgVariable.value
+        }
 
         return{
             itemClass,

@@ -24,7 +24,7 @@ app.component('layout-grid', {
             'grid-cols-'+columns,
             'md:grid-cols-'+columnsMd,
             'gap-'+gap,
-            'rounded-xl',
+            'rounded-xl max-w-full',
             itemClass
         ]">
             <slot></slot>

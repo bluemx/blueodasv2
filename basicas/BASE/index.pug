@@ -11,11 +11,13 @@ html(lang="en")
     body 
         //#app.container.mx-auto.my-5.animate__animated.animate__fadeIn.animate__delay-1s
         #app.container.mx-auto.my-5
-            module-choice(class="" v-bind:answer="2" v-bind:allok="false" v-bind:options="[{value:'fxemoji:alien'}, {value:'fxemoji:bactriancamel'}, {value:'fxemoji:wolfface'}]")
-                template(#option="{ value }")
+            module-choice(class="" v-bind:answer="2" v-bind:allok="false" v-bind:options="[{v1:'fxemoji:alien', v2:'https://picsum.photos/100/100'}, {v1:'fxemoji:bactriancamel', v2:'https://picsum.photos/60/60'}, {v1:'fxemoji:wolfface', v2:'https://picsum.photos/50/50'}]")
+                template(#option="{ v1, v2 }")
                     //util-text {{value}}
                     layout-box(design="0" class="w-32")
-                        oda-icon(:name="value" class="text-4xl")
+                        oda-icon(:name="v1" class="text-4xl")
+                        p {{v2}}
+                    layout-img(img="https://picsum.photos/200/100"  class="w-full")
 
 
             //-
