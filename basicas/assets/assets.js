@@ -60,7 +60,6 @@ app.directive('textfn', {
 
 
 
-
 tailwind.config = {
     theme: {
       extend: {

@@ -69,6 +69,10 @@ function nextScript(){
         loadScript()
     } else {
         app.mount('#app')
+        fitty('.fitty', {
+            minSize: 6,
+            maxSize: 300,
+        })
     }
 }
 

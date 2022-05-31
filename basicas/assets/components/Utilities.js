@@ -35,7 +35,7 @@ app.component('util-result', {
 app.component('util-text', {
     props:{
         class:String,
-        design: String,
+        design: String
     },
     setup(props, context){
         

@@ -16,4 +16,5 @@ body {
 
 #app{
     max-width: 980px;
+    padding: 0 8px;
 }

@@ -5,7 +5,8 @@ app.component('module-drag',{
         liner: String,
         design: String,
         connector: String,
-        allok: Boolean
+        allok: Boolean,
+        onlyOk: Boolean
     },
     setup (props, context) {
         const ODA = inject('ODA')
@@ -48,7 +49,9 @@ app.component('module-drag',{
                         return false
                     }
                     itemParent.value.appendChild(item.value)
-                    updateLiner('hide')  
+                    updateLiner('hide')
+
+                    updateFitty()
                 },
                 onDrag: function(e){
                     if(finalized.value){
@@ -64,7 +67,10 @@ app.component('module-drag',{
                     let wasDropped = false
                     for(let dropzone of ODA.modules.dropzone){
                     //for(let i in ODA.modules.dropzone){
-                        if (this.hitTest(dropzone, '50%')) {
+                        let candrop = dropzone.__vueParentComponent.ctx.candrop()
+                        if (this.hitTest(dropzone, '50%') && candrop ) {
+
+
                             dropzone.appendChild(item.value)
                             gsap.to(item.value, {
                                 x:0,y:0,
@@ -73,6 +79,13 @@ app.component('module-drag',{
                             })
                             s_select.play()
                             wasDropped = true
+                            updateFitty()
+
+                            
+                            
+
+
+
                         } else {
                             gsap.to(item.value, {
                                 x:0,y:0,
@@ -122,11 +135,18 @@ app.component('module-drag',{
             }
         }
 
+        const updateFitty = () => {
+            if(item.value.classList.contains('fitty')){
+                setTimeout(()=>{
+                    fitty.fitAll()
+                }, 100)
+            }
+        }
 
         if(props.design==undefined || props.design==0 || props.design=="0"){
 
         } else if(props.design=="1"){
-            itemClass.value += ' bg-white rounded p-2 shadow-oda text-center border-2 border-grey-100 border-solid w-fit min-w-[6rem] flex justify-center items-center'
+            itemClass.value += ' bg-white rounded p-2 shadow-oda text-center border-2 border-grey-100 border-solid w-fit min-w-[4rem] max-w-full flex justify-center items-center'
         }
 
 
@@ -155,29 +175,39 @@ app.component('module-drag',{
                 if(props.answer==""){
                     //EMPTY ANSWER
                     if(currentParent == itemParent.value){
-                        result.value = true
-                        RESULTS.oks++
+                        finalizeResult(true)
                     } else {
-                        result.value = false
-                        RESULTS.errors++
+
+                        finalizeResult(false)
                     }
                 } else {
                     //DIDNT MOVE PARENTNODE
                     if(currentParent == itemParent.value){
-                        result.value = false
-                        RESULTS.errors++
+                        finalizeResult(false)
                     } else {
                         if(currentParent.__vueParentComponent.ctx.answer == props.answer){
-                            result.value = true
-                            RESULTS.oks++
+                            finalizeResult(true)
                         } else {
-                            result.value = false
-                            RESULTS.errors++
+                            finalizeResult(false)
                         }
                     }
                 }
             }
         }))
+
+        const finalizeResult = (isok) => {
+            if(isok){
+                result.value = true
+                RESULTS.oks++
+            } else {
+                if(props.onlyOk){
+                    console.log('onlyok')
+                    return false
+                }
+                result.value = false
+                RESULTS.errors++
+            }
+        }
 
         return {
             item,
@@ -191,7 +221,7 @@ app.component('module-drag',{
     },
     template: `
         <div :class="['moduleDrag', itemClass]" ref="item">
-            <util-result :result="result" v-if="finalized" />    
+            <util-result :result="result" v-if="finalized && !onlyOk" />    
             <slot></slot>
             <div 
                 :class="[
@@ -212,7 +242,8 @@ app.component('module-drop',{
     props: {
         class: String,
         answer: String,
-        design: String
+        design: String,
+        limit: String
     },
     setup (props, context) {
         const ODA = inject('ODA')
@@ -222,10 +253,34 @@ app.component('module-drop',{
         itemClass.value += ' p-1 flex justify-center items-center flex-col gap-2'
         
         const item = ref(null)
+        const dropLimits = ref(0)
 
         if(props.design=="1"){
             itemClass.value += ' rounded-xl border-dashed border-2 border-accent'
         }
+
+        if(props.limit=="0" || !props.limit){
+            dropLimits.value = 0
+        } else {
+            dropLimits.value = parseInt(props.limit)
+        }
+
+        const candrop = () => {
+            let result = true
+            const children = item.value.children.length - 1
+            if(dropLimits.value==0){
+                result = true
+            } else {
+                if(children<dropLimits.value){
+                    result = true
+                } else {
+                    result = false
+                }
+            }
+            return result
+        }
+
+
 
         onMounted(()=>{
             ODA.modules.dropzone.push(item.value)
@@ -233,7 +288,8 @@ app.component('module-drop',{
 
         return{
             item,
-            itemClass
+            itemClass,
+            candrop
         }
     },
     template: `
