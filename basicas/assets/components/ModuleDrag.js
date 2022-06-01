@@ -139,7 +139,7 @@ app.component('module-drag',{
             if(item.value.classList.contains('fitty')){
                 setTimeout(()=>{
                     fitty.fitAll()
-                }, 100)
+                }, 250)
             }
         }
 
