@@ -4,7 +4,8 @@ app.component('module-check', {
         class: String,
         options: Array,
         float: String,
-        allok: Boolean
+        allok: Boolean,
+        useclass: Boolean
     },
     setup (props, context){
         const ODA = inject('ODA')
@@ -18,6 +19,8 @@ app.component('module-check', {
         const itemClass = ref(props.class || '')
         const itemCheckClass = ref('')
 
+        const useclass = ref(props.useclass || false)
+
         if(props.float==undefined || props.float==""){
 
         } else {
@@ -28,9 +31,11 @@ app.component('module-check', {
             if(props.float=='bottomleft'){pos=' bottom-2 left-2 '}
             if(props.float=='bottomright'){pos=' bottom-2 right-2 '}
             itemCheckClass.value += pos 
-
         }
 
+
+
+        
         
         const active = ref(0)
 
@@ -75,14 +80,16 @@ app.component('module-check', {
             clicked,
             active,
             finalized,
-            result
+            result,
+            useclass
         }
     },
     template: `
         <div :class="[
                 'moduleCheck',
-                'flex cursor-pointer items-center relative',
-                itemClass
+                'flex cursor-pointer items-center relative rounded',
+                itemClass,
+                useclass?options[active]:''
             ]"
             @click="clicked"
             ref="item"
@@ -94,7 +101,7 @@ app.component('module-check', {
                 'border-2 border-solid border-clear',
                 'bg-white shadow-oda',
                 itemCheckClass
-            ]">
+            ]" v-if="!useclass">
                 <template v-for="(icon, index) in options">
                     <template v-if="index==active ">
                         <oda-icon :name="icon" v-if="icon"  />

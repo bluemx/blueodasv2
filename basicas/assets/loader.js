@@ -39,6 +39,7 @@ const components = [
     path+'components/ModuleInput.js',
     path+'components/ModuleSelect.js',
     path+'components/ModuleChoice.js',
+    path+'components/ModuleCustomCode.js',
 ]
 
 
@@ -55,7 +56,7 @@ let styles = [
     {url:'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css', rel: 'stylesheet'},
     {url:'https://fonts.googleapis.com', rel:'preconnect'},
     {url:'https://fonts.gstatic.com', rel: 'preconnect', crossorigin:true},
-    {url:'https://fonts.googleapis.com/css2?family=Rubik:wght@400;700;800&display=swap', rel:'stylesheet'}
+    {url:'https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700;800&display=swap', rel:'stylesheet'}
 ]
 
 //--------------

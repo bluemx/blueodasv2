@@ -10,25 +10,32 @@
     <!--#app.container.mx-auto.my-5.animate__animated.animate__fadeIn.animate__delay-1s-->
     <div class="container mx-auto my-5" id="app">
       <oda-titulo title="Kitchen" subtitle="Sink"></oda-titulo>
-      <layout-grid columns="4">
-        <layout-box design="0">
-          <util-text class="text-5xl fitty">Bienvenido a Walmart</util-text>
-        </layout-box>
-        <layout-box design="0">
-          <util-text class="text-5xl fitty">Chedraui conectados siempre</util-text>
-        </layout-box>
-        <layout-box design="0">
-          <util-text class="text-5xl fitty">Café con taza y sandwiches</util-text>
-        </layout-box>
-        <layout-box class="flex-col" design="0">
-          <module-drag class="fitty" dropzone="drop1" answer="a" liner="0" connector="0" v-bind:allok="false">Arrastrame por allá</module-drag>
-          <module-drag class="fitty" dropzone="drop1" answer="a" liner="0" connector="0" v-bind:allok="false">Arrastrame por allá</module-drag>
-          <module-drag class="fitty" dropzone="drop1" answer="a" liner="0" connector="0" v-bind:allok="false" v-bind:only-ok="true">Sólo ok</module-drag>
-        </layout-box>
-      </layout-grid>
-      <layout-box class="w-40" design="0">
-        <module-drop class="w-full h-full" name="drop1" answer="a" design="1" limit="2"></module-drop>
-      </layout-box>
+      <module-check v-bind="{options:['fxemoji:crossmark'],answer:1}" v-bind:allok="true">Probando</module-check>
+      <module-check v-bind="{options:['bg-blue-400 w-fit p-1 text-white'],answer:1}" v-bind:useclass="true" v-bind:allok="true">Probando</module-check>
+      <!--p.text-5xl Arrástrame, ñañeñiñoñu áéíó-->
+      <!--layout-grid(columns="4")
+      layout-box(design="0")
+          util-text(class="text-5xl fitty") Bienvenido a Walmart
+      layout-box(design="0")
+          util-text(class="text-5xl fitty") Chedraui conectados siempre
+      layout-box(design="0")
+          util-text(class="text-5xl fitty") Café con taza y sandwiches
+      
+      layout-box(design="0" class="flex-col")
+          module-drag(dropzone="drop1"  answer="a" design="1"  liner="0" connector="0" v-bind:allok="false" class="fitty") Arrastrame por allá
+          module-drag(dropzone="drop1" answer="a"  liner="0" connector="0" v-bind:allok="false" class="fitty") Arrastrame por allá
+          module-drag(dropzone="drop1" answer="a"  liner="0" connector="0" v-bind:allok="false" class="fitty" v-bind:only-ok="true") Sólo ok
+      -->
+      <!--layout-grid(columns="3")
+      layout-box(design="0" class="w-40")
+          module-drop(name="drop1" no-arrow=true answer="a" design="1" class="w-full h-full" limit="2")
+      layout-box(design="0" class="w-40")
+          module-drop(name="drop1" answer="a" design="1" class="w-full h-full" limit="2")
+      layout-box(design="0" class="w-40")
+          module-drop(name="drop1" answer="a" design="1" class="w-full h-full" limit="2")
+      
+      -->
+      <module-customcode></module-customcode>
       <!--module-choice(class="" v-bind:answer="2" v-bind:allok="false" v-bind:options="[{v1:'fxemoji:alien', v2:'https://picsum.photos/100/100'}, {v1:'fxemoji:bactriancamel', v2:'https://picsum.photos/60/60'}, {v1:'fxemoji:wolfface', v2:'https://picsum.photos/50/50'}]")
       template(#option="{ v1, v2 }")
           //util-text {{value}}

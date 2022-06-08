@@ -243,7 +243,8 @@ app.component('module-drop',{
         class: String,
         answer: String,
         design: String,
-        limit: String
+        limit: String,
+        noArrow: Boolean
     },
     setup (props, context) {
         const ODA = inject('ODA')
@@ -254,6 +255,8 @@ app.component('module-drop',{
         
         const item = ref(null)
         const dropLimits = ref(0)
+
+        const noArrow = props.noArrow || false
 
         if(props.design=="1"){
             itemClass.value += ' rounded-xl border-dashed border-2 border-accent'
@@ -289,13 +292,14 @@ app.component('module-drop',{
         return{
             item,
             itemClass,
-            candrop
+            candrop,
+            noArrow
         }
     },
     template: `
         <div :class="['moduleDrop relative', itemClass]" ref="item">
             <slot></slot>
-            <oda-icon name="uil:arrow-down" class="absolute z-0 text-xl opacity-30" />
+            <oda-icon :name="noArrow?'':'uil:arrow-down'" class="absolute z-0 text-xl opacity-30" />
         </div>
     `
 })
