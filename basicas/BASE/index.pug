@@ -8,12 +8,18 @@ html(lang="en")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title=titulo
-    body 
+    body(data="ASOMATE-ESP")
         //#app.container.mx-auto.my-5.animate__animated.animate__fadeIn.animate__delay-1s
         #app.container.mx-auto.my-5
             
+
+
             oda-titulo(title=titulo subtitle=subtitulo)
             
+            oda-instruccion Arrastralas  fxemoji:alien que los textos funcionen como deben de funcionar y no haya problemas con el triangulo de las instrucciones.
+            oda-instruccion Encuentra fxemoji:alien los objetos.
+
+
             action-repeater(v-bind:options="[{v1:['fxemoji:crossmark', 'fxemoji:alien']}]")
                 template(#option="{v1}")    
                     module-check(v-bind:options="v1" v-bind:answer="1") {{v1}}
@@ -71,7 +77,7 @@ html(lang="en")
                 module-input(answer="hola." placeholder="hola." v-bind:allok="true")
         
             //-
-                oda-instruccion <span><span> Probando fxemoji:alien que los textos funcionen como deben de funcionar y no haya problemas con el triangulo de las instrucciones. </span></span>
+                
 
                 layout-grid(columns="3" class="bg-isok py-5 my-20")
                     div.text-center: module-drag(dropzone="drop1" answer="a" liner="0" connector="0" class="w-fit mx-auto")

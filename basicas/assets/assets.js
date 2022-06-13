@@ -1,5 +1,5 @@
 
-const {createApp, ref, provide, inject, onMounted, getCurrentInstance, nextTick} = Vue
+const {createApp, ref, provide, inject, onMounted, computed, getCurrentInstance, nextTick} = Vue
 const emitter = mitt()
 
 /* AUDIOS */
@@ -20,7 +20,8 @@ const app = createApp({
                 input: [],
                 select: [],
                 choice: [],
-                customcode: []
+                customcode: [],
+                instructions: []
             }
         }
         app.provide('ODA', oda)

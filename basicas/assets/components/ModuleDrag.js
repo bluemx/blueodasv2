@@ -6,7 +6,8 @@ app.component('module-drag',{
         design: String,
         connector: String,
         allok: Boolean,
-        onlyOk: Boolean
+        onlyOk: Boolean,
+        onlyError: Boolean,
     },
     setup (props, context) {
         const ODA = inject('ODA')
@@ -197,11 +198,13 @@ app.component('module-drag',{
 
         const finalizeResult = (isok) => {
             if(isok){
+                if(props.onlyErrors){
+                    return false
+                }
                 result.value = true
                 RESULTS.oks++
             } else {
                 if(props.onlyOk){
-                    console.log('onlyok')
                     return false
                 }
                 result.value = false
@@ -221,7 +224,9 @@ app.component('module-drag',{
     },
     template: `
         <div :class="['moduleDrag', itemClass]" ref="item">
-            <util-result :result="result" v-if="finalized && !onlyOk" />    
+            <util-result :result="result" v-if="finalized && !onlyOk && !onlyError" />
+            <util-result :result="result" v-else-if="finalized && ( !result && onlyError) " />
+            <util-result :result="result" v-else-if="finalized && ( result && onlyOk) " />
             <slot></slot>
             <div 
                 :class="[
@@ -231,9 +236,7 @@ app.component('module-drag',{
                 ]"
                 v-if="hasConnector"></div>
         </div>
-        
         `
-        
 })
 
 

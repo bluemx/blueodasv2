@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kitchen</title>
   </head>
-  <body> 
+  <body data="ASOMATE-ESP">
     <!--#app.container.mx-auto.my-5.animate__animated.animate__fadeIn.animate__delay-1s-->
     <div class="container mx-auto my-5" id="app">
       <oda-titulo title="Kitchen" subtitle="Sink"></oda-titulo>
+      <oda-instruccion>Arrastralas  fxemoji:alien que los textos funcionen como deben de funcionar y no haya problemas con el triangulo de las instrucciones.</oda-instruccion>
+      <oda-instruccion>Encuentra fxemoji:alien los objetos.</oda-instruccion>
       <action-repeater v-bind:options="[{v1:['fxemoji:crossmark', 'fxemoji:alien']}]">
         <template #option="{v1}">   
           <module-check v-bind:options="v1" v-bind:answer="1">{{v1}}</module-check>
