@@ -15,16 +15,25 @@ html(lang="en")
 
 
             oda-titulo(title=titulo subtitle=subtitulo)
+
+
+            module-drag(v-bind:only-ok='false' v-bind:only-error='true' v-bind:allok='false' dropzone='drop1' answer='' liner='0' connector='0' design='1') onlyError
+            module-drag(v-bind:only-ok='false' v-bind:only-error='true' v-bind:allok='false' dropzone='drop1' answer='' liner='0' connector='0' design='1') onlyError 2
+            module-drag(v-bind:only-ok='true' v-bind:only-error='false' v-bind:allok='false' dropzone='drop1' answer='a' liner='0' connector='0' design='1') onlyOk
+            module-drag(v-bind:only-ok='false' v-bind:only-error='false' v-bind:allok='false' dropzone='drop1' answer='a' liner='0' connector='0' design='1') Normal
+            module-drop.h-40(name='drop1' design='1' answer='a' limit='0' v-bind:no-arrow='false' v-bind:horizontal="true") Horizontal
+            module-drop.h-40(name='drop1' design='1' answer='a' limit='0' v-bind:no-arrow='false' ) Vertical
+
             
             oda-instruccion Arrastralas  fxemoji:alien que los textos funcionen como deben de funcionar y no haya problemas con el triangulo de las instrucciones.
             oda-instruccion Encuentra fxemoji:alien los objetos.
 
 
-            action-repeater(v-bind:options="[{v1:['fxemoji:crossmark', 'fxemoji:alien']}]")
+            //action-repeater(v-bind:options="[{v1:['fxemoji:crossmark', 'fxemoji:alien']}]")
                 template(#option="{v1}")    
                     module-check(v-bind:options="v1" v-bind:answer="1") {{v1}}
 
-            action-repeater(v-bind:options='[{"v1":"hola","v2":"","v3":"","v4":""},{"v1":"adios","v2":"","v3":"","v4":""}]')
+            //action-repeater(v-bind:options='[{"v1":"hola","v2":"","v3":"","v4":""},{"v1":"adios","v2":"","v3":"","v4":""}]')
                 template(#option="{v1,v2,v3,v4}")
                     module-drag(v-bind:only-ok="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" class="") drag
 

@@ -13,7 +13,7 @@ app.component('module-drag',{
         const ODA = inject('ODA')
         const RESULTS = inject('RESULTS')
         const finalized = ref(false)
-        const result = ref()
+        const result = ref(null)
 
         let uid = (Math.random() + 1).toString(36).substring(7);
         const item = ref(null)
@@ -197,8 +197,9 @@ app.component('module-drag',{
         }))
 
         const finalizeResult = (isok) => {
+
             if(isok){
-                if(props.onlyErrors){
+                if(props.onlyError){
                     return false
                 }
                 result.value = true
@@ -224,9 +225,13 @@ app.component('module-drag',{
     },
     template: `
         <div :class="['moduleDrag', itemClass]" ref="item">
-            <util-result :result="result" v-if="finalized && !onlyOk && !onlyError" />
-            <util-result :result="result" v-else-if="finalized && ( !result && onlyError) " />
-            <util-result :result="result" v-else-if="finalized && ( result && onlyOk) " />
+            <template v-if="finalized">
+                <util-result :result="result" v-if="!onlyOk && !onlyError" />
+                <util-result :result="result" v-else-if="result===false && onlyError" />
+                <util-result :result="result" v-else-if="result===true && onlyOk" />
+
+            </template>
+            
             <slot></slot>
             <div 
                 :class="[
@@ -247,14 +252,21 @@ app.component('module-drop',{
         answer: String,
         design: String,
         limit: String,
-        noArrow: Boolean
+        noArrow: Boolean,
+        horizontal: [Boolean]
     },
     setup (props, context) {
         const ODA = inject('ODA')
         
         const itemClass = ref(props.class || ' ')
         
-        itemClass.value += ' p-1 flex justify-center items-center flex-col gap-2'
+        const veticalHorizontal = ref('flex-col')
+        if(props.horizontal==true){
+            console.log('horizontal')
+            veticalHorizontal.value="flex-row"
+        }
+
+        itemClass.value += ' p-1 flex justify-center items-center gap-2 ' + veticalHorizontal.value + ' ' 
         
         const item = ref(null)
         const dropLimits = ref(0)
