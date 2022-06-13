@@ -22,15 +22,10 @@ app.component('action-repeater', {
         }
     },
     template: `
-        <div :class="[
-                'actionRepeater',
-                itemClass,
-            ]"
-            ref="item"
-        >
+        
             <template v-for="(option, index) in options">
                 <slot name="option" v-bind="option"></slot>
             </template>
-        </div>
+
         `
 })
