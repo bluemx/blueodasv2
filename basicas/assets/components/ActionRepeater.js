@@ -28,7 +28,6 @@ app.component('action-repeater', {
             ]"
             ref="item"
         >
-            {{options}}
             <template v-for="(option, index) in options">
                 <slot name="option" v-bind="option"></slot>
             </template>
