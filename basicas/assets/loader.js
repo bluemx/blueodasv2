@@ -40,6 +40,7 @@ const components = [
     path+'components/ModuleSelect.js',
     path+'components/ModuleChoice.js',
     path+'components/ModuleCustomCode.js',
+    path+'components/actionRepeater.js',
 ]
 
 
