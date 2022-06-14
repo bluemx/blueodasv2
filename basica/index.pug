@@ -1,6 +1,6 @@
 - titulo = 'Kitchen'
 - subtitulo = 'Sink'
-- assetsPath = '../assets/'
+- assetsPath = '../lib/'
 doctype html
 html(lang="en")
     head
@@ -20,6 +20,7 @@ html(lang="en")
                 action-repeater(v-bind:options="[{'v1':'guau','v2':'a','v3':'','v4':''},{'v1':'miau','v2':'b','v3':'','v4':''},{'v1':'huh','v2':'c','v3':'','v4':''},{'v1':'rrrrrrr','v2':'d','v3':'','v4':''},{'v1':'hiiihi','v2':'e','v3':'','v4':''},{'v1':'boing','v2':'f','v3':'','v4':''},{'v1':'rawr','v2':'g','v3':'','v4':''},{'v1':'¡hola!','v2':'h','v3':'','v4':''},{'v1':'ssshh a','v2':'i','v3':'','v4':''},{'v1':'gghjj','v2':'j','v3':'','v4':''},{'v1':'ñnt','v2':'k','v3':'','v4':''},{'v1':'bzz','v2':'l','v3':'','v4':''},{'v1':'run','v2':'m','v3':'','v4':''},{'v1':'iiiiggggoioi','v2':'n','v3':'','v4':''},{'v1':'chuuu','v2':'o','v3':'','v4':''}]")
                     template(#option='{v1,v2,v3,v4}')
                         module-drop.h-16(name='drop1' design='1'  limit='0' v-bind:no-arrow='false' v-bind:horizontal='false' v-bind:answer='v2') {{v1}}
+
 
 
             oda-titulo(title=titulo subtitle=subtitulo)

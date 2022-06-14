@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitchen</title>
+  </head>
+  <body data="ASOMATE-ESP">
+    <!--#app.container.mx-auto.my-5.animate__animated.animate__fadeIn.animate__delay-1s-->
+    <div class="container mx-auto my-5" id="app">
+      <layout-grid columns="5" columns-md="5" gap="2">
+        <action-repeater v-bind:options="[{'v1':'Perro','v2':'a','v3':'','v4':''},{'v1':'Gato','v2':'b','v3':'','v4':''},{'v1':'Tortuga','v2':'c','v3':'','v4':''},{'v1':'Avión','v2':'d','v3':'','v4':''},{'v1':'Caballo','v2':'e','v3':'','v4':''},{'v1':'Pelota','v2':'f','v3':'','v4':''},{'v1':'Dinosaurio','v2':'g','v3':'','v4':''},{'v1':'Televisión','v2':'h','v3':'','v4':''},{'v1':'iPad','v2':'i','v3':'','v4':''},{'v1':'Lagartija','v2':'j','v3':'','v4':''},{'v1':'Hormiga','v2':'k','v3':'','v4':''},{'v1':'Abeja','v2':'l','v3':'','v4':''},{'v1':'Automóvil','v2':'m','v3':'','v4':''},{'v1':'Computadora','v2':'n','v3':'','v4':''},{'v1':'Barco','v2':'o','v3':'','v4':''}]">
+          <template #option="{v1,v2,v3,v4}">
+            <module-drag class="mx-auto" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" liner="0" connector="0" design="1" v-bind:answer="v2">{{v1}}</module-drag>
+          </template>
+        </action-repeater>
+      </layout-grid>
+      <layout-grid class="p-3 m-3 bg-pastel2" columns="5" columns-md="5" gap="2">
+        <action-repeater v-bind:options="[{'v1':'guau','v2':'a','v3':'','v4':''},{'v1':'miau','v2':'b','v3':'','v4':''},{'v1':'huh','v2':'c','v3':'','v4':''},{'v1':'rrrrrrr','v2':'d','v3':'','v4':''},{'v1':'hiiihi','v2':'e','v3':'','v4':''},{'v1':'boing','v2':'f','v3':'','v4':''},{'v1':'rawr','v2':'g','v3':'','v4':''},{'v1':'¡hola!','v2':'h','v3':'','v4':''},{'v1':'ssshh a','v2':'i','v3':'','v4':''},{'v1':'gghjj','v2':'j','v3':'','v4':''},{'v1':'ñnt','v2':'k','v3':'','v4':''},{'v1':'bzz','v2':'l','v3':'','v4':''},{'v1':'run','v2':'m','v3':'','v4':''},{'v1':'iiiiggggoioi','v2':'n','v3':'','v4':''},{'v1':'chuuu','v2':'o','v3':'','v4':''}]">
+          <template #option="{v1,v2,v3,v4}">
+            <module-drop class="h-16" name="drop1" design="1" limit="0" v-bind:no-arrow="false" v-bind:horizontal="false" v-bind:answer="v2">{{v1}}</module-drop>
+          </template>
+        </action-repeater>
+      </layout-grid>
+      <oda-titulo title="Kitchen" subtitle="Sink"></oda-titulo>
+      <!--
+      module-drag(v-bind:only-ok='false' v-bind:only-error='true' v-bind:allok='false' dropzone='drop1' answer='' liner='0' connector='0' design='1') onlyError
+      module-drag(v-bind:only-ok='false' v-bind:only-error='true' v-bind:allok='false' dropzone='drop1' answer='' liner='0' connector='0' design='1') onlyError 2
+      module-drag(v-bind:only-ok='true' v-bind:only-error='false' v-bind:allok='false' dropzone='drop1' answer='a' liner='0' connector='0' design='1') onlyOk
+      module-drag(v-bind:only-ok='false' v-bind:only-error='false' v-bind:allok='false' dropzone='drop1' answer='a' liner='0' connector='0' design='1') Normal
+      module-drop.h-40(name='drop1' design='1' answer='a' limit='0' v-bind:no-arrow='false' v-bind:horizontal="true") Horizontal
+      module-drop.h-40(name='drop1' design='1' answer='a' limit='0' v-bind:no-arrow='false' ) Vertical
+      
+      
+      -->
+      <oda-instruccion>Arrastralas  fxemoji:alien que los textos funcionen como deben de funcionar y no haya problemas con el triangulo de las instrucciones.</oda-instruccion>
+      <oda-instruccion>Encuentra fxemoji:alien los objetos.</oda-instruccion>
+      <!--action-repeater(v-bind:options="[{v1:['fxemoji:crossmark', 'fxemoji:alien']}]")
+      template(#option="{v1}")    
+          module-check(v-bind:options="v1" v-bind:answer="1") {{v1}}
+      
+      -->
+      <!--action-repeater(v-bind:options='[{"v1":"hola","v2":"","v3":"","v4":""},{"v1":"adios","v2":"","v3":"","v4":""}]')
+      template(#option="{v1,v2,v3,v4}")
+          module-drag(v-bind:only-ok="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" class="") drag
+      
+      -->
+      <!--module-customcode()-->
+      <!--module-check(v-bind="{options:['fxemoji:crossmark'],answer:1}" v-bind:allok="true") Probando-->
+      <!--module-check(v-bind="{options:['bg-blue-400 w-fit p-1 text-white'],answer:1}" v-bind:useclass="true" v-bind:allok="true") Probando-->
+      <!--p.text-5xl Arrástrame, ñañeñiñoñu áéíó-->
+      <!--layout-grid(columns="4")
+      layout-box(design="0")
+          util-text(class="text-5xl fitty") Bienvenido a Walmart
+      layout-box(design="0")
+          util-text(class="text-5xl fitty") Chedraui conectados siempre
+      layout-box(design="0")
+          util-text(class="text-5xl fitty") Café con taza y sandwiches
+      
+      layout-box(design="0" class="flex-col")
+          module-drag(dropzone="drop1"  answer="a" design="1"  liner="0" connector="0" v-bind:allok="false" class="fitty") Arrastrame por allá
+          module-drag(dropzone="drop1" answer="a"  liner="0" connector="0" v-bind:allok="false" class="fitty") Arrastrame por allá
+          module-drag(dropzone="drop1" answer="a"  liner="0" connector="0" v-bind:allok="false" class="fitty" v-bind:only-ok="true") Sólo ok
+      -->
+      <!--layout-grid(columns="3")
+      layout-box(design="0" class="w-40")
+          module-drop(name="drop1" no-arrow=true answer="a" design="1" class="w-full h-full" limit="2")
+      layout-box(design="0" class="w-40")
+          module-drop(name="drop1" answer="a" design="1" class="w-full h-full" limit="2")
+      layout-box(design="0" class="w-40")
+          module-drop(name="drop1" answer="a" design="1" class="w-full h-full" limit="2")
+      
+      
+      
+      -->
+      <!--module-choice(class="" v-bind:answer="2" v-bind:allok="false" v-bind:options="[{v1:'fxemoji:alien', v2:'https://picsum.photos/100/100'}, {v1:'fxemoji:bactriancamel', v2:'https://picsum.photos/60/60'}, {v1:'fxemoji:wolfface', v2:'https://picsum.photos/50/50'}]")
+      template(#option="{ v1, v2 }")
+          //util-text {{value}}
+          layout-box(design="0" class="w-32")
+              oda-icon(:name="v1" class="text-4xl")
+              p {{v2}}
+          layout-img(img="https://picsum.photos/200/100" :img-variable="null" class="w-full")
+      
+      
+      -->
+      <!--
+      layout-grid(columns="4")
+          module-input(answer="hola." placeholder="hola.")
+          layout-box(design=""): module-select(answer="true" class="w-full h-full") Hola
+      
+      module-check(v-bind="{options:['fxemoji:crossmark'],answer:1}")
+      
+      oda-icon(name="fxemoji:alien")
+      oda-titulo(title=titulo subtitle=subtitulo)
+      
+      
+      layout-grid(columns=4 gap=10)
+          layout-box(design): module-select(answer="true" class="w-32 h-32") Hola
+          module-select(answer="false") Adios
+          module-select(:answer="true")
+              layout-box(img="https://picsum.photos/200" design)
+      
+      
+      layout-box(class="my-5 flex gap-2 bg-grey-100")
+          module-input(answer="Respuesta" placeholder="Respuesta" class="w-full")
+      layout-box(class="my-5 flex gap-2 bg-grey-100")
+          module-input(answer="Hola" placeholder="Hola" )
+      
+      
+      layout-box(class="my-5 flex gap-2 ")
+          module-drag(dropzone='drop1' answer="" liner=3 design) A
+          layout-box(design): module-drag(dropzone='drop1' answer="a" liner="1" connector="1")
+          layout-box(design): module-drag(dropzone='drop1' answer="a" liner=2 connector=2)
+          layout-box(design): module-drag(dropzone='drop1' answer="a" liner=2 connector=2)
+          layout-box(design): module-drag(dropzone='drop1' answer="a" liner=2 connector=2)
+      
+      layout-grid(columns="3" class="bg-pastel2 p-5 rounded justify-center")
+          module-drag(dropzone='drop1' answer="a")
+              layout-box(design="2" class="bg-gray-100") A
+          module-drag(dropzone='drop1' answer="b")
+              layout-box(design="2" class="bg-gray-100") B
+      
+      layout-grid(columns="2" gap="10" class="p-5")
+          module-drop(name="drop1" answer="a" design class="p-2 min-h-[6rem]")
+          module-drop(name="drop1" answer="b" design class="p-2 min-h-[6rem]")
+      
+      
+      util-text() Default Random Color
+      util-text( design="1" class="text-accent") Diseño 1 Color 1
+      util-text( design="2" size="xl") Diseño 2 size xl
+      util-text( design="2" size="5xl") Diseño 2 size xl
+      util-text( design="3" size="2xl" extrabold) Diseño 3 size 2xl
+      util-text( design="4" size="3xl") Diseño 4 3xl
+      util-text( design="5" size="4xl" extrabold) Diseño 5 size 4xl
+      util-text( design="6" size="4xl" bold) Diseño 6 size 4xl
+      
+      oda-instruccion Selecciona así fxemoji:crossmark las situaciones que son <strong class=text-main>justas</strong>.
+      oda-instruccion Selecciona así las situaciones que son <strong class=text-main>justas</strong>.
+      
+      
+      
+      //layout-grid(columns="4" columns-md="3")
+      layout-grid(columns="3" columns-md="3" gap="10" class="p-5")
+          //layout-box(design="2")
+              | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis sint, labore aperiam vel eos doloremque est quis animi consectetur unde eveniet sed nulla odio consequatur, asperiores ipsam! Quo, fugit aspernatur!
+          div: layout-box(class="bg-gray-100" design="2")
+              module-check(:answer="1" :options="['fxemoji:crossmark', 'fxemoji:heavycheckmark']" float="")
+                  | Correcta
+      
+          div: layout-box(class="bg-gray-100" design="2")
+              module-check(:answer="1" :options="['fxemoji:crossmark']" float="")
+                  | Incorrecta
+          
+          module-check(:answer="1" :options="['fxemoji:crossmark']" float="bottomright")
+              //layout-box(img="https://picsum.photos/200" design)
+              layout-img(img="https://picsum.photos/200/100" class="w-full")
+      
+      
+      oda-instruccion Marca así fxemoji:whiteheavycheckmark los platillos que representan la comida típica mexicana.</strong>.
+      
+      layout-grid(columns="2" columns-md="3" gap="10")
+          module-check(:answer="0" float :options="['fxemoji:whiteheavycheckmark']")
+              layout-box(img="https://picsum.photos/200" design)
+          module-check(:answer="0" float :options="['fxemoji:whiteheavycheckmark']")
+              layout-box(img="https://picsum.photos/200" design)
+          module-check(:answer="0" float :options="['fxemoji:whiteheavycheckmark']")
+              layout-box(img="https://picsum.photos/200" design)
+          module-check(:answer="1" float :options="['fxemoji:whiteheavycheckmark']")
+              layout-box(img="https://picsum.photos/200" design)
+          module-check(:answer="1" float :options="['fxemoji:whiteheavycheckmark']")
+              layout-box(img="https://picsum.photos/200" design)
+          module-check(:answer="1" float :options="['fxemoji:whiteheavycheckmark']")
+              layout-box(img="https://picsum.photos/200" design)
+      
+      oda-instruccion Marca así fxemoji:heavycheckmark los olores que son agradables para ti..
+      layout-grid(columns="2" gap="10")
+          layout-box(class="bg-pastel1" design="2")
+              module-check(:answer="1" :options="['fxemoji:heavycheckmark']") Aroma de las flores
+          layout-box(class="bg-pastel2" design="2")
+              module-check(:answer="0" :options="['fxemoji:heavycheckmark']") Aroma de las flores
+          layout-box(class="bg-pastel3" design="2")
+              module-check(:answer="1" :options="['fxemoji:heavycheckmark']") Aroma de las flores
+          layout-box(class="bg-pastel4" design="2")
+              module-check(:answer="0" :options="['fxemoji:heavycheckmark']") Aroma de las flores
+          layout-box(class="bg-pastel5" design="2")
+              module-check(:answer="1" :options="['fxemoji:heavycheckmark']") Aroma de las flores
+          layout-box(class="bg-pastel6" design="2")
+              module-check(:answer="1" :options="['fxemoji:heavycheckmark']") Aroma de las flores
+      
+      
+      -->
+      <oda-finalizar></oda-finalizar>
+    </div>
+    <script src="../lib/loader.js" data="local" data-loader-version="v1.0.12"></script>
+  </body>
+</html>
