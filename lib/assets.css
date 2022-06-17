@@ -15,6 +15,10 @@ body {
 }
 
 #app{
-    max-width: 980px;
+    max-width: 1200px;
     padding: 0 8px;
 }
+
+[v-cloak] {
+    display: none;
+  }
