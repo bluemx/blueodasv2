@@ -8,16 +8,17 @@
   </head>
   <body class="bg-beige h-full" data="ASOMATE-MAT">
     <div class="mx-auto h-full" id="app" v-cloak>
-      <av-scene>
-        <av-start></av-start>
-      </av-scene>
+      <!--av-scene
+      av-start
+      
+      -->
       <av-scene>
         <av-info title="Un paseo muy alto" interaction="video">
-          <action-timeline show="0" completed="1">
-            <module-audiotext :autoplay="true" text="¿Cuál globo sube más alto? A cada globo le corresponde un número. Mira cómo la flecha traza el recorrido de cada uno." audio="audios/i1.mp3"></module-audiotext>
-          </action-timeline>
+          <module-audiotext :autoplay="true" text="Prueba" audio="https://ucarecdn.com/1c58281f-edd0-41b9-af6f-b6d2213f7bb8/"></module-audiotext>
+          <!--action-timeline(show="0" completed="1")module-audiotext( :autoplay="true" text="¿Cuál globo sube más alto? A cada globo le corresponde un número. Mira cómo la flecha traza el recorrido de cada uno." audio="audios/i1.mp3")
+          -->
           <action-timeline show="1">
-            <module-audiotext text="Muy bien, ¡comencemos!..." audio="https://ucarecdn.com/c3534439-9eb7-41aa-8ca8-df639534dfe2/" :autoplay="true"></module-audiotext>
+            <module-audiotext :autoplay="true" text="Prueba" audio="https://ucarecdn.com/1c58281f-edd0-41b9-af6f-b6d2213f7bb8/"></module-audiotext>
           </action-timeline>
         </av-info>
         <av-activity class="bg-grey-100">

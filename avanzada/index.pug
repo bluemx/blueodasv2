@@ -10,15 +10,16 @@ html(lang="en" style="height:100%")
         title=titulo
     body(data="ASOMATE-MAT").bg-beige.h-full
         #app.mx-auto.h-full(v-cloak)
-            av-scene
+            //av-scene
                 av-start
             
             av-scene
                 av-info(title="Un paseo muy alto" interaction="video")
-                    action-timeline(show="0" completed="1")
+                    module-audiotext(:autoplay="true" text="Prueba" audio="https://ucarecdn.com/1c58281f-edd0-41b9-af6f-b6d2213f7bb8/" class="")
+                    //action-timeline(show="0" completed="1")
                         module-audiotext( :autoplay="true" text="¿Cuál globo sube más alto? A cada globo le corresponde un número. Mira cómo la flecha traza el recorrido de cada uno." audio="audios/i1.mp3")
                     action-timeline(show="1")
-                        module-audiotext(text="Muy bien, ¡comencemos!..." audio="https://ucarecdn.com/c3534439-9eb7-41aa-8ca8-df639534dfe2/" :autoplay="true" )
+                        module-audiotext(:autoplay="true" text="Prueba" audio="https://ucarecdn.com/1c58281f-edd0-41b9-af6f-b6d2213f7bb8/" class="")
                 av-activity(class="bg-grey-100")
                     action-timeline(hide="1")
                         module-lottie(src="animations/globo.json" :autoplay="false"  class="w-2/3")
