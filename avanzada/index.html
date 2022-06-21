@@ -11,7 +11,7 @@
       <av-scene>
         <av-start></av-start>
       </av-scene>
-      <av-scene>
+      <av-scene :automatic-scene="true">
         <av-info title="Un paseo muy alto" interaction="video">
           <!--
           module-audiotext(:autoplay="false" text="Prueba" audio="https://ucarecdn.com/1c58281f-edd0-41b9-af6f-b6d2213f7bb8/" class="")
@@ -42,23 +42,8 @@
           
           -->
           <layout-grid>
-            <action-timeline completed-audio="s_ok" error-audio="s_error" ok-audio="s_bh_mujer">
-              <module-check module-check float="" v-bind:options="['fxemoji:crossmark']" v-bind:answer="0" v-bind:allok="false" v-bind:useclass="false" :inmediate="true">Check</module-check>
-            </action-timeline>
             <action-timeline completed-audio="s_ok" error-audio="s_vi_hombre" ok-audio="s_bh_mujer" ok="1" hide="1">
               <module-check module-check float="" v-bind:options="['fxemoji:crossmark']" v-bind:answer="1" v-bind:allok="false" v-bind:useclass="false" :inmediate="true">Check</module-check>
-            </action-timeline>
-            <action-timeline completed-audio="s_ok" error-audio="" ok-audio="s_bh_mujer">
-              <module-check module-check float="" v-bind:options="['fxemoji:crossmark', 'fxemoji:alien']" v-bind:answer="2" v-bind:allok="false" v-bind:useclass="false" :inmediate="true">Check</module-check>
-            </action-timeline>
-            <action-timeline completed-audio="s_ok" error-audio="" ok-audio="s_bh_mujer">
-              <module-select class="text-xl" :answer="true" :inmediate="true">Click</module-select>
-            </action-timeline>
-            <action-timeline completed-audio="s_ok" error-audio="s_vi_hombre" ok-audio="s_bh_mujer">
-              <module-select class="text-xl" :answer="false" :inmediate="true">Click</module-select>
-            </action-timeline>
-            <action-timeline completed-audio="s_ok" error-audio="s_vi_hombre" ok-audio="s_bh_mujer">
-              <av-button nextscene="false" nexttimeline="false" emit-error="true">Eror</av-button>
             </action-timeline>
           </layout-grid>
         </av-activity>
