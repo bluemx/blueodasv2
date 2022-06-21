@@ -13,7 +13,14 @@ html(lang="en" style="height:100%")
             av-scene
                 av-start
             
-            av-scene(:automatic-scene="true")
+            av-scene(:automatic-scene="false")
+                av-info
+                av-activity
+                    action-timeline(completed="1")
+                        module-video(src="https://ucarecdn.com/98c620ec-b970-4ffa-b554-566b517e3cc6/" class="w-80" :autoplay="true")
+                    action-timeline(show="1")
+                        av-button Continuar!
+            //av-scene(:automatic-scene="true")
                 av-info(title="Un paseo muy alto" interaction="video")
                     //
 

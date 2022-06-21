@@ -11,43 +11,67 @@
       <av-scene>
         <av-start></av-start>
       </av-scene>
-      <av-scene :automatic-scene="true">
-        <av-info title="Un paseo muy alto" interaction="video">
-          <!--
-          module-audiotext(:autoplay="false" text="Prueba" audio="https://ucarecdn.com/1c58281f-edd0-41b9-af6f-b6d2213f7bb8/" class="")
-          //-
-              action-timeline(show="0" completed="1")
-                  module-audiotext( :autoplay="true" text="¿Cuál globo sube más alto? A cada globo le corresponde un número. Mira cómo la flecha traza el recorrido de cada uno." audio="audios/i1.mp3")
-              action-timeline(show="1")
-                  module-audiotext(:autoplay="true" text="Prueba" audio="https://ucarecdn.com/1c58281f-edd0-41b9-af6f-b6d2213f7bb8/" class="")
-          -->
-        </av-info>
-        <av-activity class="bg-grey-100">
-          <!--
-          action-timeline(hide="1")
-              module-lottie(src="animations/globo.json" :autoplay="false"  class="w-2/3")
-          
-          action-timeline(show="1" completed="2")
-              module-lottie(src="animations/globo.json" autoplay="true" speed="5" :segment="[0, 1150]"  class="w-2/3" :loop="false" :debug="false" :audios="[{time:300, file: 'audios/au_uno.mp3'}, {time:400, file: 'audios/au_dos.mp3'}, {time:500, file: 'audios/au_tres.mp3'}, {time:600, file: 'audios/au_cuatro.mp3'}, {time:700, file: 'audios/au_cinco.mp3'}, {time:800, file: 'audios/au_seis.mp3'}]")
-          
-          action-timeline(show="2" completed="3")
-              module-audiotext(text="¿Cuál globo subió más alto?" audio="audios/i3.mp3" class="flex"  :autoplay="true")
-          
-          action-timeline(show="3" hide="4")
-              action-timeline(completed="4")
-                  action-delay(time="2" class="p-1 bg-white rounded")
-          
-          action-timeline(show="4")
-              module-audiotext(text="Así es! El globo que subió más alto fue el número tres. ¡Buen trabajo!" audio="audios/i4.mp3" class="text-4xl text-main"  :autoplay="true")
-          
-          -->
-          <layout-grid>
-            <action-timeline completed-audio="s_ok" error-audio="s_vi_hombre" ok-audio="s_bh_mujer" ok="1" hide="1">
-              <module-check module-check float="" v-bind:options="['fxemoji:crossmark']" v-bind:answer="1" v-bind:allok="false" v-bind:useclass="false" :inmediate="true">Check</module-check>
-            </action-timeline>
-          </layout-grid>
+      <av-scene :automatic-scene="false">
+        <av-info></av-info>
+        <av-activity>
+          <action-timeline completed="1">
+            <module-video class="w-80" src="https://ucarecdn.com/98c620ec-b970-4ffa-b554-566b517e3cc6/" :autoplay="true"></module-video>
+          </action-timeline>
+          <action-timeline show="1">
+            <av-button>Continuar!</av-button>
+          </action-timeline>
         </av-activity>
       </av-scene>
+      <!--av-scene(:automatic-scene="true")
+      av-info(title="Un paseo muy alto" interaction="video")
+          //
+      
+              module-audiotext(:autoplay="false" text="Prueba" audio="https://ucarecdn.com/1c58281f-edd0-41b9-af6f-b6d2213f7bb8/" class="")
+              //-
+                  action-timeline(show="0" completed="1")
+                      module-audiotext( :autoplay="true" text="¿Cuál globo sube más alto? A cada globo le corresponde un número. Mira cómo la flecha traza el recorrido de cada uno." audio="audios/i1.mp3")
+                  action-timeline(show="1")
+                      module-audiotext(:autoplay="true" text="Prueba" audio="https://ucarecdn.com/1c58281f-edd0-41b9-af6f-b6d2213f7bb8/" class="")
+      av-activity(class="bg-grey-100")
+          //
+              action-timeline(hide="1")
+                  module-lottie(src="animations/globo.json" :autoplay="false"  class="w-2/3")
+              
+              action-timeline(show="1" completed="2")
+                  module-lottie(src="animations/globo.json" autoplay="true" speed="5" :segment="[0, 1150]"  class="w-2/3" :loop="false" :debug="false" :audios="[{time:300, file: 'audios/au_uno.mp3'}, {time:400, file: 'audios/au_dos.mp3'}, {time:500, file: 'audios/au_tres.mp3'}, {time:600, file: 'audios/au_cuatro.mp3'}, {time:700, file: 'audios/au_cinco.mp3'}, {time:800, file: 'audios/au_seis.mp3'}]")
+      
+              action-timeline(show="2" completed="3")
+                  module-audiotext(text="¿Cuál globo subió más alto?" audio="audios/i3.mp3" class="flex"  :autoplay="true")
+              
+              action-timeline(show="3" hide="4")
+                  action-timeline(completed="4")
+                      action-delay(time="2" class="p-1 bg-white rounded")
+      
+              action-timeline(show="4")
+                  module-audiotext(text="Así es! El globo que subió más alto fue el número tres. ¡Buen trabajo!" audio="audios/i4.mp3" class="text-4xl text-main"  :autoplay="true")
+          
+          layout-grid()
+              action-timeline(completed-audio="s_ok" error-audio="s_vi_hombre" ok-audio="s_bh_mujer"  ok="1" hide="1")
+                  module-check(module-check float="" v-bind:options="['fxemoji:crossmark']" v-bind:answer="1" v-bind:allok="false" v-bind:useclass="false" class="" :inmediate="true") Check
+              //-
+                  action-timeline(completed-audio="s_ok" error-audio="s_error" ok-audio="s_bh_mujer")
+                      module-check(module-check float="" v-bind:options="['fxemoji:crossmark']" v-bind:answer="0" v-bind:allok="false" v-bind:useclass="false" class="" :inmediate="true") Check
+                  action-timeline(completed-audio="s_ok" error-audio="" ok-audio="s_bh_mujer")
+                      module-check(module-check float="" v-bind:options="['fxemoji:crossmark', 'fxemoji:alien']" v-bind:answer="2" v-bind:allok="false" v-bind:useclass="false" class="" :inmediate="true") Check
+                  action-timeline(completed-audio="s_ok" error-audio="" ok-audio="s_bh_mujer")
+                      module-select(:answer="true" :inmediate="true" class="text-xl") Click
+                  action-timeline(completed-audio="s_ok" error-audio="s_vi_hombre" ok-audio="s_bh_mujer")
+                      module-select(:answer="false" :inmediate="true" class="text-xl") Click
+                  action-timeline(completed-audio="s_ok" error-audio="s_vi_hombre" ok-audio="s_bh_mujer")
+                      av-button(nextscene="false" nexttimeline="false" emit-error="true") Eror
+              //-
+                  module-select(:answer="true" :inmediate="true" class="text-xl") Click
+                  module-select(:answer="true" :inmediate="true" class="text-xl") Click
+                  module-select(:answer="true" :inmediate="true" class="text-xl") Click
+                  module-select(:answer="true" :inmediate="true" class="text-xl") Click
+                  module-select(:answer="true" :inmediate="true" class="text-xl") Click
+                  module-select(answer="false" :inmediate="true" class="text-xl") Click no
+      -->
       <av-scene>
         <av-info title="Un paseo muy alto" interaction="video">
           <module-audiotext :autoplay="false" text="¿Cuál globo sube más alto? A cada globo le corresponde un número. Mira cómo la flecha traza el recorrido de cada uno." audio="audios/i1.mp3"></module-audiotext>
