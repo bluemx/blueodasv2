@@ -37,16 +37,15 @@
               action-timeline(completed="4")
                   action-delay(time="2" class="p-1 bg-white rounded")
           
-          av-button(nextscene="true" nexttimeline="false") Siguiente
           action-timeline(show="4")
               module-audiotext(text="Así es! El globo que subió más alto fue el número tres. ¡Buen trabajo!" audio="audios/i4.mp3" class="text-4xl text-main"  :autoplay="true")
           
           -->
           <layout-grid>
-            <action-timeline completed-audio="s_ok" error-audio="https://ucarecdn.com/09783d7e-8fa3-4f1d-ad54-0e521e573aec/" ok-audio="s_bh_mujer">
+            <action-timeline completed-audio="s_ok" error-audio="s_error" ok-audio="s_bh_mujer">
               <module-check module-check float="" v-bind:options="['fxemoji:crossmark']" v-bind:answer="0" v-bind:allok="false" v-bind:useclass="false" :inmediate="true">Check</module-check>
             </action-timeline>
-            <action-timeline completed-audio="s_ok" error-audio="s_vi_hombre" ok-audio="s_bh_mujer">
+            <action-timeline completed-audio="s_ok" error-audio="s_vi_hombre" ok-audio="s_bh_mujer" ok="1" hide="1">
               <module-check module-check float="" v-bind:options="['fxemoji:crossmark']" v-bind:answer="1" v-bind:allok="false" v-bind:useclass="false" :inmediate="true">Check</module-check>
             </action-timeline>
             <action-timeline completed-audio="s_ok" error-audio="" ok-audio="s_bh_mujer">
@@ -57,6 +56,9 @@
             </action-timeline>
             <action-timeline completed-audio="s_ok" error-audio="s_vi_hombre" ok-audio="s_bh_mujer">
               <module-select class="text-xl" :answer="false" :inmediate="true">Click</module-select>
+            </action-timeline>
+            <action-timeline completed-audio="s_ok" error-audio="s_vi_hombre" ok-audio="s_bh_mujer">
+              <av-button nextscene="false" nexttimeline="false" emit-error="true">Eror</av-button>
             </action-timeline>
           </layout-grid>
         </av-activity>
