@@ -11,15 +11,16 @@
       <av-scene>
         <av-start></av-start>
       </av-scene>
-      <av-scene :automatic-scene="false">
+      <av-scene :automatic-scene="true">
         <av-info></av-info>
         <av-activity>
-          <action-timeline completed="1">
-            <module-video class="w-80" src="https://ucarecdn.com/98c620ec-b970-4ffa-b554-566b517e3cc6/" :autoplay="true"></module-video>
-          </action-timeline>
-          <action-timeline show="1">
-            <av-button>Continuar!</av-button>
-          </action-timeline>
+          <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" :inmediate="true">DRAG! OK</module-drag>
+          <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="" liner="0" connector="0" design="" :inmediate="true">DRAG! NO</module-drag>
+          <module-drop class=" w-3/4 h-52 bg-pastel4" name="drop1" design="1" answer="a" limit="5" v-bind:no-arrow="false" v-bind:horizontal="true"></module-drop>
+          <!--action-timeline(completed="1")module-video(src="https://ucarecdn.com/98c620ec-b970-4ffa-b554-566b517e3cc6/" class="w-80" :autoplay="true")
+          -->
+          <!--action-timeline(show="1")av-button Continuar!
+          -->
         </av-activity>
       </av-scene>
       <!--av-scene(:automatic-scene="true")
@@ -72,7 +73,7 @@
                   module-select(:answer="true" :inmediate="true" class="text-xl") Click
                   module-select(answer="false" :inmediate="true" class="text-xl") Click no
       -->
-      <av-scene>
+      <av-scene :automatic-scene="true">
         <av-info title="Un paseo muy alto" interaction="video">
           <module-audiotext :autoplay="false" text="¿Cuál globo sube más alto? A cada globo le corresponde un número. Mira cómo la flecha traza el recorrido de cada uno." audio="audios/i1.mp3"></module-audiotext>
         </av-info>

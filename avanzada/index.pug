@@ -13,12 +13,16 @@ html(lang="en" style="height:100%")
             av-scene
                 av-start
             
-            av-scene(:automatic-scene="false")
+            av-scene(:automatic-scene="true")
                 av-info
                 av-activity
-                    action-timeline(completed="1")
+                    module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" class=" w-fit h-fit" :inmediate="true") DRAG! OK
+                    module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="" liner="0" connector="0" design="" class=" w-fit h-fit" :inmediate="true") DRAG! NO
+                    module-drop(name="drop1" design="1" answer="a" limit="5" class=" w-3/4 h-52 bg-pastel4" v-bind:no-arrow="false" v-bind:horizontal="true")
+                    
+                    //action-timeline(completed="1")
                         module-video(src="https://ucarecdn.com/98c620ec-b970-4ffa-b554-566b517e3cc6/" class="w-80" :autoplay="true")
-                    action-timeline(show="1")
+                    //action-timeline(show="1")
                         av-button Continuar!
             //av-scene(:automatic-scene="true")
                 av-info(title="Un paseo muy alto" interaction="video")
@@ -69,7 +73,7 @@ html(lang="en" style="height:100%")
                             module-select(:answer="true" :inmediate="true" class="text-xl") Click
                             module-select(:answer="true" :inmediate="true" class="text-xl") Click
                             module-select(answer="false" :inmediate="true" class="text-xl") Click no
-            av-scene
+            av-scene(:automatic-scene="true")
                 av-info(title="Un paseo muy alto" interaction="video")
                     module-audiotext( :autoplay="false" text="¿Cuál globo sube más alto? A cada globo le corresponde un número. Mira cómo la flecha traza el recorrido de cada uno." audio="audios/i1.mp3")
                 av-activity
