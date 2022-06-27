@@ -12,7 +12,10 @@
         <av-start></av-start>
       </av-scene>
       <av-scene :automatic-scene="true">
-        <av-info></av-info>
+        <av-info>
+          <div>AUDIO:</div>
+          <module-audio audio="audio.mp3" :loop="true" :autoplay="true" :volume="0.2" :visible="false"></module-audio>
+        </av-info>
         <av-activity>
           <action-timeline ok="1">
             <module-input answer="Probando" inmediate></module-input>

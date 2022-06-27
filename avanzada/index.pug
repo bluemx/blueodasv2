@@ -15,6 +15,8 @@ html(lang="en" style="height:100%")
             
             av-scene(:automatic-scene="true")
                 av-info
+                    div AUDIO:
+                    module-audio(audio="audio.mp3" :loop="true" :autoplay="true" :volume="0.2" :visible="false")
                 av-activity
                     action-timeline(ok="1")
                         module-input(answer="Probando" inmediate)
