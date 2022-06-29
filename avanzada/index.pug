@@ -13,29 +13,33 @@ html(lang="en" style="height:100%")
             av-scene
                 av-start
             
-            av-scene(:automatic-scene="true")
-                av-info
-                    div AUDIO:
-                    module-audio(audio="audio.mp3" :loop="true" :autoplay="true" :volume="0.2" :visible="false")
+            av-scene(:automatic-scene="true" end-audio="isok.mp3" :force-oks="4")
+                av-info(title="Ok")
                 av-activity
                     action-timeline(ok="1")
-                        module-input(answer="Probando" inmediate)
-                    action-timeline(show="1" ok="2")
-                        module-input(answer="Probando" inmediate)
-                    action-timeline(show="2" ok="3")
-                        module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" class=" w-fit h-fit" :inmediate="true") DRAG! OK
-                        module-drop(name="drop1" design="1" answer="a" limit="5" class=" w-3/4 h-52 bg-pastel4" v-bind:no-arrow="false" v-bind:horizontal="true" :key="1")
-                    action-timeline(show="3")
-                        module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" class=" w-fit h-fit" :inmediate="true") DRAG! OK
-                        module-drop(name="drop1" design="1" answer="a" limit="5" class=" w-3/4 h-52 bg-pastel4" v-bind:no-arrow="false" v-bind:horizontal="true" :key="1")
+                        module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" class=" w-fit h-fit" :inmediate="true")
+                            div DRAG! OK
+                            module-audio(audio="audio.mp3" :loop="true" :autoplay="true" :volume="0.2" :visible="true")
+                        module-drop(name="drop1" design="1" answer="a" limit="5" class=" w-3/4 h-52 bg-pastel4" v-bind:no-arrow="false" v-bind:horizontal="true" :key="2")
+                    action-timeline(show="1")
+                        module-select(:answer="true" :inmediate="true" class="text-xl") Click
+                        action-timeline(ok="2")
+                            module-select(:answer="true" :inmediate="true" class="text-xl") Click 2
+                    action-timeline(show="2")
+                        module-select(:answer="true" :inmediate="true" class="text-xl") Click 3
+                        module-select(:answer="true" :inmediate="true" class="text-xl") Click 3
+                        module-select(:answer="true" :inmediate="true" class="text-xl") Click 3
 
-
-            av-scene(:automatic-scene="true")
+            av-scene(:automatic-scene="true" :force-oks="3")
                 av-info
-                av-activity
+                av-activity()
                     p ESCENA 2
                     module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" class=" w-fit h-fit" :inmediate="true") DRAG! OK
+                    module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" class=" w-fit h-fit" :inmediate="true") DRAG! OK
+                    module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" class=" w-fit h-fit" :inmediate="true") DRAG! OK
+                    module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" class=" w-fit h-fit" :inmediate="true") DRAG! OK
                     module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="" liner="0" connector="0" design="" class=" w-fit h-fit" :inmediate="true") DRAG! NO
+
                     module-drop(name="drop1" design="1" answer="a" limit="5" class=" w-3/4 h-52 bg-pastel4" v-bind:no-arrow="false" v-bind:horizontal="true" :key="2")
                     
                     //action-timeline(completed="1")

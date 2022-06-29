@@ -11,32 +11,36 @@
       <av-scene>
         <av-start></av-start>
       </av-scene>
-      <av-scene :automatic-scene="true">
-        <av-info>
-          <div>AUDIO:</div>
-          <module-audio audio="audio.mp3" :loop="true" :autoplay="true" :volume="0.2" :visible="false"></module-audio>
-        </av-info>
+      <av-scene :automatic-scene="true" end-audio="isok.mp3" :force-oks="4">
+        <av-info title="Ok"></av-info>
         <av-activity>
           <action-timeline ok="1">
-            <module-input answer="Probando" inmediate></module-input>
+            <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" :inmediate="true">
+              <div>DRAG! OK</div>
+              <module-audio audio="audio.mp3" :loop="true" :autoplay="true" :volume="0.2" :visible="true"></module-audio>
+            </module-drag>
+            <module-drop class=" w-3/4 h-52 bg-pastel4" name="drop1" design="1" answer="a" limit="5" v-bind:no-arrow="false" v-bind:horizontal="true" :key="2"></module-drop>
           </action-timeline>
-          <action-timeline show="1" ok="2">
-            <module-input answer="Probando" inmediate></module-input>
+          <action-timeline show="1">
+            <module-select class="text-xl" :answer="true" :inmediate="true">Click</module-select>
+            <action-timeline ok="2">
+              <module-select class="text-xl" :answer="true" :inmediate="true">Click 2</module-select>
+            </action-timeline>
           </action-timeline>
-          <action-timeline show="2" ok="3">
-            <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" :inmediate="true">DRAG! OK</module-drag>
-            <module-drop class=" w-3/4 h-52 bg-pastel4" name="drop1" design="1" answer="a" limit="5" v-bind:no-arrow="false" v-bind:horizontal="true" :key="1"></module-drop>
-          </action-timeline>
-          <action-timeline show="3">
-            <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" :inmediate="true">DRAG! OK</module-drag>
-            <module-drop class=" w-3/4 h-52 bg-pastel4" name="drop1" design="1" answer="a" limit="5" v-bind:no-arrow="false" v-bind:horizontal="true" :key="1"></module-drop>
+          <action-timeline show="2">
+            <module-select class="text-xl" :answer="true" :inmediate="true">Click 3</module-select>
+            <module-select class="text-xl" :answer="true" :inmediate="true">Click 3</module-select>
+            <module-select class="text-xl" :answer="true" :inmediate="true">Click 3</module-select>
           </action-timeline>
         </av-activity>
       </av-scene>
-      <av-scene :automatic-scene="true">
+      <av-scene :automatic-scene="true" :force-oks="3">
         <av-info></av-info>
         <av-activity>
           <p>ESCENA 2</p>
+          <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" :inmediate="true">DRAG! OK</module-drag>
+          <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" :inmediate="true">DRAG! OK</module-drag>
+          <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" :inmediate="true">DRAG! OK</module-drag>
           <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" :inmediate="true">DRAG! OK</module-drag>
           <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="" liner="0" connector="0" design="" :inmediate="true">DRAG! NO</module-drag>
           <module-drop class=" w-3/4 h-52 bg-pastel4" name="drop1" design="1" answer="a" limit="5" v-bind:no-arrow="false" v-bind:horizontal="true" :key="2"></module-drop>
