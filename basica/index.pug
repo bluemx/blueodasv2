@@ -11,19 +11,31 @@ html(lang="en")
     body(data="ASOMATE-ESP")
         //#app.container.mx-auto.my-5.animate__animated.animate__fadeIn.animate__delay-1s
         #app.container.mx-auto.my-5
-            
-            layout-grid(columns='5' columns-md='5' gap='2')
-                action-repeater(v-bind:options="[{'v1':'Perro','v2':'a','v3':'','v4':''},{'v1':'Gato','v2':'b','v3':'','v4':''},{'v1':'Tortuga','v2':'c','v3':'','v4':''},{'v1':'Avión','v2':'d','v3':'','v4':''},{'v1':'Caballo','v2':'e','v3':'','v4':''},{'v1':'Pelota','v2':'f','v3':'','v4':''},{'v1':'Dinosaurio','v2':'g','v3':'','v4':''},{'v1':'Televisión','v2':'h','v3':'','v4':''},{'v1':'iPad','v2':'i','v3':'','v4':''},{'v1':'Lagartija','v2':'j','v3':'','v4':''},{'v1':'Hormiga','v2':'k','v3':'','v4':''},{'v1':'Abeja','v2':'l','v3':'','v4':''},{'v1':'Automóvil','v2':'m','v3':'','v4':''},{'v1':'Computadora','v2':'n','v3':'','v4':''},{'v1':'Barco','v2':'o','v3':'','v4':''}]")
-                    template(#option='{v1,v2,v3,v4}')
-                        module-drag.mx-auto(v-bind:only-ok='false' v-bind:only-error='false' v-bind:allok='false' dropzone='drop1'  liner='0' connector='0' design='1' v-bind:answer='v2') {{v1}}
-            layout-grid.p-3.m-3.bg-pastel2(columns='5' columns-md='5' gap='2')
-                action-repeater(v-bind:options="[{'v1':'guau','v2':'a','v3':'','v4':''},{'v1':'miau','v2':'b','v3':'','v4':''},{'v1':'huh','v2':'c','v3':'','v4':''},{'v1':'rrrrrrr','v2':'d','v3':'','v4':''},{'v1':'hiiihi','v2':'e','v3':'','v4':''},{'v1':'boing','v2':'f','v3':'','v4':''},{'v1':'rawr','v2':'g','v3':'','v4':''},{'v1':'¡hola!','v2':'h','v3':'','v4':''},{'v1':'ssshh a','v2':'i','v3':'','v4':''},{'v1':'gghjj','v2':'j','v3':'','v4':''},{'v1':'ñnt','v2':'k','v3':'','v4':''},{'v1':'bzz','v2':'l','v3':'','v4':''},{'v1':'run','v2':'m','v3':'','v4':''},{'v1':'iiiiggggoioi','v2':'n','v3':'','v4':''},{'v1':'chuuu','v2':'o','v3':'','v4':''}]")
-                    template(#option='{v1,v2,v3,v4}')
-                        module-drop.h-16(name='drop1' design='1'  limit='0' v-bind:no-arrow='false' v-bind:horizontal='false' v-bind:answer='v2') {{v1}}
+            oda-titulo(title='Benito y Benito' subtitle='')
+            div
+                module-drag(v-bind:only-ok='false' v-bind:only-error='false' v-bind:allok='false' dropzone='drop1' answer='a' liner='0' connector='0' design='1').w-fit.h-fit ARRASTRAME
+                .h-80.bg-gray-400
+                .h-80.bg-gray-400.my-5
+                module-drop(name='drop1' design='' answer='a' limit='0' v-bind:no-arrow='false' v-bind:horizontal='false')
+            oda-finalizar
+
+
+            //
+                layout-grid(columns='5' columns-md='5' gap='2')
+                    action-repeater(v-bind:options="[{'v1':'Perro','v2':'a','v3':'','v4':''},{'v1':'Gato','v2':'b','v3':'','v4':''},{'v1':'Tortuga','v2':'c','v3':'','v4':''},{'v1':'Avión','v2':'d','v3':'','v4':''},{'v1':'Caballo','v2':'e','v3':'','v4':''},{'v1':'Pelota','v2':'f','v3':'','v4':''},{'v1':'Dinosaurio','v2':'g','v3':'','v4':''},{'v1':'Televisión','v2':'h','v3':'','v4':''},{'v1':'iPad','v2':'i','v3':'','v4':''},{'v1':'Lagartija','v2':'j','v3':'','v4':''},{'v1':'Hormiga','v2':'k','v3':'','v4':''},{'v1':'Abeja','v2':'l','v3':'','v4':''},{'v1':'Automóvil','v2':'m','v3':'','v4':''},{'v1':'Computadora','v2':'n','v3':'','v4':''},{'v1':'Barco','v2':'o','v3':'','v4':''}]")
+                        template(#option='{v1,v2,v3,v4}')
+                            module-drag.mx-auto(v-bind:only-ok='false' v-bind:only-error='false' v-bind:allok='false' dropzone='drop1'  liner='0' connector='0' design='1' v-bind:answer='v2') {{v1}}
+                layout-grid.p-3.m-3.bg-pastel2(columns='5' columns-md='5' gap='2')
+                    action-repeater(v-bind:options="[{'v1':'guau','v2':'a','v3':'','v4':''},{'v1':'miau','v2':'b','v3':'','v4':''},{'v1':'huh','v2':'c','v3':'','v4':''},{'v1':'rrrrrrr','v2':'d','v3':'','v4':''},{'v1':'hiiihi','v2':'e','v3':'','v4':''},{'v1':'boing','v2':'f','v3':'','v4':''},{'v1':'rawr','v2':'g','v3':'','v4':''},{'v1':'¡hola!','v2':'h','v3':'','v4':''},{'v1':'ssshh a','v2':'i','v3':'','v4':''},{'v1':'gghjj','v2':'j','v3':'','v4':''},{'v1':'ñnt','v2':'k','v3':'','v4':''},{'v1':'bzz','v2':'l','v3':'','v4':''},{'v1':'run','v2':'m','v3':'','v4':''},{'v1':'iiiiggggoioi','v2':'n','v3':'','v4':''},{'v1':'chuuu','v2':'o','v3':'','v4':''}]")
+                        template(#option='{v1,v2,v3,v4}')
+                            module-drop.h-16(name='drop1' design='1'  limit='0' v-bind:no-arrow='false' v-bind:horizontal='false' v-bind:answer='v2') {{v1}}
 
 
 
-            oda-titulo(title=titulo subtitle=subtitulo)
+                oda-titulo(title=titulo subtitle=subtitulo)
+                module-drag.mx-auto(v-bind:only-ok='false' v-bind:only-error='false' v-bind:allok='false' dropzone='drop1'  liner='0' connector='0' design='1' answer='a') ARRA 1
+                module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="1" class=" w-fit h-fit") ARRASTRAME
+
 
             //
                 module-drag(v-bind:only-ok='false' v-bind:only-error='true' v-bind:allok='false' dropzone='drop1' answer='' liner='0' connector='0' design='1') onlyError
@@ -33,10 +45,7 @@ html(lang="en")
                 module-drop.h-40(name='drop1' design='1' answer='a' limit='0' v-bind:no-arrow='false' v-bind:horizontal="true") Horizontal
                 module-drop.h-40(name='drop1' design='1' answer='a' limit='0' v-bind:no-arrow='false' ) Vertical
 
-            
-            oda-instruccion Arrastralas  fxemoji:alien que los textos funcionen como deben de funcionar y no haya problemas con el triangulo de las instrucciones.
-            oda-instruccion Encuentra fxemoji:alien los objetos.
-
+       
 
             //action-repeater(v-bind:options="[{v1:['fxemoji:crossmark', 'fxemoji:alien']}]")
                 template(#option="{v1}")    
@@ -214,5 +223,5 @@ html(lang="en")
 
 
             oda-finalizar
-        script(src=assetsPath+"loader.js" data="local" data-loader-version="v1.0.12")
+        script(src=assetsPath+"loader.js" data="local" data-loader-version="v1.1.2")
         

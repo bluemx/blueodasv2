@@ -80,3 +80,27 @@ app.component('util-text', {
         </div>
     `
 })
+
+app.component('util-text3d', {
+    props:{
+        class:String
+    },
+    setup(props, context){
+        
+        const item = ref(null)
+        const itemClass = ref(props.class || '')
+        
+        onMounted(()=>{
+
+        })
+        return {
+            itemClass,
+            item,
+        }
+    },
+    template: `
+        <div class="util-3dtext" :class="itemClass" data-z data-z-layers="3" data-z-depth="0.5em ref="item">
+            <slot></slot>
+        </div>
+    `
+})
