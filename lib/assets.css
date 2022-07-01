@@ -42,14 +42,46 @@ body {
 
 
 .z-layer:not(:first-child) {
-    filter: contrast(100%)
+    filter: contrast(100%);
 }
 [data-z="lighten"] .z-layer:not(:first-child) {
-    filter: contrast(140%)
+    filter: contrast(140%);
 }
 [data-z="darken"] .z-layer:not(:first-child) {
-    filter: contrast(60%)
+    filter: contrast(60%);
 }
+[data-z="fade"] .z-layer:not(:first-child) {
+    opacity: 0.2;
+}
+[data-z="hue-180"] .z-layer:not(:first-child) {
+    filter: hue-rotate(180deg);
+}
+[data-z="hue-135"] .z-layer:not(:first-child) {
+    filter: hue-rotate(135deg);
+}
+[data-z="hue-90"] .z-layer:not(:first-child) {
+    filter: hue-rotate(90deg);
+}
+[data-z="hue-45"] .z-layer:not(:first-child) {
+    filter: hue-rotate(45deg);
+}
+[data-z="hue-animate"] .z-layer:not(:first-child) {
+    animation: hueAnimate 3s infinite;
+}
+
+
+@keyframes hueAnimate {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    50% {
+        filter: hue-rotate(360deg);
+    }
+    100% {
+        filter: hue-rotate(0deg);
+    }
+}
+
 
 
 @keyframes zdataStart {
