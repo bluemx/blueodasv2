@@ -11,63 +11,105 @@
       <av-scene>
         <av-start></av-start>
       </av-scene>
-      <av-scene :automatic-scene="true" end-audio="audio.mp3" :force-oks="0">
+      <av-scene :automatic-scene="false" :force-oks="0">
         <av-info title="Ok"></av-info>
         <av-activity>
+          <div class="w-80 h-80 bg-gray-400 p-6 flex justify-center items-center">
+            <module-switch v-bind:button="true" button-icon="" v-bind:navigation="true" autoplay="0" v-bind:arrows="true">
+              <div class="text-9xl m-2" data-z="lighten">
+                <oda-icon name="fxemoji:alien"> </oda-icon>
+              </div>
+              <div class="text-5xl m-2">
+                <oda-icon name="fxemoji:cow"> </oda-icon>
+              </div>
+              <div class="text-5xl m-2">
+                <oda-icon name="fxemoji:tiger"> </oda-icon>
+              </div>
+              <div class="text-5xl m-2">
+                <oda-icon name="fxemoji:foxcrying"> </oda-icon>
+              </div>
+            </module-switch>
+          </div>
           <module-switch v-bind:button="true" button-icon="fxemoji:decreasefontsize" v-bind:navigation="false" autoplay="0"><span class="text-5xl" data-z="false"> 😃</span><span class="text-5xl" data-z="darken">
-              <oda-icon name="fxemoji:alien">a </oda-icon></span><span class="text-white 5xl drop-shadow-md" data-z="darken">Hola</span></module-switch><span class="text-5xl text-teal-500" data-z="fade">Fade</span><span class="text-5xl text-sec font-extrabold" data-z="hue-45">HUE</span><span class="text-5xl text-main font-extrabold" data-z="hue-90">HUE</span><span class="text-5xl text-accent font-extrabold" data-z="hue-135">HUE</span><span class="text-5xl text-teal-500 font-extrabold" data-z="hue-180">HUE</span><span class="text-5xl text-teal-500" data-z="hue-animate">¿ANIMATE! 😃</span><span class="text-5xl text-teal-500" data-z="lighten">Aclarar</span><span class="text-5xl text-gray-300 font-extrabold" data-z="darken">Oscurecer</span>
-          <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" :inmediate="true">
-            <div data-z="darken">
-              <div class="bg-white p-3 rounded shadow-oda">DRAG! OK</div>
-            </div>
-          </module-drag>
-          <module-drop class=" w-3/4 h-80 bg-pastel4" name="drop1" design="1" answer="a" limit="5" v-bind:no-arrow="false" v-bind:horizontal="true" :key="2"></module-drop>
-          <module-switch v-bind:button="true" button-icon="" v-bind:navigation="true" autoplay="1">
-            <div class="text-A">A</div>
-            <div class="text-A">b</div>
-            <div class="text-A">c</div>
-            <div class="text-A">d</div>
-            <div class="text-A">e</div>
-          </module-switch>
-          <!--div.flex.items-center
+              <oda-icon name="fxemoji:alien">a </oda-icon></span><span class="text-white 5xl drop-shadow-md" data-z="darken">Hola</span></module-switch>
+          <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" :inmediate="true" :duplicate="true"><span class="text-5xl text-sec font-extrabold" data-z="darken">❌</span></module-drag>
+          <module-dragclone class=" w-fit h-fit" dropzone="drop1" answer="a"><span class="text-5xl text-sec font-extrabold" data-z="hue-45">CLONE</span></module-dragclone>
+          <module-drop class=" w-40 h-40 bg-pastel4" name="drop1" design="1" answer="a" limit="5" v-bind:no-arrow="false"></module-drop>
+        </av-activity>
+      </av-scene>
+      <!--av-scene(:automatic-scene="true" end-audio="audio.mp3" :force-oks="0")
+      av-info(title="Ok")
+      av-activity
+      
+      
+          module-switch(class="" v-bind:button="true" button-icon="fxemoji:decreasefontsize" v-bind:navigation="false" autoplay="0")
+              span(data-z="false" class="text-5xl")  😃
+              span(data-z="darken" class="text-5xl"): oda-icon(name="fxemoji:alien") a 
+              span(data-z="darken" class="text-white 5xl drop-shadow-md") Hola
+          
+          
+          span(data-z="fade" class="text-5xl text-teal-500") Fade
+          span(data-z="hue-45" class="text-5xl text-sec font-extrabold") HUE
+          span(data-z="hue-90" class="text-5xl text-main font-extrabold") HUE
+          span(data-z="hue-135" class="text-5xl text-accent font-extrabold") HUE
+          span(data-z="hue-180" class="text-5xl text-teal-500 font-extrabold") HUE
+      
+          span(data-z="hue-animate" class="text-5xl text-teal-500") ¿ANIMATE! 😃
+          span(data-z="lighten" class="text-5xl text-teal-500") Aclarar
+          span(data-z="darken" class="text-5xl text-gray-300 font-extrabold") Oscurecer
+      
+      
           module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" class=" w-fit h-fit" :inmediate="true")
-              div DRAG! OK
+              div(data-z="darken"): div(class="bg-white p-3 rounded shadow-oda") DRAG! OK
           module-drop(name="drop1" design="1" answer="a" limit="5" class=" w-3/4 h-80 bg-pastel4" v-bind:no-arrow="false" v-bind:horizontal="true" :key="2")
-          -->
-          <!--
-          action-timeline(ok="1")
+      
+      
+          module-switch(class="" v-bind:button="true" button-icon="" v-bind:navigation="true" autoplay="1")
+              div(class="text-A") A
+              div(class="text-A") b
+              div(class="text-A") c
+              div(class="text-A") d
+              div(class="text-A") e
+          
+          
+          
+          //div.flex.items-center
               module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" class=" w-fit h-fit" :inmediate="true")
                   div DRAG! OK
-                  module-audio(audio="audio.mp3" :loop="true" :autoplay="true" :volume="0.2" :visible="true")
-              module-drop(name="drop1" design="1" answer="a" limit="5" class=" w-3/4 h-52 bg-pastel4" v-bind:no-arrow="false" v-bind:horizontal="true" :key="2")
-          action-timeline(show="1"autoplay)
-              module-select(:answer="true" :inmediate="true" class="text-xl") Click
-              action-timeline(ok="2")
-                  module-select(:answer="true" :inmediate="true" class="text-xl") Click 2
-          action-timeline(show="2")
-              module-select(:answer="true" :inmediate="true" class="text-xl") Click 3
-              module-select(:answer="true" :inmediate="true" class="text-xl") Click 3
-              module-select(:answer="true" :inmediate="true" class="text-xl") Click 3
+              module-drop(name="drop1" design="1" answer="a" limit="5" class=" w-3/4 h-80 bg-pastel4" v-bind:no-arrow="false" v-bind:horizontal="true" :key="2")
+          //
+              action-timeline(ok="1")
+                  module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" class=" w-fit h-fit" :inmediate="true")
+                      div DRAG! OK
+                      module-audio(audio="audio.mp3" :loop="true" :autoplay="true" :volume="0.2" :visible="true")
+                  module-drop(name="drop1" design="1" answer="a" limit="5" class=" w-3/4 h-52 bg-pastel4" v-bind:no-arrow="false" v-bind:horizontal="true" :key="2")
+              action-timeline(show="1"autoplay)
+                  module-select(:answer="true" :inmediate="true" class="text-xl") Click
+                  action-timeline(ok="2")
+                      module-select(:answer="true" :inmediate="true" class="text-xl") Click 2
+              action-timeline(show="2")
+                  module-select(:answer="true" :inmediate="true" class="text-xl") Click 3
+                  module-select(:answer="true" :inmediate="true" class="text-xl") Click 3
+                  module-select(:answer="true" :inmediate="true" class="text-xl") Click 3
+      
+      -->
+      <!--av-scene(:automatic-scene="true" :force-oks="3")
+      av-info
+      av-activity()
+          p ESCENA 2
+          module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" class=" w-fit h-fit" :inmediate="true") DRAG! OK
+          module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" class=" w-fit h-fit" :inmediate="true") DRAG! OK
+          module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" class=" w-fit h-fit" :inmediate="true") DRAG! OK
+          module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" class=" w-fit h-fit" :inmediate="true") DRAG! OK
+          module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="" liner="0" connector="0" design="" class=" w-fit h-fit" :inmediate="true") DRAG! NO
+      
+          module-drop(name="drop1" design="1" answer="a" limit="5" class=" w-3/4 h-52 bg-pastel4" v-bind:no-arrow="false" v-bind:horizontal="true" :key="2")
           
-          -->
-        </av-activity>
-      </av-scene>
-      <av-scene :automatic-scene="true" :force-oks="3">
-        <av-info></av-info>
-        <av-activity>
-          <p>ESCENA 2</p>
-          <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" :inmediate="true">DRAG! OK</module-drag>
-          <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" :inmediate="true">DRAG! OK</module-drag>
-          <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" :inmediate="true">DRAG! OK</module-drag>
-          <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" :inmediate="true">DRAG! OK</module-drag>
-          <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="" liner="0" connector="0" design="" :inmediate="true">DRAG! NO</module-drag>
-          <module-drop class=" w-3/4 h-52 bg-pastel4" name="drop1" design="1" answer="a" limit="5" v-bind:no-arrow="false" v-bind:horizontal="true" :key="2"></module-drop>
-          <!--action-timeline(completed="1")module-video(src="https://ucarecdn.com/98c620ec-b970-4ffa-b554-566b517e3cc6/" class="w-80" :autoplay="true")
-          -->
-          <!--action-timeline(show="1")av-button Continuar!
-          -->
-        </av-activity>
-      </av-scene>
+          //action-timeline(completed="1")
+              module-video(src="https://ucarecdn.com/98c620ec-b970-4ffa-b554-566b517e3cc6/" class="w-80" :autoplay="true")
+          //action-timeline(show="1")
+              av-button Continuar!
+      -->
       <!--av-scene(:automatic-scene="true")
       av-info(title="Un paseo muy alto" interaction="video")
           //

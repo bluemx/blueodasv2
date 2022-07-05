@@ -14,10 +14,35 @@ html(lang="en" style="height:100%")
             av-scene
                 av-start
             
-            av-scene(:automatic-scene="true" end-audio="audio.mp3" :force-oks="0")
+            av-scene(:automatic-scene="false" :force-oks="0")
                 av-info(title="Ok")
                 av-activity
+                    div.w-80.h-80.bg-gray-400.p-6.flex.justify-center.items-center
+                        module-switch(class="" v-bind:button="true" button-icon="" v-bind:navigation="true" autoplay="0" v-bind:arrows="true")
+                            div.text-9xl.m-2(data-z="lighten"): oda-icon(name="fxemoji:alien") 
+                            div.text-5xl.m-2: oda-icon(name="fxemoji:cow") 
+                            div.text-5xl.m-2: oda-icon(name="fxemoji:tiger") 
+                            div.text-5xl.m-2: oda-icon(name="fxemoji:foxcrying") 
                     
+                    
+                    module-switch(class="" v-bind:button="true" button-icon="fxemoji:decreasefontsize" v-bind:navigation="false" autoplay="0")
+                        span(data-z="false" class="text-5xl")  😃
+                        span(data-z="darken" class="text-5xl"): oda-icon(name="fxemoji:alien") a 
+                        span(data-z="darken" class="text-white 5xl drop-shadow-md") Hola
+
+
+
+                    module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" class=" w-fit h-fit" :inmediate="true" :duplicate="true")
+                        span(data-z="darken" class="text-5xl text-sec font-extrabold") ❌
+
+                    module-dragclone(dropzone="drop1" answer="a" class=" w-fit h-fit")
+                        span(data-z="hue-45" class="text-5xl text-sec font-extrabold") CLONE
+                    module-drop(name="drop1" design="1" answer="a" limit="5" class=" w-40 h-40 bg-pastel4" v-bind:no-arrow="false")
+
+            //av-scene(:automatic-scene="true" end-audio="audio.mp3" :force-oks="0")
+                av-info(title="Ok")
+                av-activity
+
 
                     module-switch(class="" v-bind:button="true" button-icon="fxemoji:decreasefontsize" v-bind:navigation="false" autoplay="0")
                         span(data-z="false" class="text-5xl")  😃
@@ -69,7 +94,7 @@ html(lang="en" style="height:100%")
                             module-select(:answer="true" :inmediate="true" class="text-xl") Click 3
                             module-select(:answer="true" :inmediate="true" class="text-xl") Click 3
 
-            av-scene(:automatic-scene="true" :force-oks="3")
+            //av-scene(:automatic-scene="true" :force-oks="3")
                 av-info
                 av-activity()
                     p ESCENA 2
