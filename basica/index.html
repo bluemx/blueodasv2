@@ -10,10 +10,9 @@
     <!--#app.container.mx-auto.my-5.animate__animated.animate__fadeIn.animate__delay-1s-->
     <div class="container mx-auto my-5" id="app">
       <oda-titulo title="Benito y Benito" subtitle=""></oda-titulo>
-      <module-drag v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="1">Hola</module-drag>
-      <module-drop class="w-40 h-40" name="drop1" design="" answer="a" limit="0" v-bind:no-arrow="false" v-bind:horizontal="false" v-bind:empty-is-error="true"></module-drop>
-      <module-drop class="w-40 h-40" name="drop1" design="" answer="a" limit="0" v-bind:no-arrow="false" v-bind:horizontal="false" v-bind:empty-is-error="false"></module-drop>
-      <module-drop class="w-40 h-40" name="drop1" design="" answer="a" limit="0" v-bind:no-arrow="false" v-bind:horizontal="false"></module-drop>
+      <div data-z="false">Probando</div>
+      <module-drag v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="1" v-bind:empty-is-error="false">Texto</module-drag>
+      <module-drop class="w-40 h-40" name="drop1" design="1" answer="a" limit="0" v-bind:no-arrow="false" v-bind:horizontal="false" v-bind:empty-is-error="false"></module-drop>
       <!--
       layout-grid(columns='5' columns-md='5' gap='2')
           action-repeater(v-bind:options="[{'v1':'Perro','v2':'a','v3':'','v4':''},{'v1':'Gato','v2':'b','v3':'','v4':''},{'v1':'Tortuga','v2':'c','v3':'','v4':''},{'v1':'Avión','v2':'d','v3':'','v4':''},{'v1':'Caballo','v2':'e','v3':'','v4':''},{'v1':'Pelota','v2':'f','v3':'','v4':''},{'v1':'Dinosaurio','v2':'g','v3':'','v4':''},{'v1':'Televisión','v2':'h','v3':'','v4':''},{'v1':'iPad','v2':'i','v3':'','v4':''},{'v1':'Lagartija','v2':'j','v3':'','v4':''},{'v1':'Hormiga','v2':'k','v3':'','v4':''},{'v1':'Abeja','v2':'l','v3':'','v4':''},{'v1':'Automóvil','v2':'m','v3':'','v4':''},{'v1':'Computadora','v2':'n','v3':'','v4':''},{'v1':'Barco','v2':'o','v3':'','v4':''}]")
@@ -199,6 +198,7 @@
       -->
       <oda-finalizar></oda-finalizar>
     </div>
-    <script src="../lib/loader.js" data="local" data-loader-version="v1.1.2"></script>
+    <script src="https://cdn.jsdelivr.net/gh/bluemx/blueodasv2@v1.2.20/lib/loader.min.js" data="local" data-loader-version="v1.2.20"></script>
+    <!--script(src=assetsPath+"loader.js" data="local" data-loader-version="v1.2.20")-->
   </body>
 </html>

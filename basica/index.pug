@@ -12,10 +12,10 @@ html(lang="en")
         //#app.container.mx-auto.my-5.animate__animated.animate__fadeIn.animate__delay-1s
         #app.container.mx-auto.my-5
             oda-titulo(title='Benito y Benito' subtitle='')
-            module-drag(v-bind:only-ok='false' v-bind:only-error='false' v-bind:allok='false' dropzone='drop1' answer='a' liner='0' connector='0' design='1') Hola
-            module-drop.w-40.h-40(name='drop1' design='' answer='a' limit='0' v-bind:no-arrow='false' v-bind:horizontal='false' v-bind:empty-is-error="true")
-            module-drop.w-40.h-40(name='drop1' design='' answer='a' limit='0' v-bind:no-arrow='false' v-bind:horizontal='false' v-bind:empty-is-error="false")
-            module-drop.w-40.h-40(name='drop1' design='' answer='a' limit='0' v-bind:no-arrow='false' v-bind:horizontal='false' )
+            
+            div(data-z='false') Probando
+            module-drag(v-bind:only-ok='false' v-bind:only-error='false' v-bind:allok='false' dropzone='drop1' answer='a' liner='0' connector='0' design='1' v-bind:empty-is-error='false') Texto
+            module-drop.w-40.h-40(name='drop1' design='1' answer='a' limit='0' v-bind:no-arrow='false' v-bind:horizontal='false' v-bind:empty-is-error='false')
 
             //
                 layout-grid(columns='5' columns-md='5' gap='2')
@@ -220,5 +220,6 @@ html(lang="en")
 
 
             oda-finalizar
-        script(src=assetsPath+"loader.js" data="local" data-loader-version="v1.1.2")
+        script(src="https://cdn.jsdelivr.net/gh/bluemx/blueodasv2@v1.2.20/lib/loader.min.js" data="local" data-loader-version="v1.2.20")
+        //script(src=assetsPath+"loader.js" data="local" data-loader-version="v1.2.20")
         
