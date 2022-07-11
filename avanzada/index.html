@@ -11,43 +11,108 @@
       <av-scene>
         <av-start></av-start>
       </av-scene>
-      <av-scene :automatic-scene="false" :force-oks="0">
-        <av-info title="Bienvenido a mi casa en el patio" interaction="drag">
-          <div>Hola, me llamo Mauricio y vivo en en el patio de mi casa. Soy un topo y nunca he vivivo en otra parte.</div>
-          <div>Hoy te invitaré a conocer mi casa desde un nuevo punto de vista.</div>
-          <div>Arrastra los sonidos a donde corresponden.</div>
-        </av-info>
+      <av-scene :automatic-scene="true" :force-oks="0">
+        <av-info title="Test" interaction="drag"></av-info>
         <av-activity>
-          <!--div.w-80.h-80.bg-gray-400.p-6.flex.justify-center.items-center
-          module-switch(class="" v-bind:button="true" button-icon="" v-bind:navigation="true" autoplay="0" v-bind:arrows="true")
-              div.text-9xl.m-2(data-z="lighten"): oda-icon(name="fxemoji:alien") 
-              div.text-5xl.m-2: oda-icon(name="fxemoji:cow") 
-              div.text-5xl.m-2: oda-icon(name="fxemoji:tiger") 
-              div.text-5xl.m-2: oda-icon(name="fxemoji:foxcrying") 
-          
-          
-          -->
-          <!--module-switch(class="" v-bind:button="true" button-icon="fxemoji:decreasefontsize" v-bind:navigation="false" autoplay="0")
-          span(data-z="false" class="text-5xl")  😃
-          span(data-z="darken" class="text-5xl"): oda-icon(name="fxemoji:alien") a 
-          span(data-z="darken" class="text-white 5xl drop-shadow-md") Hola
-          
-          
-          
-          
-          -->
-          <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" :inmediate="true" :clone="true"><span class="text-5xl text-sec font-extrabold" data-z="darken">👾</span></module-drag>
-          <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="b" liner="0" connector="0" design="" :inmediate="true" :clone="true"><span class="text-5xl text-sec font-extrabold" data-z="darken">🪲</span></module-drag>
-          <!--
-          module-dragclone(dropzone="drop1" answer="a" class=" w-fit h-fit"): span(data-z="hue-45" class="text-5xl text-sec font-extrabold") A
-          module-dragclone(dropzone="drop1" answer="a" class=" w-fit h-fit"): span(data-z="hue-45" class="text-5xl text-sec font-extrabold") B
-          module-dragclone(dropzone="drop1" answer="a" class=" w-fit h-fit"): span(data-z="hue-45" class="text-5xl text-sec font-extrabold") C
-          
-          -->
-          <module-drop class=" w-full h-40 bg-pastel4" name="drop1" design="1" answer="a" limit="10" v-bind:no-arrow="false" v-bind:horizontal="true"></module-drop>
-          <module-drop class=" w-full h-40 bg-pastel4 mt-1" name="drop2" design="1" answer="a" limit="5" v-bind:no-arrow="false" v-bind:horizontal="true"></module-drop>
+          <div class="my-10">
+            <action-dialog :display-result="true">
+              <module-choice :display-ok="true" :inmediate="true" v-bind:answer="0" v-bind:allok="false" v-bind:options="[{v1:'fxemoji:alien', v2:'https://picsum.photos/100/100'}, {v1:'fxemoji:bactriancamel', v2:'https://picsum.photos/60/60'}, {v1:'fxemoji:wolfface', v2:'https://picsum.photos/50/50'}]">
+                <template #option="{ v1, v2 }">
+                  <layout-box class="w-32" design="0">
+                    <oda-icon class="text-4xl" :name="v1"></oda-icon>
+                  </layout-box>
+                </template>
+              </module-choice>
+            </action-dialog>
+            <action-dialog :display-result="false">
+              <module-choice :display-ok="true" :inmediate="true" v-bind:answer="0" v-bind:allok="false" v-bind:options="[{v1:'fxemoji:alien', v2:'https://picsum.photos/100/100'}, {v1:'fxemoji:bactriancamel', v2:'https://picsum.photos/60/60'}, {v1:'fxemoji:wolfface', v2:'https://picsum.photos/50/50'}]">
+                <template #option="{ v1, v2 }">
+                  <layout-box class="w-32" design="0">
+                    <oda-icon class="text-4xl" :name="v1"></oda-icon>
+                  </layout-box>
+                </template>
+              </module-choice>
+            </action-dialog>
+          </div>
+          <div class="grid grid-cols-2 gap-10">
+            <div>
+              <div class="w-40 h-40 bg-white flex items-center justify-center">
+                <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="1" connector="1" design="" :inmediate="true" :clone="false"></module-drag>
+              </div>
+              <div class="w-40 h-40 bg-white flex items-center justify-center">
+                <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="1" connector="1" design="" :inmediate="true" :clone="false"></module-drag>
+              </div>
+            </div>
+            <div>
+              <div class="w-40 h-40 bg-dark flex items-center justify-center">
+                <module-drop class=" w-full h-40 bg-pastel4" name="drop1" design="1" answer="a" limit="10" v-bind:no-arrow="false" v-bind:horizontal="true"></module-drop>
+              </div>
+              <div class="w-40 h-40 bg-dark flex items-center justify-center">
+                <module-drop class=" w-full h-40 bg-pastel4" name="drop1" design="1" answer="a" limit="10" v-bind:no-arrow="false" v-bind:horizontal="true"></module-drop>
+              </div>
+            </div>
+          </div>
         </av-activity>
       </av-scene>
+      <av-scene :automatic-scene="true" :force-oks="0">
+        <av-info title="Test" interaction="drag"></av-info>
+        <av-activity>
+          <div class="grid grid-cols-4 gap-10">
+            <div class="w-40 h-40 bg-white flex items-center justify-center">
+              <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="1" connector="1" design="" :inmediate="true" :clone="false"></module-drag>
+            </div>
+            <div class="w-40 h-40 bg-white flex items-center justify-center">
+              <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="1" connector="1" design="" :inmediate="true" :clone="false"></module-drag>
+            </div>
+            <div class="w-40 h-40 bg-dark flex items-center justify-center">
+              <module-drop class=" w-full h-40 bg-pastel4" name="drop1" design="1" answer="a" limit="10" v-bind:no-arrow="false" v-bind:horizontal="true"></module-drop>
+            </div>
+            <div class="w-40 h-40 bg-dark flex items-center justify-center">
+              <module-drop class=" w-full h-40 bg-pastel4" name="drop1" design="1" answer="a" limit="10" v-bind:no-arrow="false" v-bind:horizontal="true"></module-drop>
+            </div>
+          </div>
+        </av-activity>
+      </av-scene>
+      <!--av-scene(:automatic-scene="false" :force-oks="0")
+      av-info(title="Bienvenido a mi casa en el patio" interaction="drag")
+          div Hola, me llamo Mauricio y vivo en en el patio de mi casa. Soy un topo y nunca he vivivo en otra parte.
+          div Hoy te invitaré a conocer mi casa desde un nuevo punto de vista.
+          div Arrastra los sonidos a donde corresponden.
+      av-activity
+          
+          //div.w-80.h-80.bg-gray-400.p-6.flex.justify-center.items-center
+              module-switch(class="" v-bind:button="true" button-icon="" v-bind:navigation="true" autoplay="0" v-bind:arrows="true")
+                  div.text-9xl.m-2(data-z="lighten"): oda-icon(name="fxemoji:alien") 
+                  div.text-5xl.m-2: oda-icon(name="fxemoji:cow") 
+                  div.text-5xl.m-2: oda-icon(name="fxemoji:tiger") 
+                  div.text-5xl.m-2: oda-icon(name="fxemoji:foxcrying") 
+          
+          
+          //module-switch(class="" v-bind:button="true" button-icon="fxemoji:decreasefontsize" v-bind:navigation="false" autoplay="0")
+              span(data-z="false" class="text-5xl")  😃
+              span(data-z="darken" class="text-5xl"): oda-icon(name="fxemoji:alien") a 
+              span(data-z="darken" class="text-white 5xl drop-shadow-md") Hola
+      
+      
+      
+          
+          module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" class=" w-fit h-fit" :inmediate="true" :clone="true")
+              span(data-z="darken" class="text-5xl text-sec font-extrabold" ) 👾
+          
+          module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="b" liner="0" connector="0" design="" class=" w-fit h-fit" :inmediate="true" :clone="true")
+              span(data-z="darken" class="text-5xl text-sec font-extrabold" ) 🪲
+          
+       
+          //
+              module-dragclone(dropzone="drop1" answer="a" class=" w-fit h-fit"): span(data-z="hue-45" class="text-5xl text-sec font-extrabold") A
+              module-dragclone(dropzone="drop1" answer="a" class=" w-fit h-fit"): span(data-z="hue-45" class="text-5xl text-sec font-extrabold") B
+              module-dragclone(dropzone="drop1" answer="a" class=" w-fit h-fit"): span(data-z="hue-45" class="text-5xl text-sec font-extrabold") C
+          
+          module-drop(name="drop1" design="1" answer="a" limit="10" class=" w-full h-40 bg-pastel4" v-bind:no-arrow="false"  v-bind:horizontal="true")
+          
+          module-drop(name="drop2" design="1" answer="a" limit="5" class=" w-full h-40 bg-pastel4 mt-1" v-bind:no-arrow="false"  v-bind:horizontal="true")
+      
+      -->
       <!--av-scene(:automatic-scene="true" end-audio="audio.mp3" :force-oks="0")
       av-info(title="Ok")
       av-activity
