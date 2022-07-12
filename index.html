@@ -1,0 +1,59 @@
+<html>
+    <head>
+        
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.min.css" rel="stylesheet" />
+        
+    </head>
+    <body>
+        <div class="bg-teal-500 p-10">
+            <h1 class="text-4xl text-center p-5 text-white">Básica</h1>
+            <!-- iframe -->
+            <iframe style="width:100%" id="theIframe" src="basica/" frameborder="0"></iframe>
+            <!-- respuesta -->
+
+            <div class="bg-yellow-400 p-4 m-4 break-all w-fit" >RESPUESTA</div>
+            <pre class="!whitespace-pre-wrap"><code id="theData" class="language-json">{}</code></pre>
+
+
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js"></script>
+        <script>
+
+            // BASICAS
+            
+            let theIframe = document.getElementById('theIframe')
+            let theData = document.getElementById('theData')
+            // Recibir postMessage
+            window.addEventListener("message", (event) => {
+                // Recibir height
+                if(event.data.height){
+                    theIframe.style.height = event.data.height+'px'
+                }
+                // Recibir data
+                if(!event.data.height) {
+                    // Resultados
+                    let resultados = event.data
+                    
+                    // Mostrar data en html
+                    theData.innerHTML = Prism.highlight(resultados, Prism.languages.json, 'json')
+                }
+                
+            })
+
+
+            setTimeout(()=>{
+                console.log('outline!')
+                theIframe.contentWindow.postMessage({activeDataId:'abc123'}, "*");
+            }, 1000)
+            setTimeout(()=>{
+                console.log('outline!')
+                theIframe.contentWindow.postMessage({activeDataId:'123abc'}, "*");
+            }, 2000)
+            
+            
+        </script>
+    </body>
+</html>
