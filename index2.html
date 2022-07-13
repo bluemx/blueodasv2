@@ -1,0 +1,50 @@
+<html>
+    <head>
+        
+        <script src="https://cdn.tailwindcss.com"></script>
+        
+    </head>
+    <body>
+        <div class="bg-teal-500 p-10">
+            <h1 class="text-4xl text-center p-5 text-white">Básica</h1>
+            <!-- iframe -->
+            <iframe style="width:100%" id="theIframe" src="https://bluemx.github.io/blueodasv2/basica/" frameborder="0"></iframe>
+            <!-- respuesta -->
+
+            <div class="bg-yellow-400 p-4 m-4 break-all w-fit" >RESPUESTA</div>
+            <pre><code id="theData">{}</code></pre>
+
+
+        </div>
+
+
+        <script>
+
+            // BASICAS
+            
+            let theIframe = document.getElementById('theIframe')
+            let theData = document.getElementById('theData')
+            // Recibir postMessage
+            window.addEventListener("message", (event) => {
+                // Recibir height
+                if(event.data.height){
+                    theIframe.style.height = event.data.height+'px'
+                }
+                // Recibir data
+                if(!event.data.height) {
+                    // Resultados
+                    let resultados = event.data
+                    
+                    // Mostrar data en html
+                    theData.innerHTML = resultados
+                }
+                
+            })
+
+
+           
+            
+            
+        </script>
+    </body>
+</html>
