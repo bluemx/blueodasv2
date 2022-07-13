@@ -34,6 +34,12 @@
           <action-timeline show="3">
             <div>Timeline 3</div>
           </action-timeline>
+          <action-timeline>
+            <module-select class="text-xl" :answer="true" :inmediate="true">Click Me!</module-select>
+          </action-timeline>
+          <module-switch class="m-5 p-5" v-bind:button="false" button-icon="" v-bind:navigation="true" autoplay="0">
+            <module-select class="text-xl" :answer="true" :inmediate="true">Click Me!</module-select><span class="text-5xl" data-z="darken">👻</span>
+          </module-switch>
           <!--DIALOG - CHOICE-->
           <!--div.my-10
           action-dialog(:display-result="true")
@@ -97,10 +103,7 @@
                   div.text-5xl.m-2: oda-icon(name="fxemoji:foxcrying") 
           
           
-          //module-switch(class="" v-bind:button="true" button-icon="fxemoji:decreasefontsize" v-bind:navigation="false" autoplay="0")
-              span(data-z="false" class="text-5xl")  😃
-              span(data-z="darken" class="text-5xl"): oda-icon(name="fxemoji:alien") a 
-              span(data-z="darken" class="text-white 5xl drop-shadow-md") Hola
+          
       
       
       
@@ -256,7 +259,7 @@
         <av-end></av-end>
       </av-scene>
     </div>
-    <script src="../lib/loader.js" data-loader-version="v1.2.26"></script>
-    <!--script(src=assetsPath+"loader.js" data="local" data-loader-version="v1.1.0")-->
+    <!--script(src=assetsPath+"loader.js" data-loader-version="v1.2.26")-->
+    <script src="../lib/loader.js" data="local" data-loader-version="v1.1.0"></script>
   </body>
 </html>

@@ -29,6 +29,14 @@ html(lang="en" style="height:100%")
                     action-timeline(show="1"): div Timeline 1
                     action-timeline(show="2"): div Timeline 2
                     action-timeline(show="3"): div Timeline 3
+                    
+                    action-timeline()
+                        module-select(:answer="true" :inmediate="true" class="text-xl") Click Me!
+
+                    module-switch(class="m-5 p-5" v-bind:button="false" button-icon="" v-bind:navigation="true" autoplay="0" )
+                        module-select(:answer="true" :inmediate="true" class="text-xl") Click Me!
+                        span(data-z="darken" class="text-5xl") 👻
+
                     //DIALOG - CHOICE
                     //div.my-10
                         action-dialog(:display-result="true")
@@ -87,10 +95,7 @@ html(lang="en" style="height:100%")
                             div.text-5xl.m-2: oda-icon(name="fxemoji:foxcrying") 
                     
                     
-                    //module-switch(class="" v-bind:button="true" button-icon="fxemoji:decreasefontsize" v-bind:navigation="false" autoplay="0")
-                        span(data-z="false" class="text-5xl")  😃
-                        span(data-z="darken" class="text-5xl"): oda-icon(name="fxemoji:alien") a 
-                        span(data-z="darken" class="text-white 5xl drop-shadow-md") Hola
+                    
 
 
 
@@ -241,5 +246,5 @@ html(lang="en" style="height:100%")
                 av-end
 
 
-        script(src=assetsPath+"loader.js" data-loader-version="v1.2.26")
-        //script(src=assetsPath+"loader.js" data="local" data-loader-version="v1.1.0")
+        //script(src=assetsPath+"loader.js" data-loader-version="v1.2.26")
+        script(src=assetsPath+"loader.js" data="local" data-loader-version="v1.1.0")
