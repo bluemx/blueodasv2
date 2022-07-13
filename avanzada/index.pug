@@ -24,18 +24,19 @@ html(lang="en" style="height:100%")
                             module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="1" class=" w-fit h-fit" :inmediate="true") DRAG! OK
                             module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="1" class=" w-fit h-fit" :inmediate="true") DRAG! OK
                             module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="1" class=" w-fit h-fit" :inmediate="true") DRAG! OK
-                    action-timeline(hide="1" completed="1")
+                    action-timeline(hide="1" completed="1" :multiok="[]")
                         module-drop(:emit-completed="true" name="drop1" design="1" answer="a" limit="3" class=" w-3/4 h-80 bg-pastel4" v-bind:no-arrow="false" v-bind:horizontal="true" :key="2")
-                    action-timeline(show="1"): div Timeline 1
+                    action-timeline(show="1" ): div Timeline 1
                     action-timeline(show="2"): div Timeline 2
                     action-timeline(show="3"): div Timeline 3
                     
-                    action-timeline()
+                    action-timeline(:multiok="[]")
                         module-select(:answer="true" :inmediate="true" class="text-xl") Click Me!
 
                     module-switch(class="m-5 p-5" v-bind:button="false" button-icon="" v-bind:navigation="true" autoplay="0" )
                         module-select(:answer="true" :inmediate="true" class="text-xl") Click Me!
                         span(data-z="darken" class="text-5xl") 👻
+                        
 
                     //DIALOG - CHOICE
                     //div.my-10
