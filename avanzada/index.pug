@@ -33,15 +33,16 @@ html(lang="en" style="height:100%")
                     action-timeline(:multiok="[]")
                         module-select(:answer="true" :inmediate="true" class="text-xl") Click Me!
 
-                    module-switch(class="m-5 p-5" v-bind:button="false" button-icon="" v-bind:navigation="true" autoplay="0" )
+                    module-switch(class="m-5 p-5" v-bind:button="false" button-icon="" v-bind:navigation="false" autoplay="0" :ok-next="true")
                         module-select(:answer="true" :inmediate="true" class="text-xl") Click Me!
-                        span(data-z="darken" class="text-5xl") 👻
+                        module-select(:answer="true" :inmediate="true" class="text-xl") Click Me2
+                        module-select(:answer="true" :inmediate="true" class="text-xl") Click Me3
                         
-                    module-switch(class="m-5 p-5" v-bind:button="false" button-icon="" v-bind:navigation="true" autoplay="0" )
+                    module-switch(class="m-5 p-5" v-bind:button="false" button-icon="" v-bind:navigation="false" autoplay="0" :completed-next="true")
                         action-delay(time="2" class="p-1 bg-white rounded")
                         span(data-z="darken" class="text-6xl") 👻
                     
-                    module-switch(class="m-5 p-5" v-bind:button="false" button-icon="" v-bind:navigation="true" autoplay="0" )
+                    module-switch(class="m-5 p-5" v-bind:button="false" button-icon="" v-bind:navigation="false" autoplay="0" :completed-next="true")
                         av-button(:emit-completed="true") Hola!
                         span(data-z="darken" class="text-6xl") 👻
                         
