@@ -37,6 +37,14 @@ html(lang="en" style="height:100%")
                         module-select(:answer="true" :inmediate="true" class="text-xl") Click Me!
                         span(data-z="darken" class="text-5xl") 👻
                         
+                    module-switch(class="m-5 p-5" v-bind:button="false" button-icon="" v-bind:navigation="true" autoplay="0" )
+                        action-delay(time="2" class="p-1 bg-white rounded")
+                        span(data-z="darken" class="text-6xl") 👻
+                    
+                    module-switch(class="m-5 p-5" v-bind:button="false" button-icon="" v-bind:navigation="true" autoplay="0" )
+                        av-button(:emit-completed="true") Hola!
+                        span(data-z="darken" class="text-6xl") 👻
+                        
 
                     //DIALOG - CHOICE
                     //div.my-10
