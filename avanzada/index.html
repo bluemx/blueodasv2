@@ -11,74 +11,97 @@
       <av-scene>
         <av-start></av-start>
       </av-scene>
-      <av-scene :automatic-scene="true" :force-oks="0">
+      <av-scene :automatic-scene="false" :force-oks="0">
         <av-info title="Test" interaction="drag"></av-info>
         <av-activity>
-          <layout-grid columns="4">
-            <action-timeline :multiok="[['', ''], ['', 'audio.mp3'], ['3', 'iserror.mp3']]">
-              <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="1" :inmediate="true">DRAG! OK</module-drag>
-              <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="1" :inmediate="true">DRAG! OK</module-drag>
-              <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="1" :inmediate="true">DRAG! OK</module-drag>
-              <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="1" :inmediate="true">DRAG! OK</module-drag>
-            </action-timeline>
+          <layout-grid class="w-full" columns="2">
+            <div>
+              <div class="bg-white w-40 h-20 flex justify-center items-center rounded-xl my-2">
+                <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="1" connector="0" design="1" :inmediate="true">Liner 1</module-drag>
+              </div>
+              <div class="bg-white w-40 h-20 flex justify-center items-center rounded-xl my-2">
+                <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="2" connector="0" design="1" :inmediate="true">Liner 2</module-drag>
+              </div>
+              <div class="bg-white w-40 h-20 flex justify-center items-center rounded-xl my-2">
+                <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="3" connector="0" design="1" :inmediate="true">Liner 3</module-drag>
+              </div>
+              <div class="bg-white w-40 h-20 flex justify-center items-center rounded-xl my-2">
+                <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="4" connector="0" design="1" :inmediate="true">Liner 4</module-drag>
+              </div>
+              <div class="bg-white w-40 h-20 flex justify-center items-center rounded-xl">
+                <module-drag class=" w-fit h-fit" v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="5" connector="0" design="1" :inmediate="true">Liner 5</module-drag>
+              </div>
+            </div>
+            <div>
+              <module-drop class=" w-40 h-20 bg-pastel4 rounded-xl" :emit-completed="true" name="drop1" design="1" answer="a" limit="3" v-bind:no-arrow="false" v-bind:horizontal="false" :key="2"></module-drop>
+              <module-drop class=" w-40 h-20 bg-pastel4 rounded-xl" :emit-completed="true" name="drop1" design="1" answer="a" limit="3" v-bind:no-arrow="false" v-bind:horizontal="false" :key="2"></module-drop>
+              <module-drop class=" w-40 h-20 bg-pastel4 rounded-xl" :emit-completed="true" name="drop1" design="1" answer="a" limit="3" v-bind:no-arrow="false" v-bind:horizontal="false" :key="2"></module-drop>
+              <module-drop class=" w-40 h-20 bg-pastel4 rounded-xl my-5" :emit-completed="true" name="drop1" design="1" answer="a" limit="3" v-bind:no-arrow="false" v-bind:horizontal="false" :key="2"></module-drop>
+              <module-drop class=" w-40 h-20 bg-pastel4 rounded-xl" :emit-completed="true" name="drop1" design="1" answer="a" limit="3" v-bind:no-arrow="false" v-bind:horizontal="false" :key="2"></module-drop>
+            </div>
           </layout-grid>
-          <action-timeline hide="1" completed="1" :multiok="[]">
-            <module-drop class=" w-3/4 h-80 bg-pastel4" :emit-completed="true" name="drop1" design="1" answer="a" limit="3" v-bind:no-arrow="false" v-bind:horizontal="true" :key="2"></module-drop>
-          </action-timeline>
-          <action-timeline show="1">
-            <div>Timeline 1</div>
-          </action-timeline>
-          <action-timeline show="2">
-            <div>Timeline 2</div>
-          </action-timeline>
-          <action-timeline show="3">
-            <div>Timeline 3</div>
-          </action-timeline>
-          <action-timeline :multiok="[]">
-            <module-select class="text-xl" :answer="true" :inmediate="true">Click Me!</module-select>
-          </action-timeline>
-          <module-switch class="m-5 p-5" v-bind:button="false" button-icon="" v-bind:navigation="false" autoplay="0" :ok-next="true">
-            <module-select class="text-xl" :answer="true" :inmediate="true">Click Me!</module-select>
-            <module-select class="text-xl" :answer="true" :inmediate="true">Click Me2</module-select>
-            <module-select class="text-xl" :answer="true" :inmediate="true">Click Me3</module-select>
-          </module-switch>
-          <module-switch class="m-5 p-5" v-bind:button="false" button-icon="" v-bind:navigation="false" autoplay="0" :completed-next="true">
-            <action-delay class="p-1 bg-white rounded" time="2"></action-delay><span class="text-6xl" data-z="darken">👻</span>
-          </module-switch>
-          <module-switch class="m-5 p-5" v-bind:button="false" button-icon="" v-bind:navigation="false" autoplay="0" :completed-next="true">
-            <av-button :emit-completed="true">Hola!</av-button><span class="text-6xl" data-z="darken">👻</span>
-          </module-switch>
-          <!--DIALOG - CHOICE-->
-          <!--div.my-10
-          action-dialog(:display-result="true")
-              module-choice(:display-ok="true" :inmediate="true" class="" v-bind:answer="0" v-bind:allok="false" v-bind:options="[{v1:'fxemoji:alien', v2:'https://picsum.photos/100/100'}, {v1:'fxemoji:bactriancamel', v2:'https://picsum.photos/60/60'}, {v1:'fxemoji:wolfface', v2:'https://picsum.photos/50/50'}]")
-                  template(#option="{ v1, v2 }")
-                      layout-box(design="0" class="w-32")
-                          oda-icon(:name="v1" class="text-4xl")
-          -->
-          <!--    
-          action-dialog(:display-result="false")
-              module-choice(:display-ok="true" :inmediate="true" class="" v-bind:answer="0" v-bind:allok="false" v-bind:options="[{v1:'fxemoji:alien', v2:'https://picsum.photos/100/100'}, {v1:'fxemoji:bactriancamel', v2:'https://picsum.photos/60/60'}, {v1:'fxemoji:wolfface', v2:'https://picsum.photos/50/50'}]")
-                  template(#option="{ v1, v2 }")
-                      layout-box(design="0" class="w-32")
-                          oda-icon(:name="v1" class="text-4xl")
-          
-          
-          
-          .grid.grid-cols-2.gap-10
-              div
-                  div.w-40.h-40.bg-white.flex.items-center.justify-center
-                      module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="1" connector="1" design="" class=" w-fit h-fit" :inmediate="true" :clone="false")
-                  div.w-40.h-40.bg-white.flex.items-center.justify-center
-                      module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="1" connector="1" design="" class=" w-fit h-fit" :inmediate="true" :clone="false")
-              div
-                  div.w-40.h-40.bg-dark.flex.items-center.justify-center
-                      module-drop(name="drop1" design="1" answer="a" limit="10" class=" w-full h-40 bg-pastel4" v-bind:no-arrow="false"  v-bind:horizontal="true")
-                  div.w-40.h-40.bg-dark.flex.items-center.justify-center
-                      module-drop(name="drop1" design="1" answer="a" limit="10" class=" w-full h-40 bg-pastel4" v-bind:no-arrow="false"  v-bind:horizontal="true")
-          -->
         </av-activity>
       </av-scene>
+      <!--av-scene(:automatic-scene="true" :force-oks="0")
+      av-info(title="Test" interaction="drag")
+      av-activity
+          layout-grid(columns=4)
+              action-timeline(:multiok="[['', ''], ['', 'audio.mp3'], ['3', 'iserror.mp3']]" )
+                  module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="1" class=" w-fit h-fit" :inmediate="true") DRAG! OK
+                  module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="1" class=" w-fit h-fit" :inmediate="true") DRAG! OK
+                  module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="1" class=" w-fit h-fit" :inmediate="true") DRAG! OK
+                  module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="1" class=" w-fit h-fit" :inmediate="true") DRAG! OK
+          action-timeline(hide="1" completed="1" :multiok="[]")
+              module-drop(:emit-completed="true" name="drop1" design="1" answer="a" limit="3" class=" w-3/4 h-80 bg-pastel4" v-bind:no-arrow="false" v-bind:horizontal="true" :key="2")
+          action-timeline(show="1" ): div Timeline 1
+          action-timeline(show="2"): div Timeline 2
+          action-timeline(show="3"): div Timeline 3
+          
+          action-timeline(:multiok="[]")
+              module-select(:answer="true" :inmediate="true" class="text-xl") Click Me!
+      
+          module-switch(class="m-5 p-5" v-bind:button="false" button-icon="" v-bind:navigation="false" autoplay="0" :ok-next="true")
+              module-select(:answer="true" :inmediate="true" class="text-xl") Click Me!
+              module-select(:answer="true" :inmediate="true" class="text-xl") Click Me2
+              module-select(:answer="true" :inmediate="true" class="text-xl") Click Me3
+              
+          module-switch(class="m-5 p-5" v-bind:button="false" button-icon="" v-bind:navigation="false" autoplay="0" :completed-next="true")
+              action-delay(time="2" class="p-1 bg-white rounded")
+              span(data-z="darken" class="text-6xl") 👻
+          
+          module-switch(class="m-5 p-5" v-bind:button="false" button-icon="" v-bind:navigation="false" autoplay="0" :completed-next="true")
+              av-button(:emit-completed="true") Hola!
+              span(data-z="darken" class="text-6xl") 👻
+              
+      
+          //DIALOG - CHOICE
+          //div.my-10
+              action-dialog(:display-result="true")
+                  module-choice(:display-ok="true" :inmediate="true" class="" v-bind:answer="0" v-bind:allok="false" v-bind:options="[{v1:'fxemoji:alien', v2:'https://picsum.photos/100/100'}, {v1:'fxemoji:bactriancamel', v2:'https://picsum.photos/60/60'}, {v1:'fxemoji:wolfface', v2:'https://picsum.photos/50/50'}]")
+                      template(#option="{ v1, v2 }")
+                          layout-box(design="0" class="w-32")
+                              oda-icon(:name="v1" class="text-4xl")
+          //    
+              action-dialog(:display-result="false")
+                  module-choice(:display-ok="true" :inmediate="true" class="" v-bind:answer="0" v-bind:allok="false" v-bind:options="[{v1:'fxemoji:alien', v2:'https://picsum.photos/100/100'}, {v1:'fxemoji:bactriancamel', v2:'https://picsum.photos/60/60'}, {v1:'fxemoji:wolfface', v2:'https://picsum.photos/50/50'}]")
+                      template(#option="{ v1, v2 }")
+                          layout-box(design="0" class="w-32")
+                              oda-icon(:name="v1" class="text-4xl")
+              
+      
+      
+              .grid.grid-cols-2.gap-10
+                  div
+                      div.w-40.h-40.bg-white.flex.items-center.justify-center
+                          module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="1" connector="1" design="" class=" w-fit h-fit" :inmediate="true" :clone="false")
+                      div.w-40.h-40.bg-white.flex.items-center.justify-center
+                          module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="1" connector="1" design="" class=" w-fit h-fit" :inmediate="true" :clone="false")
+                  div
+                      div.w-40.h-40.bg-dark.flex.items-center.justify-center
+                          module-drop(name="drop1" design="1" answer="a" limit="10" class=" w-full h-40 bg-pastel4" v-bind:no-arrow="false"  v-bind:horizontal="true")
+                      div.w-40.h-40.bg-dark.flex.items-center.justify-center
+                          module-drop(name="drop1" design="1" answer="a" limit="10" class=" w-full h-40 bg-pastel4" v-bind:no-arrow="false"  v-bind:horizontal="true")
+      -->
       <!--av-scene(:automatic-scene="true" :force-oks="0")
       av-info(title="Test" interaction="drag")
       av-activity

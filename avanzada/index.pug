@@ -13,9 +13,30 @@ html(lang="en" style="height:100%")
         #app.mx-auto.h-full(v-cloak)
             av-scene
                 av-start
-            
+        
+            av-scene(:automatic-scene="false" :force-oks="0")
+                av-info(title="Test" interaction="drag")
+                av-activity
+                    layout-grid(columns=2 class="w-full")
+                        div
+                            div(class="bg-white w-40 h-20 flex justify-center items-center rounded-xl my-2")
+                                module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="1" connector="0" design="1" class=" w-fit h-fit" :inmediate="true") Liner 1
+                            div(class="bg-white w-40 h-20 flex justify-center items-center rounded-xl my-2")
+                                module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="2" connector="0" design="1" class=" w-fit h-fit" :inmediate="true") Liner 2
+                            div(class="bg-white w-40 h-20 flex justify-center items-center rounded-xl my-2")
+                                module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="3" connector="0" design="1" class=" w-fit h-fit" :inmediate="true") Liner 3
+                            div(class="bg-white w-40 h-20 flex justify-center items-center rounded-xl my-2")
+                                module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="4" connector="0" design="1" class=" w-fit h-fit" :inmediate="true") Liner 4
+                            div(class="bg-white w-40 h-20 flex justify-center items-center rounded-xl")
+                                module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="5" connector="0" design="1" class=" w-fit h-fit" :inmediate="true") Liner 5
+                        div
+                            module-drop(:emit-completed="true" name="drop1" design="1" answer="a" limit="3" class=" w-40 h-20 bg-pastel4 rounded-xl" v-bind:no-arrow="false" v-bind:horizontal="false" :key="2")
+                            module-drop(:emit-completed="true" name="drop1" design="1" answer="a" limit="3" class=" w-40 h-20 bg-pastel4 rounded-xl" v-bind:no-arrow="false" v-bind:horizontal="false" :key="2")
+                            module-drop(:emit-completed="true" name="drop1" design="1" answer="a" limit="3" class=" w-40 h-20 bg-pastel4 rounded-xl" v-bind:no-arrow="false" v-bind:horizontal="false" :key="2")
+                            module-drop(:emit-completed="true" name="drop1" design="1" answer="a" limit="3" class=" w-40 h-20 bg-pastel4 rounded-xl my-5" v-bind:no-arrow="false" v-bind:horizontal="false" :key="2")
+                            module-drop(:emit-completed="true" name="drop1" design="1" answer="a" limit="3" class=" w-40 h-20 bg-pastel4 rounded-xl" v-bind:no-arrow="false" v-bind:horizontal="false" :key="2")
 
-            av-scene(:automatic-scene="true" :force-oks="0")
+            //av-scene(:automatic-scene="true" :force-oks="0")
                 av-info(title="Test" interaction="drag")
                 av-activity
                     layout-grid(columns=4)
