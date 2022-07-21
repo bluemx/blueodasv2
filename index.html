@@ -45,11 +45,11 @@
 
 
             setTimeout(()=>{
-                console.log('outline!')
+
                 theIframe.contentWindow.postMessage({activeDataId:'abc123'}, "*");
             }, 1000)
             setTimeout(()=>{
-                console.log('outline!')
+
                 theIframe.contentWindow.postMessage({activeDataId:'123abc'}, "*");
             }, 2000)
             

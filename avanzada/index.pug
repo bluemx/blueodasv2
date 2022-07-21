@@ -20,7 +20,7 @@ html(lang="en" style="height:100%")
 
                     action-variable(name="a", value="0", ok-is="==8" :visible="true" :show-value="true")
                     layout-grid(columns=3)
-                        div: action-timeline(:ok-function="['a','+1']" :reset-function="['a', '-1']")
+                        div: action-timeline(:ok-function="" :reset-function="['a', '-1']")
                             module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="1" class=" w-fit h-fit" :inmediate="true" :disable-ok="true") $1
                         div: action-timeline(:ok-function="['a','+2']" :reset-function="['a', '-2']")
                             module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="1" class=" w-fit h-fit" :inmediate="true" :disable-ok="true") $2
@@ -28,8 +28,8 @@ html(lang="en" style="height:100%")
                             module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="1" class=" w-fit h-fit" :inmediate="true" :disable-ok="true" ) $5
                     module-drop(:emit-completed="true" name="drop1" design="1" answer="a" limit="0" class=" w-40 h-40 flex-wrap" v-bind:no-arrow="false" v-bind:horizontal="true")
                         
-                        //TODO: Hacer módulo conditional
-                    action-conditional(variable="a", hide-if="==1")
+
+                    action-conditional(variable="a", show-if="==0" hide-if="==1")
                         div a>0 && a<3
 
 
