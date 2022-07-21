@@ -14,27 +14,27 @@ html(lang="en" style="height:100%")
             av-scene
                 av-start
         
-            av-scene(:automatic-scene="false" :force-oks="0")
+            av-scene(:automatic-scene="true" :force-oks="0")
                 av-info(title="Test" interaction="drag")
                 av-activity
-                    layout-grid(columns=2 class="w-full")
-                        div
-                            div(class="bg-white w-40 h-20 flex justify-center items-center rounded-xl my-2")
-                                module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="1" connector="0" design="1" class=" w-fit h-fit" :inmediate="true") Liner 1
-                            div(class="bg-white w-40 h-20 flex justify-center items-center rounded-xl my-2")
-                                module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="2" connector="0" design="1" class=" w-fit h-fit" :inmediate="true") Liner 2
-                            div(class="bg-white w-40 h-20 flex justify-center items-center rounded-xl my-2")
-                                module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="3" connector="0" design="1" class=" w-fit h-fit" :inmediate="true") Liner 3
-                            div(class="bg-white w-40 h-20 flex justify-center items-center rounded-xl my-2")
-                                module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="4" connector="0" design="1" class=" w-fit h-fit" :inmediate="true") Liner 4
-                            div(class="bg-white w-40 h-20 flex justify-center items-center rounded-xl")
-                                module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="5" connector="0" design="1" class=" w-fit h-fit" :inmediate="true") Liner 5
-                        div
-                            module-drop(:emit-completed="true" name="drop1" design="1" answer="a" limit="3" class=" w-40 h-20 bg-pastel4 rounded-xl" v-bind:no-arrow="false" v-bind:horizontal="false" :key="2")
-                            module-drop(:emit-completed="true" name="drop1" design="1" answer="a" limit="3" class=" w-40 h-20 bg-pastel4 rounded-xl" v-bind:no-arrow="false" v-bind:horizontal="false" :key="2")
-                            module-drop(:emit-completed="true" name="drop1" design="1" answer="a" limit="3" class=" w-40 h-20 bg-pastel4 rounded-xl" v-bind:no-arrow="false" v-bind:horizontal="false" :key="2")
-                            module-drop(:emit-completed="true" name="drop1" design="1" answer="a" limit="3" class=" w-40 h-20 bg-pastel4 rounded-xl my-5" v-bind:no-arrow="false" v-bind:horizontal="false" :key="2")
-                            module-drop(:emit-completed="true" name="drop1" design="1" answer="a" limit="3" class=" w-40 h-20 bg-pastel4 rounded-xl" v-bind:no-arrow="false" v-bind:horizontal="false" :key="2")
+
+                    action-variable(name="a", value="0", ok-is="==8" :visible="true" :show-value="true")
+                    layout-grid(columns=3)
+                        div: action-timeline(:ok-function="['a','+1']" :reset-function="['a', '-1']")
+                            module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="1" class=" w-fit h-fit" :inmediate="true" :disable-ok="true") $1
+                        div: action-timeline(:ok-function="['a','+2']" :reset-function="['a', '-2']")
+                            module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="1" class=" w-fit h-fit" :inmediate="true" :disable-ok="true") $2
+                        div: action-timeline(:ok-function="['a','+5']" :reset-function="['a', '-5']")
+                            module-drag(v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="1" class=" w-fit h-fit" :inmediate="true" :disable-ok="true" ) $5
+                    module-drop(:emit-completed="true" name="drop1" design="1" answer="a" limit="0" class=" w-40 h-40 flex-wrap" v-bind:no-arrow="false" v-bind:horizontal="true")
+                        
+                        //TODO: Hacer módulo conditional
+                    action-conditional(variable="a", hide-if="==1")
+                        div a>0 && a<3
+
+
+                    //module-audiotext(:autoplay="true" text="Prueba" audio="https://ucarecdn.com/1c58281f-edd0-41b9-af6f-b6d2213f7bb8/" class="")
+
 
             //av-scene(:automatic-scene="true" :force-oks="0")
                 av-info(title="Test" interaction="drag")
@@ -277,5 +277,5 @@ html(lang="en" style="height:100%")
                 av-end
 
 
-        script(src=assetsPath+"loader.js")
-        //script(src=assetsPath+"loader.js" data="local" data-loader-version="v1.1.0")
+        //script(src=assetsPath+"loader.js")
+        script(src=assetsPath+"loader.js" data="local")

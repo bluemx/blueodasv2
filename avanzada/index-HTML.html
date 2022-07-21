@@ -8,64 +8,45 @@
   </head>
   <body class="bg-beige h-full" data="ASOMATE-MAT">
     <div class="mx-auto h-full" id="app" v-cloak>
-      <av-scene>
+      
+      <!-- <av-scene>
         <av-start></av-start>
       </av-scene>
+       -->
       
-      
 
 
 
-      <av-scene class="" v-bind:automatic-scene="true" end-audio="" v-bind:force-oks="0">
-        <av-info title="" interaction="drag" class="">
-          <module-audiotext text="" audio="" v-bind:autoplay="true" class=""></module-audiotext>
+      <av-scene class="" v-bind:automatic-scene="true" end-audio="" v-bind:force-oks="0" data-module-id="Escena 1">
+        <av-info title="Las colecciones" interaction="select" class="" data-module-id="LaterialInfo">
+          <action-timeline show="" hide="" completed="1" completed-audio="" ok="" ok-audio="" error="" error-audio="" v-bind:multiok="[]">
+            <module-audiotext text="Observa la imagen, y después selecciona las respuestas correctas." audio="https://ucarecdn.com/75af0a19-e9da-4ecc-81ca-c042b408987f/" v-bind:autoplay="true" class="" data-module-id="INS 1"></module-audiotext>
+          </action-timeline>
+          <action-timeline show="1" hide="" completed="" completed-audio="" ok="" ok-audio="" error="" error-audio="" v-bind:multiok="[]">
+            <module-audio audio="https://ucarecdn.com/4d029da7-c162-46db-90da-f2e843de5f10/" v-bind:autoplay="true" v-bind:loop="false" v-bind:volume="1" v-bind:visible="false" class="" data-module-id="0daddd825"></module-audio>
+          </action-timeline>
         </av-info>
-        <av-activity class="">
-          
-          <layout-grid columns="5" columns-md="5" gap="10" class=" p-3 justify-center items-center bg-white" data-module-id="Letras">
-            <action-timeline show="" hide="" completed="" completed-audio="" ok="" ok-audio="https://ucarecdn.com/f5795de6-ff4e-43d0-b5ec-ce87a7316a2b/" error="" error-audio="https://ucarecdn.com/13097593-2e15-4079-ac47-5febc1d6aa1e/" v-bind:multiok="[]">
-              <module-drag v-bind:only-ok="true" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" v-bind:clone="false" v-bind:clone-deletable="false" class="" :inmediate="true" data-module-id="06068afae"><span class=" text-5xl font-bold text-center text-main" data-z="false" data-module-id="00999cfbc">A</span></module-drag>
-            </action-timeline>
-            <action-timeline show="" hide="" completed="" completed-audio="" ok="" ok-audio="https://ucarecdn.com/f5795de6-ff4e-43d0-b5ec-ce87a7316a2b/" error="" error-audio="https://ucarecdn.com/13097593-2e15-4079-ac47-5febc1d6aa1e/" v-bind:multiok="[]">
-              <module-drag v-bind:only-ok="false" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="" liner="0" connector="0" design="" v-bind:clone="false" v-bind:clone-deletable="false" class="" :inmediate="true" data-module-id="06068afae1"><span class=" text-5xl font-bold text-center text-sec" data-z="false" data-module-id="00999cfbc">u</span></module-drag>
-            </action-timeline>
-            <action-timeline show="" hide="" completed="" completed-audio="" ok="" ok-audio="https://ucarecdn.com/f5795de6-ff4e-43d0-b5ec-ce87a7316a2b/" error="" error-audio="https://ucarecdn.com/13097593-2e15-4079-ac47-5febc1d6aa1e/" v-bind:multiok="[]">
-              <module-drag v-bind:only-ok="true" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" v-bind:clone="false" v-bind:clone-deletable="false" class="" :inmediate="true" data-module-id="06068afae"><span class=" text-5xl font-bold text-center text-clear" data-z="false" data-module-id="00999cfbc">N</span></module-drag>
-            </action-timeline>
-            <action-timeline show="" hide="" completed="" completed-audio="" ok="" ok-audio="https://ucarecdn.com/f5795de6-ff4e-43d0-b5ec-ce87a7316a2b/" error="" error-audio="https://ucarecdn.com/13097593-2e15-4079-ac47-5febc1d6aa1e/" v-bind:multiok="[]">
-              <module-drag v-bind:only-ok="true" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="" liner="0" connector="0" design="" v-bind:clone="false" v-bind:clone-deletable="false" class="" :inmediate="true" data-module-id="06068afae"><span class=" text-5xl font-bold text-center text-accent" data-z="false" data-module-id="00999cfbc">n</span></module-drag>
-            </action-timeline>
-            <action-timeline show="" hide="" completed="" completed-audio="" ok="" ok-audio="https://ucarecdn.com/f5795de6-ff4e-43d0-b5ec-ce87a7316a2b/" error="" error-audio="https://ucarecdn.com/13097593-2e15-4079-ac47-5febc1d6aa1e/" v-bind:multiok="[]">
-              <module-drag v-bind:only-ok="true" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" v-bind:clone="false" v-bind:clone-deletable="false" class="" :inmediate="true" data-module-id="06068afae"><span class=" text-5xl font-bold text-center text-isok" data-z="false" data-module-id="00999cfbc">P</span></module-drag>
-            </action-timeline>
-            <action-timeline show="" hide="" completed="" completed-audio="" ok="" ok-audio="https://ucarecdn.com/f5795de6-ff4e-43d0-b5ec-ce87a7316a2b/" error="" error-audio="https://ucarecdn.com/13097593-2e15-4079-ac47-5febc1d6aa1e/" v-bind:multiok="[]">
-              <module-drag v-bind:only-ok="true" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" v-bind:clone="false" v-bind:clone-deletable="false" class="" :inmediate="true" data-module-id="06068afae"><span class=" text-5xl font-bold text-center text-isok" data-z="false" data-module-id="00999cfbc">E</span></module-drag>
-            </action-timeline>
-            <action-timeline show="" hide="" completed="" completed-audio="" ok="" ok-audio="https://ucarecdn.com/f5795de6-ff4e-43d0-b5ec-ce87a7316a2b/" error="" error-audio="https://ucarecdn.com/13097593-2e15-4079-ac47-5febc1d6aa1e/" v-bind:multiok="[]">
-              <module-drag v-bind:only-ok="true" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="" liner="0" connector="0" design="" v-bind:clone="false" v-bind:clone-deletable="false" class="" :inmediate="true" data-module-id="06068afae"><span class=" text-5xl font-bold text-center text-accent" data-z="false" data-module-id="00999cfbc">f</span></module-drag>
-            </action-timeline>
-            <action-timeline show="" hide="" completed="" completed-audio="" ok="" ok-audio="https://ucarecdn.com/f5795de6-ff4e-43d0-b5ec-ce87a7316a2b/" error="" error-audio="https://ucarecdn.com/13097593-2e15-4079-ac47-5febc1d6aa1e/" v-bind:multiok="[]">
-              <module-drag v-bind:only-ok="true" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" v-bind:clone="false" v-bind:clone-deletable="false" class="" :inmediate="true" data-module-id="06068afae"><span class=" text-5xl font-bold text-center text-clear" data-z="false" data-module-id="00999cfbc">F</span></module-drag>
-            </action-timeline>
-            <action-timeline show="" hide="" completed="" completed-audio="" ok="" ok-audio="https://ucarecdn.com/f5795de6-ff4e-43d0-b5ec-ce87a7316a2b/" error="" error-audio="https://ucarecdn.com/13097593-2e15-4079-ac47-5febc1d6aa1e/" v-bind:multiok="[]">
-              <module-drag v-bind:only-ok="true" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="" liner="0" connector="0" design="" v-bind:clone="false" v-bind:clone-deletable="false" class="" :inmediate="true" data-module-id="06068afae"><span class=" text-5xl font-bold text-center text-sec" data-z="false" data-module-id="00999cfbc">o</span></module-drag>
-            </action-timeline>
-            <action-timeline show="" hide="" completed="" completed-audio="" ok="" ok-audio="https://ucarecdn.com/f5795de6-ff4e-43d0-b5ec-ce87a7316a2b/" error="" error-audio="https://ucarecdn.com/13097593-2e15-4079-ac47-5febc1d6aa1e/" v-bind:multiok="[]">
-              <module-drag v-bind:only-ok="true" v-bind:only-error="false" v-bind:allok="false" dropzone="drop1" answer="a" liner="0" connector="0" design="" v-bind:clone="false" v-bind:clone-deletable="false" class="" :inmediate="true" data-module-id="06068afae"><span class=" text-5xl font-bold text-center text-main" data-z="false" data-module-id="00999cfbc">T</span></module-drag>
-            </action-timeline>
-          </layout-grid>
-          <div class=" relative" data-z="false" data-module-id="Canasta">
-            <layout-img img="https://ucarecdn.com/fa3424f8-2c39-4528-bb7d-840e80b2ce20/" class=" w-80" data-module-id="0fa626b34"></layout-img>
-            <div class=" is-overlapping-item absolute w-[100%] h-[100%] left-[0%] top-[0%]" data-z="false" data-module-id="1752b004a">
-              <module-drop name="drop1" design="1" answer="a" limit="6" v-bind:no-arrow="true" v-bind:horizontal="true" v-bind:empty-is-error="false" v-bind:emit-completed="false" class=" w-full h-full" data-module-id="02c406bd6"></module-drop>
+        <av-activity class="" data-module-id="Actividad">
+          <div class=" flex justify-center items-center" data-z="false" data-module-id="Imagen">
+            <layout-img img="https://ucarecdn.com/c10a1c14-0f4d-4168-9fc3-5711abc3fe89/" class="" data-module-id="0d935d05f"></layout-img>
+          </div>
+          <div class=" mt-5 flex justify-center items-center flex-col" data-z="false" data-module-id="Pregunta"><span class=" text-2xl" data-z="false" data-module-id="0e8fe98f8">¿Cuántas leoncitas hay?</span>
+            <div class=" mt-2 justify-center flex items-center flex-row" data-z="false" data-module-id="Respuestas">
+              <action-timeline show="" hide="" completed="" completed-audio="" ok="" ok-audio="" error="" error-audio="https://ucarecdn.com/5946b3d0-f09a-4579-9bcd-faa1ce7fa843/" v-bind:multiok="[]">
+                <module-select v-bind:allok="false" v-bind:answer="false" class=" mx-5" :inmediate="true" data-module-id="Error 2"><span class=" text-3xl font-extrabold text-sec" data-z="false" data-module-id="07a277919">2
+      </span></module-select>
+              </action-timeline>
+              <action-timeline show="" hide="" completed="" completed-audio="" ok="" ok-audio="https://ucarecdn.com/1e793ea8-88b8-4a64-a9d7-c987e5ab3e56/" error="" error-audio="" v-bind:multiok="[]">
+                <module-select v-bind:allok="false" v-bind:answer="true" class=" mx-5" :inmediate="true" data-module-id="Correcta"><span class=" text-3xl font-extrabold text-isok" data-z="false" data-module-id="07a277919">3</span></module-select>
+                <module-select v-bind:allok="false" v-bind:answer="true" class=" mx-5" :inmediate="true" data-module-id="Correcta"><span class=" text-3xl font-extrabold text-isok" data-z="false" data-module-id="07a277919">3</span></module-select>
+                <module-select v-bind:allok="false" v-bind:answer="true" class=" mx-5" :inmediate="true" data-module-id="Correcta"><span class=" text-3xl font-extrabold text-isok" data-z="false" data-module-id="07a277919">3</span></module-select>
+              </action-timeline>
+              <action-timeline show="" hide="" completed="" completed-audio="" ok="" ok-audio="" error="" error-audio="https://ucarecdn.com/5946b3d0-f09a-4579-9bcd-faa1ce7fa843/" v-bind:multiok="[]">
+                <module-select v-bind:allok="false" v-bind:answer="false" class=" mx-5" :inmediate="true" data-module-id="Error 2"><span class=" text-3xl font-extrabold text-clear" data-z="false" data-module-id="07a277919">4</span></module-select>
+              </action-timeline>
             </div>
           </div>
-
-
         </av-activity>
-      </av-scene>
-      <av-scene class="" v-bind:automatic-scene="true" end-audio="" v-bind:force-oks="0">
-        <av-end></av-end>
       </av-scene>
 
 
